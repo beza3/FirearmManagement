@@ -1,0 +1,77 @@
+<!--main container-->
+<div class="container">
+<!--Head Banner-->
+<div class="logo">
+    <img src="assets/logos.jpg" alt="logo" style="width: 100%;">
+  </div> 
+  <!--Header Navigation Bar--> 
+  <mat-toolbar class="fixed-navbar">
+
+    <button mat-button > 
+        <div class="nav-center">
+            <span><a href="/dashboard">Dashboard</a></span>
+            </div>
+    </button>
+
+    <button mat-button  [matMenuTriggerFor]="Firearm">
+        <div class="nav-center">
+            <span>Firearm Registry</span>
+                <i class="material-icons">arrow_drop_down</i>
+        </div>
+    </button> 
+
+    <button mat-button [matMenuTriggerFor]="Access">
+        <div class="nav-center">
+          <span>Access Control</span> 
+          <i class="material-icons">arrow_drop_down</i>
+        </div>
+    </button> 
+    
+    <button mat-button [matMenuTriggerFor]="setting">
+        <div class="nav-center">
+        <span>Setting</span>
+        <i class="material-icons">arrow_drop_down</i>
+  </div>
+  
+    </button>
+   
+    
+     <!--account image-->
+
+     &nbsp;&nbsp; 
+
+    <div class="account_image">
+         <div class="image">
+         <img src="assets/OIP.jpg" alt="account_image" (click)="openModal()" style="float: right;">
+         <app-modal *ngIf="showModal" (closeModal)="closeModal()"></app-modal>
+    </div> 
+        </div>   
+  </mat-toolbar>
+</div>
+        <!--dropdowns list--> 
+        <br>
+     
+    <mat-menu #Firearm Registry="matMenu">
+        
+          <div class="dropdown">
+        <button mat-menu-item ><a href="/FirearmRegistryManagement" >Firearm Registration and Management</a></button>
+        <button mat-menu-item ><a href="/PendingFirearmOperation">Pending Firearm Operations</a></button> 
+        <button mat-menu-item ><a href="/ReportVisualization">Report And Visualization</a></button> 
+    </div>
+    </mat-menu> 
+  
+
+  
+    <mat-menu #Access="matMenu"> 
+        <div class="dropdown">
+        <button mat-menu-item><a style="text-decoration: none;"href="/SystemUserAccount">System User Account</a></button>
+        <button mat-menu-item><a style="text-decoration: none;"href="/AccessControlList">Access Control list</a></button>
+        <button mat-menu-item><a style="text-decoration: none;"href="/AccessLog">Access Log</a></button>  
+        </div>
+  
+        <mat-menu #setting="matMenu"> 
+  
+            <div class="dropdown">
+        <button mat-menu-item><a href="/backup">Automated Task and Backup</a></button> 
+            </div>   
+                                                                                

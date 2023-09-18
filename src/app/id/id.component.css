@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+  }
+  .rectangle {
+    width: 130px; 
+    height: 130px; 
+    border: 1px solid black;
+    padding: 10px;
+    font-family: monospace;
+    white-space: pre;
+    
+  }
+  #previewImage {
+    max-width: 100%;
+    max-height: 250%;
+  }
+  .text{
+    display: flex;
+    justify-content: flex-end;
+    left: 4%;
+  }
+  mat-form-field {
+    width: 50%;
+  }
+  
+  .id-no {
+    margin-right: 60%; 
+  }
+  
+  .text {
+    margin-right: 7%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .camera-icon {
+    margin-right: 10px; 
+  }
+  
+  .download-label {
+    margin-left: 10px; 
+  }
+  
+  .download-icon {
+    vertical-align: middle;
+  }
+  
+  .input-container {
+    position: relative;
+    margin-left: 80%;
+    
+  }
+  .bottom-line-input {
+    border: none;
+    border-bottom: 1px solid black; 
+    padding: 5px;
+    width: 40%;
+    outline: none; 
+    background-color: transparent; 
+  }
+  .input-one{
+    position: relative;
+  }
+  .bottom-line-input-one {
+    border: none;
+    border-bottom: 1px solid black; 
+    padding: 5px;
+    width: 80%;
+    outline: none; 
+    background-color: transparent; 
+  }
+  
+  .input-two{
+    position: relative;
+  }
+  .bottom-line-input-two {
+    border: none;
+    border-bottom: 1px solid black; 
+    padding: 5px;
+    width: 9%;
+    outline: none; 
+    background-color: transparent; 
+  }
+  .print-button {
+    margin-left: 95%;
+    opacity: 0.5;  }
+  @media print{
+    button{
+      display: none;
+    }
+  }
+  
+  
+  

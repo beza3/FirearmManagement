@@ -1,0 +1,33 @@
+button {
+    background-color:  #ccc;
+    text-decoration: none;
+    color: #141516;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    margin-left: 1px;
+    margin-right:1px;
+    border-radius: 4px;
+} 
+button a{
+  text-decoration: none;
+  color: #141516;
+}
+button:hover{
+  background-color: #b1b1b1;
+}
+button:hover a{
+   
+    color: #0c2a4c;
+} 
+button:active{
+    background-color: #dcc380;
+} 
+button:visited a{
+  background-color: #dcc380;
+}
+
+
+

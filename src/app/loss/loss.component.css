@@ -1,0 +1,133 @@
+
+.loss-box {
+    position: absolute;
+    top:45%;
+    left: 72%;
+    width: 600px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background:white;
+    box-sizing: border-box;
+    box-shadow: 0 8px 8px rgba(158, 158, 158, 0.6);
+    border-radius: 10px; 
+    margin-right: 30px;
+  }
+                    
+  .loss-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .loss-box .user-box {
+    position: relative;
+  }
+  
+  .loss-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 12px;
+    color:  #0c2a4c;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .loss-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #0c2a4c;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .loss-box .user-box input:focus ~ label,
+  .loss-box .user-box input:valid ~ label {
+    top: -15px;
+    left: 0;
+    color:  #14173d;
+    font-size: 12px;
+  }
+  
+  .loss-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #dcc380;
+    width: 250px;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 1px;
+    margin-left: 280px;
+    letter-spacing: 4px
+  }
+  
+  .loss-box a:hover {
+    background: #0c2a4c;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 1px #0c2a4c,
+              
+  }
+  
+  
+  .table{
+    width: 40px;
+    margin-left:10px;
+    margin-top: 1%;
+    
+    
+    }
+  
+  
+    th {
+   
+      text-align: left;
+      border: 1px solid #dddddd;
+     
+      color: #0c2a4c;
+      font-size:medium ;
+      
+  
+     
+    }
+    td{
+  
+      border: 1px solid #dddddd;
+      color: #0c2a4c;
+      width: 300px;
+    
+      
+      
+}
+    .user-table-cell{
+      background-color:  #0c2a4c;
+}
+.button {
+      text-align: center;
+      margin-top: 30px; 
+      
+}
+
+ .button a{
+  background-color: #f1f1f1;
+  padding: 5px;
+  border-radius: 5px; 
+  color: #343638;
+ }
+
+  .button a:hover {
+      background: #ccc;
+      color: #343638;
+      border-radius: 2px;
+      padding: 5px; 
+      cursor: pointer;
+  } 

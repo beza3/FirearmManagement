@@ -1,0 +1,202 @@
+<app-header></app-header>
+
+
+    <nav class="navbar ">
+      <div class="container-fluid">
+        <h3 style="color: #343a40;">Access Control Management</h3>
+      </div>
+    </nav>
+     <div>
+      <span><h4 style="color: green; font-weight: bold;">System User Account</h4></span>
+     </div> 
+   <div class="btn">
+    <button mat-button type="button" (click)="openUserModal()">
+      <mat-icon style="margin-right: 5px; float: right;">add</mat-icon>
+      New System User
+    </button>
+   </div>   
+   <br>
+
+     <mat-card> 
+      <br>
+  <div class="search">
+    <button mat-button>Go</button>
+    <input type="text" placeholder="Search here" style="margin-right: 5px;">
+  </div>
+ <br>
+  <div class="row">
+    <div class="select-wrapper col-md-3" style="width: 195px;">
+      <select mat-select id="accountType" class="form-control">
+        <option mat-option value="">Select Account Type</option>
+        <option value="Administrators">Administrators </option>
+        <option value="Supervisors">Supervisors </option>
+        <option value="Users">Users </option>
+      </select>
+    </div>
+
+    <div class="select-wrapper col-md-3" style="width: 195px;">
+      <select id="department" class="form-control">
+        <option value="">Select Department</option>
+        <option value="Main Department">Main Department </option>
+      </select>
+    </div> 
+
+    <div class="select-wrapper col-md-3" style="width: 195px;">
+    <select id="unit" class="form-control">
+      <option value="">Select Unit </option>
+      <option value="Regular>Patrol">Regular>Patrol </option>
+      <option value="Regular>Rapid Response">Regular>Rapid Response </option>
+      <option value="Regular>Traffic">Regular>Traffic </option>
+      <option value="Special Squad>Cyber Crime Unit">Special Squad>Cyber Crime Unit </option>
+      <option value="Special Squad>Firearms">Special Squad>Firearms </option>
+      <option value="Special Squad>Homicide">Special Squad>Homicide </option>
+    </select>
+  </div> 
+
+  <div class="select-wrapper col-md-3" style="width: 195px;">
+    <select id="organization" class="form-control">
+      <option value="">Select Organization </option>
+      <option value="The National Police">The National Police </option>
+    </select>
+  </div>
+
+  <div class="select-wrapper col-md-3" style="width: 195px;">
+    <select id="jobgroup" class="form-control">
+      <option value="">Select Jobgroup </option>
+      <option value="Destruction Officers">2 </option>
+      <option value="Investigation Officer">2 </option>
+      <option value="Issueing Officer">2 </option>
+      <option value="Markers & Registers">2 </option>
+    </select>
+  </div>
+  
+  <div class="select-wrapper col-md-3" style="width: 195px; ">
+    <select id="joblevel" class="form-control">
+      <option value="">Select Joblevel </option>
+      <option value="1">1 </option>
+      <option value="2">2 </option>
+    </select>
+  </div> 
+
+  <div class="select-wrapper col-md-3" style="width: 195px;">
+    <select id="job" class="form-control">
+      <option value="">Select Job</option>
+      <option value="Firearm Management Officer">Firearm Management Officer </option>
+    </select>
+  </div>
+
+  <div class="select-wrapper col-md-3" style="width: 195px;">
+    <select id="jobstep" class="form-control">
+      <option value="">Select Jobstep</option>
+      <option value="1">1 </option>
+      <option value="2">2 </option>
+    </select>
+  </div> 
+
+  
+  </div>
+  
+    
+  
+</mat-card>
+  <br>
+
+
+
+
+  <mat-paginator [length]="10"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25]"
+                aria-label="Select page">
+  </mat-paginator>
+  <table class="table table-bordered"> 
+    <thead class="bg-dark text-white">
+      <tr>
+        <th scope="col">REF#</th>
+        <th scope="col">NAME</th>
+        <th scope="col">UNIT</th>
+        <th scope="col">JOB</th>
+        <th scope="col">JOBTYPE</th>
+        <th scope="col">ACCOUNT TYPE</th>
+        <th scope="col">STATUS</th>
+        <th scope="col">MANAGE</th>
+        <th scope="col"> </th>
+
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>Abraham Shiferaw</td>
+      <td>Regular>Patrol</td>
+      <td>Firearms Management Officer</td>
+      <td>Consultant</td>
+      <td>Users</td>
+      <td>Active</td>
+      <td><mat-icon class="menu-icon">menu</mat-icon></td>
+      <td><mat-icon class="small-icon">create</mat-icon></td>
+    </tr>
+  
+    <tr>
+      <td>2</td>
+      <td>Dagmawit Tsegaye</td>
+      <td>Regular>Patrol</td>
+      <td>Firearms Management Officer</td>
+      <td>Consultant</td>
+      <td>Supervisors</td>
+      <td>Active</td>
+      <td><mat-icon class="menu-icon">menu</mat-icon></td>
+      <td><mat-icon class="small-icon">create</mat-icon></td>
+    </tr>
+  
+   <tr>
+      <td>3</td>
+      <td>Bezawit Solomon</td>
+      <td>Regular>Patrol</td>
+      <td>Firearms Management Officer</td>
+      <td>Consultant</td>
+      <td>Users</td>
+      <td>Active</td>
+      <td><mat-icon class="menu-icon">menu</mat-icon></td>
+      <td><mat-icon class="small-icon">create</mat-icon></td>
+    </tr>
+  
+  <tr>
+      <td>4</td>
+      <td>Abraham Shiferaw</td>
+      <td>Regular>Patrol</td>
+      <td>Firearms Management Officer</td>
+      <td>Permanent</td>
+      <td>Users</td>
+      <td>Active</td>
+      <td><mat-icon class="menu-icon">menu</mat-icon></td>
+      <td><mat-icon class="small-icon">create</mat-icon></td>
+    </tr>
+  
+  <tr>
+      <td>5</td>
+      <td>Dagmawit Tsegaye</td>
+      <td>Regular>Patrol</td>
+      <td>Firearms Management Officer</td>
+      <td>Temporary</td>
+      <td>Users</td>
+      <td>Active</td>
+      <td><mat-icon class="menu-icon">menu</mat-icon></td>
+      <td><mat-icon class="small-icon">create</mat-icon></td>
+  </tr>
+  
+  <tr>
+      <td>6</td>
+      <td>Bezawit Tsegaye</td>
+      <td>Regular>Patrol</td>
+      <td>Firearms Management Officer</td>
+      <td>Consultant</td>
+      <td>Users</td>
+      <td>Active</td>
+      <td><mat-icon class="menu-icon">menu</mat-icon></td>
+      <td><mat-icon class="small-icon">create</mat-icon></td>
+  </tr>
+     
+    </tbody>
+  </table>
+  

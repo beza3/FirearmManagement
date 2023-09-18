@@ -1,0 +1,269 @@
+<div class="modal">
+  <div class="modal-content">
+    <mat-toolbar> 
+     Firearm Registration Form in private hands
+      <span class="spacer"></span>
+      <button mat-raised-button><mat-icon>close</mat-icon></button>
+    </mat-toolbar>
+    <form >
+      <!-- First set of fields -->
+
+<br> 
+
+<div class="form-row">
+  <!-- First Column --> 
+  
+  <div class="form-column">
+    <h2>General Information</h2>
+
+    <div class="form-group">
+      <label for="Fullname">Fullname</label> <br>
+      <input formControlName="Fullname" type="text" id="Fullname">
+    </div> 
+
+    <div class="form-group">
+      <label for="Nationality">Nationality</label> <br>
+      <input formControlName="Nationality" type="text" id="Nationality">
+    </div> 
+
+    <div class="form-group">
+      <label for="Age">Date Of Birth</label> <br>
+      <input formControlName="Age" type="date" id="Age">
+    </div> 
+
+    <div class="form-group">
+      <label>Sex:</label>
+      <label class="radio-label">
+ <input type="radio" value="true">
+ M
+</label>
+<label class="radio-label">
+ <input type="radio"  value="false">
+ F
+</label>
+    </div>
+
+ <div class="form-group">
+      <label for="AccadamicStatus">Accadamic Status</label> <br>
+      <input formControlName="AccadamicStatus" type="text" id="AccadamicStatus">
+    </div> 
+
+    <div class="form-group">
+      <label for="LevelOfEducation">Marritial Status</label> <br>
+      <input formControlName="LevelOfEducation" type="text" id="LevelOfEducation">
+    </div> 
+
+    <div class="form-group">
+      <label for="MedicalResult">Medical Result</label> <br>
+      <input formControlName="MedicalResult" type="text" id="MedicalResult">
+    </div> 
+
+    <div class="form-group">
+      <label>Occupation:</label>
+      <label class="radio-label">
+ <input type="radio" value="true">
+ Has
+</label>
+<label class="radio-label">
+ <input type="radio"  value="false">
+ Hasn't
+</label>
+    </div>
+
+    <div class="form-group">
+      <label for="SizeOfCapital">Size Of Capital</label> <br>
+      <input formControlName="SizeOfCapital" type="text" id="SizeOfCapital">
+    </div> 
+
+  </div>
+
+
+  <!-- Second Column -->
+  <div class="form-column">
+    <h2>The address where the person lives</h2>
+
+    <div class="select-wrapper col-md-3" style="width: 195px;">
+      <label for="">State/Region :</label>
+      <select mat-select id="accountType" class="form-control">
+        <option mat-option value="">Select Region</option>
+        <option value="Administrators">Adiss Ababa</option>
+        <option value="Supervisors">Afar
+        </option>
+        <option value="Users">Benishangul Gumz</option>
+        <option value="Users">Dire Dawa</option>
+        <option value="Users">Gambella</option>
+        <option value="Users">Harari</option>
+        <option value="Users">Oromia</option>
+        <option value="Users">Somali</option>
+        <option value="Users">Tigray</option>
+        <option value="Users">SNNPR</option>
+        <option value="Users">Sidama</option>
+        <option value="Users">SWEPR</option>
+      </select>
+    </div>
+  <br>
+    <div class="select-wrapper col-md-3" style="width: 195px;">
+      <label for="">Zone/Subcity :</label>
+      <select mat-select id="accountType" class="form-control">
+        <option mat-option value="">Select Account Type</option>
+        <option value="Administrators">Administrators </option>
+        <option value="Supervisors">Supervisors </option>
+        <option value="Users">Users </option>
+      </select>
+    </div>
+    <br>
+<div class="form-group">
+  <label for="position">District</label> <br>
+  <input type="text" id="position" formControlName="position" required>
+</div>
+<br>
+<div class="form-group">
+  <label for="email">kebele</label> <br>
+  <input type="text" id="email" formControlName="email" required>
+</div> 
+<br> 
+
+<div class="form-group">
+  <label for="email">Specific area :</label> <br>
+  <input type="text" id="email" formControlName="email" required>
+</div>
+<br>
+
+    <div class="form-group">
+      <label for="phone-number">P/Port/ID No:</label> <br>
+      <input type="tel" id="phone-number" formControlName="phone_number" required>
+    </div> 
+    <br> 
+
+    <div class="form-group">
+      <label for="phone-number">Phone Number:</label> <br>
+      <input type="tel" id="phone-number" formControlName="phone_number" required>
+    </div>    
+     <br>  
+
+    <div class="form-group">
+      <label for="phone-number">Home Number</label> <br>
+      <input type="Email" id="phone-number" formControlName="phone_number" required>
+    </div> 
+  </div> 
+
+  <!-- Third Column -->
+  <div class="form-column">
+    <h2>Firearm Detail</h2>
+
+    <div class="form-group">
+      <label for="full-name">Firearm Type</label> <br>
+      <input type="text" id="full-name" formControlName="full_name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Manufactured Country</label> <br>
+      <input type="text" id="title" formControlName="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="position">Manufactured Year</label> <br>
+      <input type="text" id="position" formControlName="position" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Caliber</label> <br>
+      <input type="email" id="email" formControlName="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone-number">Mark Number</label> <br>
+      <input type="tel" id="phone-number" formControlName="phone_number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Bullet Number/Magazine</label> <br>
+      <textarea id="" formControlName="comment" rows="4" required></textarea>
+    </div>  
+
+    <div class="form-group">
+      <label>Marked:</label>
+      <label class="radio-label">
+ <input type="radio" value="true">
+ Yes
+</label>
+<label class="radio-label">
+ <input type="radio"  value="false">
+ No
+</label>
+    </div>
+  </div>
+
+
+  <!-- Fourth Column -->
+  <div class="form-column">
+ <h2> The body that registered the weapon</h2>
+    <div class="form-group"> 
+      <label for="full-name">Position</label> <br>
+      <input type="text" id="full-name" formControlName="full_name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="title">full name</label><br>
+      <input type="text" id="title" formControlName="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="position">Title</label> <br>
+      <input type="text" id="position" formControlName="position" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Responsibility</label> <br>
+      <input type="email" id="email" formControlName="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone-number">signature</label> <br>
+      <input type="tel" id="phone-number" formControlName="phone_number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">date</label> <br>
+      <input type="date" id="title" formControlName="title" required>
+    </div>  
+  </div>
+  <div class="container2"> 
+    <br>
+    <h2>The Registered Body</h2>
+    <div class="form-group">
+      <label for="full-name">Full Name</label> <br>
+      <input type="text" id="full-name" formControlName="full_name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Responsibility</label><br>
+      <input type="text" id="title" formControlName ="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone-number">signature</label> <br>
+      <input type="tel" id="phone-number" formControlName="phone_number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">date</label><br>
+      <input type="date" id="title" formControlName="title" required>
+    </div> 
+
+</div>
+</div>
+<div class="form-row">
+  <!-- Add more rows if needed -->
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+

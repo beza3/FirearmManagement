@@ -1,0 +1,128 @@
+<app-header></app-header> 
+<div class="spacer">
+
+</div>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="cards" style="margin: 40px 40px 40px 40px;">
+
+  <mat-card fxFlex="25"  class="card1" style="height: 130px;"> 
+    <div class="text"> 
+      <p style="font-size: 2em;">345</p>
+      <p>FIREARMS</p>
+    </div>
+  </mat-card>
+
+  <mat-card fxFlex="25" class="card2" style="height: 130px;">
+
+    <div class="text">
+   
+    <p style="font-size: 2em;">543</p>
+    <P>FIREARM HOLDERS</P>
+  </div>
+  </mat-card> 
+
+  <mat-card fxFlex="25"  class="card3" style="height: 130px;">
+    <div class="text">
+    <P style="font-size: 2em;">43</P>
+    <P>DESTROYED</P>
+  </div>
+  </mat-card> 
+
+  <mat-card fxFlex="25" class="card4"  style="height: 130px;">
+    <div class="text">
+    <P style="font-size: 2em;">13</P>
+    <P>MARKED</P>
+  </div>
+  </mat-card> 
+
+  <mat-card fxFlex="25" class="card5"  style="height: 130px;">
+    <div class="text">
+    <P style="font-size: 2em;">87%</P>
+    <P>MARKED BY PERCENTAGE<P>
+    </div>
+</mat-card> 
+</div> 
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards" style="margin-left: 30px;"> 
+   <div fxFlex="60">
+    <app-widget-bar></app-widget-bar>
+   </div> 
+
+   <div fxFlex="40">
+    <app-donut></app-donut>
+   </div>
+
+</div>
+ 
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards" style="margin:40px 40px 40px 40px;">
+    <div fxFlex="40">
+        <app-widget-pie></app-widget-pie>
+    </div>  
+
+    <div fxFlex="40">
+      
+      <app-widget-pie-a></app-widget-pie-a>
+
+    </div> 
+
+    <div fxFlex="40">
+     
+        <app-widget-pie-b></app-widget-pie-b>
+
+    </div> 
+
+  </div> 
+
+  <!--Tables Part-->
+
+<div class="Tables">
+     <!--Login Table-->
+    <div class="tableA">
+      <h4>Login History</h4>
+<app-widget-table-a></app-widget-table-a>
+</div>
+<!--Recent table--> 
+ 
+<div class="tableB">
+  <h4>Recent Operations</h4>
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" >
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> DATE </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> TIME</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+        
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef> DATABASE </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> OPERATION </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+      </ng-container> 
+
+      <ng-container matColumnDef="symbolL">
+      <mat-header-cell *matHeaderCellDef> DESCRIPTION</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+    </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+   
+</div>
+
+ </div>
+ 
+   
+ <app-footer></app-footer>

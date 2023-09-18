@@ -1,0 +1,226 @@
+<div class="modal">
+    <div class="modal-content"> 
+               <mat-toolbar> Firearm registration form available at a private company,government institution
+                <div class="CloseButton">
+                  <span>
+                    <button mat-button (click)="closeModal()"><mat-icon>close</mat-icon></button>
+                  </span>
+                </div>
+               </mat-toolbar>
+      <mat-tab-group> 
+        <!--Organization Detail-->
+        <mat-tab label="Organization Detail"> 
+        <h2 class="form-title"></h2>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="full-name">Name of Organisation:</label> 
+            <input type="text" id="name-of-organization" formControlName="nameOfOrganization" required>
+          </div>  
+          <label for=""> Select Sector :</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Agricultural Sector
+            </label>
+          </div> <br>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Manufacturing sector
+            </label>
+          </div> <br>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Service sector
+            </label>
+          </div> <br>
+               <br>
+          <div class="input-group">
+            <label for="">Size Of Capital</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+        
+          </div> 
+              <br>
+          <button type="submit" class="submit-button" [disabled]="!form.valid">Next</button> 
+
+        </form>
+
+           </mat-tab>
+
+
+           
+           <mat-tab label="Company Location"  routerLink="/tab2"> 
+            <h2 class="form-title"></h2>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                <div class="select-wrapper col-md-3" style="width: 195px;">
+                    <label for="">State/Region :</label>
+                    <select mat-select id="accountType" class="form-control">
+                      <option mat-option value="">Select Account Type</option>
+                      <option value="Administrators">Administrators </option>
+                      <option value="Supervisors">Supervisors </option>
+                      <option value="Users">Users </option>
+                    </select>
+                  </div>
+          
+                  <div class="select-wrapper col-md-3" style="width: 195px;">
+                    <label for="">Zone/Subcity :</label>
+                    <select mat-select id="accountType" class="form-control">
+                      <option mat-option value="">Select Account Type</option>
+                      <option value="Administrators">Administrators </option>
+                      <option value="Supervisors">Supervisors </option>
+                      <option value="Users">Users </option>
+                    </select>
+                  </div>
+          
+              <div class="form-group">
+                <label for="position">District</label>
+                <input type="text" id="position" formControlName="position" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="email">kebele</label>
+                <input type="text" id="email" formControlName="email" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="phone-number">Specific Area:</label>
+                <input type="tel" id="phone-number" formControlName="phone_number" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number" formControlName="phone_number" required>
+              </div>  
+
+              
+              <div class="form-group">
+                <label for="phone-number">Email:</label>
+                <input type="Email" id="phone-number" formControlName="phone_number" required>
+              </div> 
+              
+              <button type="submit" class="submit-button" [disabled]="!form.valid">Next</button>
+            </form>
+               </mat-tab>
+
+        <mat-tab label="Firearm Detail">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="full-name">Firearm Type</label> 
+              <input type="text" id="full-name" formControlName="full_name" required>
+            </div>
+        
+            <div class="form-group">
+              <label for="title">Manufactured Country</label>
+              <input type="text" id="title" formControlName="title" required>
+            </div>
+        
+            <div class="form-group">
+              <label for="position">Manufactured Year</label>
+              <input type="text" id="position" formControlName="position" required>
+            </div>
+        
+            <div class="form-group">
+              <label for="email">Caliber</label>
+              <input type="email" id="email" formControlName="email" required>
+            </div>
+        
+            <div class="form-group">
+              <label for="phone-number">Mark Number</label>
+              <input type="tel" id="phone-number" formControlName="phone_number" required>
+            </div>
+        
+            <div class="form-group">
+              <label for="comment">Bullet Number</label>
+              <textarea id="comment" formControlName="comment" rows="4" required></textarea>
+            </div>  
+            <div class="form-group">
+              <label>Marked:</label>
+              <label class="radio-label">
+         <input type="radio" value="true">
+         Yes
+       </label>
+       <label class="radio-label">
+         <input type="radio"  value="false">
+         No
+       </label>
+            </div>
+            
+            
+            <button type="submit" class="submit-button" [disabled]="!form.valid">Next</button>
+         
+              
+          </form>
+          </mat-tab>
+
+        <mat-tab label="The body that registered the weapon">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="main-container">
+              <div class="container1"> 
+                <br>
+                <label for="" style="font-weight: bold; font-size: 16px;">The body that registered the weapon </label>
+                <div class="form-group"> 
+                  <label for="full-name">Position</label> 
+                  <input type="text" id="full-name" formControlName="full_name" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="title">full name</label>
+                  <input type="text" id="title" formControlName="title" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="position">Title</label>
+                  <input type="text" id="position" formControlName="position" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="email">Responsibility</label>
+                  <input type="email" id="email" formControlName="email" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="phone-number">signature</label>
+                  <input type="tel" id="phone-number" formControlName="phone_number" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="comment">date</label>
+                  <input type="text" id="title" formControlName="title" required>
+                </div>  
+              </div>
+              <div class="container2"> 
+                <br>
+                <label for="" style="font-weight: bold; font-size: 16px;">The registered body</label>
+                <div class="form-group">
+                  <label for="full-name">Full Name</label> 
+                  <input type="text" id="full-name" formControlName="full_name" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="title">Responsibility</label>
+                  <input type="text" id="title" formControlName="title" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="phone-number">signature</label>
+                  <input type="tel" id="phone-number" formControlName="phone_number" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="comment">date</label>
+                  <input type="text" id="title" formControlName="title" required>
+                </div> 
+  
+              </div>
+            </div>
+            </form>
+          
+          
+          </mat-tab>
+      </mat-tab-group>
+     
+    </div>
+  </div>
+  

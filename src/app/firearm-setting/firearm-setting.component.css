@@ -1,0 +1,27 @@
+button {
+  background-color:  #0c2a4c;
+  text-decoration: none;
+  color: #dcc380;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  margin-left: 1px;
+  margin-right:1px;
+  border-radius: 4px 4px 0 0; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+button a{
+text-decoration: none;
+color: #dcc380;
+}
+button:hover{
+background-color: #dcc380;
+}
+button:hover a{
+  background-color:#dcc380;
+  color: #0c2a4c;
+} 
+
+

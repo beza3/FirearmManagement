@@ -1,0 +1,22 @@
+.form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 450px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  } 
+  form {
+    margin-left: 10px;
+  }

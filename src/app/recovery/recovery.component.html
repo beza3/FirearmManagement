@@ -1,0 +1,131 @@
+<app-navregister></app-navregister>
+<mat-card style="height: 800px; width: 50%px; background-color:white; margin:7px 10px 10px 10px;">
+  <h1 style="color:  #0c2a4c;" >Recovery Confirmation Queue</h1>
+<div class="recovery-box">
+  <form>
+    <div>
+      <h2 style="color:  #0c2a4c;">Firearm Recovery Report</h2>
+      <p > To complete the transfer of firearms listed alongside,Kindly fill all the information in this form.When satisfied,that all the details are correct ,click on the <strong>"CONFIRM RECOVERY" </strong>button below</p>
+      <hr>
+    </div>
+    
+    <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Firearms Returned To:</label>
+    </div>
+    <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Reported By:</label>
+    </div>
+    <div class="user-box">
+      <br>
+      <br>
+      <input type="date" name="" required="" value="">
+      <label>Authorization Date:</label>
+  </div>
+  <div class="user-box">
+    <input type="text" name="" required="" value="">
+    <label>Comment:</label>
+  </div>
+  <label>
+<p>Issued/Transfered By:-&nbsp;&nbsp; <strong>System Administrator</strong> </p>
+</label>
+<br>
+<br>
+    
+      
+    <button mat-raised-button>Confirm recovery</button>
+    <br>
+    <br>
+   
+<mat-card style="height:50px;background-color: rgb(226, 226, 142);">
+  <label>
+  <p >Please make sure that all the fields above are completed before clicking on the <strong>"TRANSFER "</strong>   button</p>
+</label>
+</mat-card>
+  </form>
+</div>
+<div class="table">
+  
+  
+  <table mat-table [dataSource]="dataSource">
+  
+      <ng-container matColumnDef="holder">
+        <th style="background-color:#0c2a4c;color: white;" mat-header-cell *matHeaderCellDef>Holder</th>
+          <td mat-cell *matCellDef="let element">{{element.holder}}</td>
+          
+        </ng-container> 
+  
+    <ng-container matColumnDef="serial">
+      <th style="background-color:#0c2a4c;color: white;"  mat-header-cell *matHeaderCellDef>Serial</th>
+      <td mat-cell *matCellDef="let element">{{element.serial}}</td>
+    </ng-container> 
+    
+    <ng-container matColumnDef="type">
+      <th style="background-color:#0c2a4c;color: white;"  mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let element">{{element.type}}</td>
+    </ng-container> 
+  
+    
+  
+    <ng-container matColumnDef="model">
+      <th style="background-color:#0c2a4c;color: white;"  mat-header-cell *matHeaderCellDef>Model</th>
+      <td mat-cell *matCellDef="let element">{{element.model}}</td>
+    </ng-container> 
+     
+    <ng-container matColumnDef="status">
+      <th style="background-color:#0c2a4c;color: white;"  mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">{{element.status}}</td>
+    </ng-container> 
+  
+    <ng-container matColumnDef="queued">
+      <th style="background-color:#0c2a4c;color: white;"  mat-header-cell *matHeaderCellDef>Queued By</th>
+      <td mat-cell *matCellDef="let element">{{element.queued}}</td>
+    </ng-container> 
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  
+  </table>
+  <br>
+<br>
+
+
+
+
+ 
+    
+  </div>
+  <div class="button">
+    <div style="  margin-top: -30px; width: 160px; height: 30px;">
+      <a>
+     Export To CSV
+      
+   </a>
+  </div>
+  
+  <div style="float: left; margin-left: 400px; margin-top: -30px; width: 180px; left: 1; ">
+   <a>
+      Cancel Recovery
+    </a>
+  </div>
+  </div>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

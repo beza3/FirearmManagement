@@ -1,0 +1,208 @@
+<div class="modal">
+  <div class="modal small">
+  <div class="modal-content">
+    <mat-toolbar> 
+      New System User
+      <span class="spacer"></span>
+      <button mat-raised-button (click)="onClose()"><mat-icon>close</mat-icon></button>
+    </mat-toolbar>
+    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+      <!-- First set of fields -->
+
+<br>
+
+<div class="form-row">
+  <!-- First Column --> 
+  <div class="form-column">
+    <h2>General Information</h2>
+    <div class="form-group">
+      <label for="firstname">First Name</label> <br>
+      <input formControlName="firstname" type="text" id="firstname">
+    </div>
+    <div class="form-group">
+      <label for="middlename">Middle Name</label> <br>
+      <input formControlName="middlename" type="text" id="middlename">
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name</label> <br>
+      <input formControlName="lastname" type="text" id="lastname">
+    </div>
+    <div class="form-group">
+      <label for="efpid">EFPID:</label> <br>
+      <input style="width: 200px;  padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;" formControlName="efpid" type="number" id="efpid">
+    </div>
+  </div>
+
+  <!-- Second Column -->
+
+  <div class="form-column">
+    <h2>Job Information</h2>
+    <div class="form-group">
+      <label for="job">Job</label> <br>
+      <input formControlName="job" type="text" id="job">
+    </div>
+    <div class="form-group">
+      <label for="Jobtype">Jobtype</label>   <br>
+      <input formControlName="jobtype" type="text" id="Jobtype" >
+    </div>  
+    <div class="form-group">
+      <label for="Unit">Unit</label>  <br>
+      <input formControlName="unit" type="text" id="Unit" >
+    </div>  
+    <div class="form-group">
+      <label for="Organization">Organization</label>  <br>
+      <input formControlName="organization" type="text" id="Organization" >
+    </div>  
+  </div>
+
+  <!-- Third Column -->
+  <div class="form-column">
+    <h2>Personal Information</h2>
+    <div class="form-group">
+      <label for="telephone">Telephone</label>  <br>
+      <input formControlName="telephone" type="text" id="telephone">
+    </div>
+    <div class="form-group">
+      <label for="full-name">Extension</label>  <br>
+      <input formControlName="extension" type="text" id="Jobtype" >
+    </div>  
+  
+    <div class="form-group">
+      <label for="full-name">Mobile</label>  <br>
+      <input formControlName="mobile" type="text" id="Mobile" >
+    </div>  
+  
+    <div class="form-group">
+      <label for="full-name">Email</label>  <br>
+      <input formControlName="email" type="email" id="Email" >
+    </div> 
+  
+    <div class="form-group">
+      <label for="full-name">Address</label>  <br>
+      <input formControlName="address" type="text" id="Address" >
+    </div> 
+  
+    <div class="form-group">
+      <label for="full-name">Town</label>  <br>
+      <input formControlName="town" type="text" id="Town" >
+    </div> 
+  
+    <div class="form-group">
+      <label for="full-name">Country</label> <br>
+      <input formControlName="country" type="text" id="Country" >
+    </div> 
+  </div>
+
+  <!-- Fourth Column -->
+  <div class="form-column">
+    <h2>Login Information</h2>
+    <div class="form-group">
+      <label for="accounttype">Account Type</label><br>
+      <input formControlName="accounttype" type="text" id="accounttype"> 
+
+    </div>
+     <mat-card>
+      <p style="color: rgb(196, 99, 99);">Choose only one  icon from the given alternative </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); grid-gap: 7px;">
+
+        <div class="icon"><img src="assets/car.png" alt="Lock">
+          <input type="checkbox" id="checkbox1" (change)="updateInput($event)">
+          <label for="checkbox1">car</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/grenade.png" alt="Key">
+          <input type="checkbox" id="checkbox2" (change)="updateInput($event)">
+          <label for="checkbox2">grenade</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/handcuff.png" alt="Fingerprint" id="Handcuff">
+          <input type="checkbox" id="checkbox3" (change)="updateInput($event)">
+          <label for="checkbox3">handcuff</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/vest.jpg" alt="Fingerprint" id="Handcuff">
+          <input type="checkbox" id="checkbox4" (change)="updateInput($event)">
+          <label for="checkbox4">vest</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/walkie.png" alt="Fingerprint" id="Handcuff">
+          <input type="checkbox" id="checkbox5" (change)="updateInput($event)">
+          <label for="checkbox5">walkie</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/hellicopter.png" alt="Fingerprint" id="Handcuff">
+          <input type="checkbox" id="checkbox6" (change)="updateInput($event)">
+          <label for="checkbox6">helicopter</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/gun.jpeg" alt="Fingerprint" id="Handcuff">
+          <input type="checkbox" id="checkbox7" (change)="updateInput($event)">
+          <label for="checkbox7">gun</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/military.png" alt="Fingerprint" id="Handcuff">
+          <input type="checkbox" id="checkbox8" (change)="updateInput($event)">
+          <label for="checkbox8">military</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/officercup.png" alt="Fingerprint" id="Handcuff">
+          <input type="checkbox" id="checkbox9" (change)="updateInput($event)">
+          <label for="checkbox9">officer</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/shoes.png" alt="Fingerprint" id="Handcuff">
+          <input type="checkbox" id="checkbox10" (change)="updateInput($event)">
+          <label for="checkbox10">boots</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/bullet.png" alt="Fingerprint" id="Handcuff" style="width: 42px;">
+          <input type="checkbox" id="checkbox11" (change)="updateInput($event)">
+          <label for="checkbox11">bullet</label><br>
+        </div>
+      
+        <div class="icon"><img src="assets/tank.png" alt="Fingerprint" id="Handcuff">
+          <input type="checkbox" id="checkbox12" (change)="updateInput($event)">
+          <label for="checkbox12">tank</label><br>
+        </div>
+      
+        <input type="text" id="inputBox" [value]="Loginicon" readonly style="visibility: hidden;" formControlName="Loginicon">
+      </div>
+      
+  </mat-card>
+  <br>
+
+  <br>
+    <div class="form-group">
+      <label for="full-name">Username</label>  <br>
+      <input formControlName="username" type="text" id="Username" >
+    </div>   
+
+    <div class="form-group">
+      <label for="full-name">Status</label>  <br>
+      <input formControlName="status" type="text" id="Status" >
+    </div>   
+
+    <div class="form-group">
+      <label for="password">Password</label>  <br>
+      <input formControlName="password" type="password" id="password" >
+    </div>  
+  </div>
+</div>
+<div class="form-row">
+  <!-- Add more rows if needed -->
+</div>
+<button mat-raised-button type="submit" (click)="signup()">Register</button>
+</form>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+

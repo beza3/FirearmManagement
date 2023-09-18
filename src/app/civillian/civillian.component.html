@@ -1,0 +1,93 @@
+<app-header></app-header>
+<div class="header-text">
+
+<h2>Civillian Register</h2>
+</div>
+ <!--new Officer button-->
+ <div class="btn">
+    <button mat-button (click)="opencivil()"><mat-icon>add</mat-icon>New Civillian</button> 
+
+    <app-civil *ngIf="showcivil" (closecivil)="closecivil()"></app-civil> 
+ </div> 
+ <br><br><br>
+<mat-card>
+  <br>
+<div class="search-container">
+  <input type="text"  placeholder="Enter search query">
+  <button>Go</button>
+</div>
+<div class="custom-select-row">
+  <div class="custom-select">
+    <select [(ngModel)]="option1" name="option1">
+      <option [ngValue]="''" disabled>Select Officer Type</option>
+      <option value="option1-1">Armourer</option>
+      <option value="option1-2">Demolisher</option>
+      <option value="option1-3">Marker</option>
+      <option value="option1-3">Officer</option>
+    </select>
+</div>
+
+<div class="custom-select">
+    <select [(ngModel)]="option2" name="option2">
+      <option [ngValue]="''" disabled>Select Unit</option>
+      <option value="option2-1">Regular > Patrol</option>
+      <option value="option2-2">Regular > Traffic</option>
+      <option value="option2-3">Regular > Cyber Security Crime</option>
+    </select>
+</div>
+
+  <div class="custom-select">
+    <select [(ngModel)]="option3" name="option3">
+      <option [ngValue]="''" disabled>Select Station</option>
+      <option value="option3-1">Federal Police</option>
+      <option value="option3-2">y Police Station</option>
+      <option value="option3-3">x Police Station</option>
+    </select>
+  </div>
+</div>
+</mat-card><br><br>
+<app-popup-child2 *ngIf="showPopupFlag === 2" (close)="hidePopup()"></app-popup-child2>
+  <app-popup-child3 *ngIf="showPopupFlag === 3" (close)="hidePopup()"></app-popup-child3>
+<!--Table Part-->
+<div class="table">
+<mat-paginator [length]="10"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25]"
+              aria-label="Select page">
+</mat-paginator>
+<br>
+<table class="table table-bordered"> 
+  <thead class="bg-dark text-white">
+    <tr>
+      <th scope="col">REF#</th>
+      <th scope="col">PERSONAL</th>
+      <th scope="col">ACADAMIC STATUS</th>
+      <th scope="col">MARRITIAL STATUS</th>
+      <th scope="col">FIREARM</th>
+      <th scope="col">OCCUPATION</th>
+      <th scope="col">ACTION</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody class="table_body">
+  <tr> 
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+      <button mat-button (click)="showPopup(3)"><a style="text-decoration: none;" ><span> 	<mat-icon>highlight_off</mat-icon>Report loss</span></a></button><br>
+      <button mat-button (click)="showPopup(2)"><a style="text-decoration: none;"><span>	<mat-icon> report_problem </mat-icon>Destruction</span></a></button><br>
+      <button mat-button (click)="showPopup(2)"><a style="text-decoration: none;"><span>	<mat-icon>arrow_back</mat-icon>
+        Return</span></a></button>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+  </tr>
+  </tbody>
+</table>
+</div>  
+

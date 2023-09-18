@@ -1,0 +1,76 @@
+.nav-center {
+    display: inline-flex;
+    align-items: center;
+    color:  #dcc380;   
+}  
+.nav-center span:hover{
+   background-color: hsl(44, 57%, 68%);
+   color: #0c2a4c;
+}
+.nav-center i:hover{
+    background-color: #dcc380;
+    color: #0c2a4c;
+ }
+span, i{
+    color: #dcc380;
+} 
+.dropdown {
+    background-color: #0c2a4c;
+}
+.dropdown button{
+    color: #dcc380;
+}
+.dropdown button:hover a{
+    background-color: #dcc380;
+    color: #0c2a4c;
+}
+.dropdown button:hover{
+    background-color: #dcc380;
+}
+.spacer {
+    background-color: #dcc380;
+}
+.account_image  img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+    position: relative;
+    text-align: right;
+    display: flex;
+    cursor: pointer;
+
+} 
+a{
+    text-decoration: none;
+    color: #dcc380;
+}  
+.nav-center span a:hover{
+    color: #0c2a4c;
+}
+.dropdown button{
+    color: #dcc380;
+}
+button:hover{
+    background-color: #dcc380;
+    color: #0c2a4c;
+} 
+.fixed-navbar {
+
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #0c2a4c; 
+    margin-left: 0; 
+    margin-bottom: -20px;
+  } 
+  .account_image {
+    display: inline-flex;
+    position: absolute;
+    top: 2;
+    right: 0;
+    margin-top: 10px; 
+    margin-right: 10px; 
+  } 
+  .container {
+    margin-bottom: 0;
+  }

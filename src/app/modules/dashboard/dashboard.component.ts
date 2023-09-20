@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { FirearmService } from 'src/app/services/firearm.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +7,22 @@ import { Component,OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 }) 
 
-export class DashboardComponent  { 
+export class DashboardComponent implements OnInit {
+  totalFirearms: number = 0;
+
+  constructor(private firearmServices: FirearmService) { }
+          
+  ngOnInit(): void {
+    this.firearmServices.getTotalFirearms().subscribe(
+      (count) => {
+        this.totalFirearms = count;
+        // Handle the count as needed, e.g., update your UI
+      },
+      (error) => {
+        console.error('Error fetching total firearms:', error);
+      }
+    );
+  }
   displayedColumns = ['position', 'name', 'weight', 'symbol','symbolL'];
   dataSource = ELEMENT_DATA;
 }

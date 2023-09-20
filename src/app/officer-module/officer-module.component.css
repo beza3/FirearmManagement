@@ -36,11 +36,10 @@
 
 
 button {
-  position: absolute;
-  right: 0;  
-  margin-right: 200px;
-  margin-bottom: 10px;
-
+   position: absolute;
+   right: 0;
+   margin-right: 200px;
+   margin-top: -10px;
 } 
 
 /* signup-form.css */
@@ -86,3 +85,21 @@ textarea {
   border-radius: 4px;
 } 
 
+/* CSS for a three-column layout */
+.three-column-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-column {
+  flex: 1;
+  width: calc(33.33% - 20px); /* Adjust the width as needed */
+  margin: 10px;
+}
+
+/* Style for the submit button */
+.submit-button mat-raised-button{
+     position: relative;
+     margin: 1000px;
+}

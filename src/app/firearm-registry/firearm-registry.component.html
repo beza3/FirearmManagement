@@ -16,8 +16,8 @@
 <div class="container">
   <br><br>
    <div class="btn1">
-      <input type="text" placeholder="Search.." name="search"> 
-     <button> GO </button>
+      <input type="text" placeholder="Search.." name="search"  [(ngModel)]="searchTerm"> 
+      <button (click)="search()">GO</button>
    </div>
   </div>
    <br>

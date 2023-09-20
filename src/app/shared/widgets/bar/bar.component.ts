@@ -13,7 +13,11 @@ export class BarComponent {
 
  } 
   ngOnInit() {
-    this.chartOptions = {
+    this.chartOptions = { 
+        chart: {
+            backgroundColor: '#f1f1f1',
+            borderRadius: '5px'
+        },
       title: {
           text: 'Firearm Activity',
           align: 'left'

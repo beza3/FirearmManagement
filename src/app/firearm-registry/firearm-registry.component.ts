@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
@@ -7,7 +7,7 @@ import { Firearm } from '../models/Firearm.model';
 import { FirearmService } from '../services/firearm.service';
 import { ReturnModalComponent } from '../return-modal/return-modal.component';
 import { DialogComponent } from '../dialog/dialog.component';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 
 // ...
 
@@ -22,6 +22,11 @@ import { MatTableDataSource } from '@angular/material/table';
   ]
 })
 export class FirearmRegistryComponent implements OnInit {
+  
+  searchTerm: string = '';
+  
+  @ViewChild('table')
+  table!: MatTable<any>;
 
 
   showReturn = false;
@@ -30,7 +35,7 @@ export class FirearmRegistryComponent implements OnInit {
   errorMessage: string | undefined;
   formValue!: FormGroup;
   dataFromApi: any;
-  dataSource: MatTableDataSource<Firearm> = new MatTableDataSource<Firearm>();
+  dataSource: MatTableDataSource<Firearm> = new MatTableDataSource<Firearm>() ;
   
   displayedColumns: string[] = [
     'REF#',
@@ -54,7 +59,11 @@ export class FirearmRegistryComponent implements OnInit {
     this.getAllFirearm();
     // Initialize formValue here if needed
   } 
-      
+ search() {
+    this.dataSource.filter = this.searchTerm.trim().toLowerCase();
+    this.table.renderRows();
+  }
+  
 
   getAllFirearm(): void {
     this.firearmService.getAllFirearms().subscribe(

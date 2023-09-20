@@ -26,52 +26,6 @@ export class DonutComponent {
  
   ngOnInit() {
     // Define custom colors
-    const customColors = [
-      '#dcc380', // Red
-      '#0c2a4a', // Green
-      '#7394d3',
-      '#c3dcc3',
-      '#4b7d81' // Blue
-      // Add more colors as needed
-    ];
-
-    this.chartOptions = {
-      chart: {
-        type: 'pie',
-        options3d: {
-          enabled: true,
-          alpha: 45,
-          beta: 0,
-        
-        }
-      },
-      title: {
-        text: 'Total Firearm in 5 Years',
-        align: 'left'
-      },
-      subtitle: {
-        text: '',
-        align: 'left'
-      },
-      plotOptions: {
-        pie: {
-          innerSize: '50%',
-          depth: 45,
-          colors: customColors, // Assign custom colors to data points
-        }
-      },
-      series: [{
-        name: 'Medals',
-        data: [
-          { name: '2016', y: 16, color: customColors[0] },
-          { name: '2017', y: 12, color: customColors[1] },
-          { name: '2018', y: 8, color: customColors[2] },
-          { name: '2019', y: 8, color: customColors[3] },
-          { name: '2020', y: 8, color: customColors[4] },
-        
-          // Add more data points with custom colors
-        ]
-      }]
-    };
+   
   }
 }

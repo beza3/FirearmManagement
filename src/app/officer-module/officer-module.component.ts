@@ -32,7 +32,16 @@ export class OfficerModuleComponent implements OnInit{
       email: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', Validators.required],
       description: ['', Validators.required],
-
+//firearm Detail 
+manufacturerSerial: ['', Validators.required],
+firearmType: [''],
+firearmModel: [''],
+firearmMechanism: [''],
+firearmCalibre: [''],
+magazineCapacity: [''],
+manufacturer: [''],
+yearManufacture: [new Date().getFullYear()],
+//source: [''],
       // The body that registered the weapon
       registeredPosition: ['', Validators.required],
       registeredFullName: ['', Validators.required],
@@ -67,6 +76,4 @@ OnSubmit() {
 }
 
   }
-
-  
 

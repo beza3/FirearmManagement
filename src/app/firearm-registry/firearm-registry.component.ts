@@ -54,6 +54,7 @@ export class FirearmRegistryComponent implements OnInit {
     private firearmService: FirearmService
   ) {}
 
+
   
   ngOnInit(): void {
     this.getAllFirearm();

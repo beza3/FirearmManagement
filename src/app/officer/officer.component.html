@@ -5,7 +5,7 @@
 </div>
  <!--new Officer button-->
  <div class="btn">
-    <button mat-button (click)="openModal()"  ><mat-icon>add</mat-icon>New Officer</button> 
+    <button mat-button ><mat-icon>add</mat-icon>New Officer</button> 
          <app-officer-module *ngIf="showModal" (closeModal)="closeModal()"></app-officer-module>
  </div> 
  <br>
@@ -50,7 +50,7 @@
 <br>
 <br>
 <app-popup-child2 *ngIf="showPopupFlag === 2" (close)="hidePopup()"></app-popup-child2>
-<app-popup-child3 *ngIf="showPopupFlag === 3" (close)="hidePopup()"></app-popup-child3>
+<app-popup-child3 *ngIf="showPopupFlag === 3" (close)="hidePopup()"></app-popup-child3> 
 <!--Table Part-->
 <div class="table">
 <mat-paginator [length]="10"
@@ -59,8 +59,11 @@
               aria-label="Select page">
 </mat-paginator>
 <br> 
+
 <app-return-modal *ngIf="showReturn" (closeModalEvent)="closeModal()"></app-return-modal>
- 
+<app-loss *ngIf="showLoss"  (closeModalEvent)="closeModal()"></app-loss> 
+<app-distruction *ngIf="showDistruction" (closeModalEvent)="closeModal()" ></app-distruction> 
+
 <mat-table [dataSource]="dataSource" >
   <!-- Define your table columns here -->
   <ng-container style="height: 1px;" matColumnDef="REF#">
@@ -115,8 +118,8 @@
     <th style="background-color: #f1f1f1;" mat-header-cell *matHeaderCellDef> ACTION </th>
     <td  *matCellDef="let element"> {{ element.ACTION }} 
 
-      <button mat-button (click)="showPopup(3)"><a style="text-decoration: none;" ><span> 	<mat-icon>highlight_off</mat-icon>Report loss</span></a></button><br>
-      <button mat-button (click)="showPopup(2)"><a style="text-decoration: none;"><span>	<mat-icon> report_problem </mat-icon>Destruction</span></a></button><br>
+      <button mat-button (click)="openLoss()"><a style="text-decoration: none;" ><span> 	<mat-icon>highlight_off</mat-icon>Report loss</span></a></button><br>
+      <button mat-button (click)="openDistruction()"><a style="text-decoration: none;"><span>	<mat-icon> report_problem </mat-icon>Destruction</span></a></button><br>
       <button mat-button (click)="openReturn()"><a style="text-decoration: none;"><span>	<mat-icon>arrow_back</mat-icon>Return</span></a></button>
 
     </td>

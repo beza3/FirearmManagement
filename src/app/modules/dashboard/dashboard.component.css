@@ -12,7 +12,6 @@ justify-content: center;
 
 .Tables {
     display: flex;
-
 }
 
 
@@ -22,36 +21,41 @@ h4{
 }
 .cards {
     position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
   .card1{ 
-    background-color: #f1f1f1;
-   font-weight: 900;
-   color: #0c2a4c;
+      /* background: linear-gradient(to top, #0c2a4c, #034897);*/
+      background: linear-gradient( #0c2a4ada,#1565c08b);
+   color: #f1f1f1;
   } 
+ 
   .card2{ 
-    background-color: #f1f1f1;
-   font-weight: 900;
-   color: #b69538;
+    color: #f1f1f1;
+    background: linear-gradient( #0c2a4ada,#1565c08b);
+     /*  background: linear-gradient(to top,#b69538,#dcc380); */
+
   } 
   .card3{ 
-    background-color: #f1f1f1;
-    font-weight: 900;
-    color: white;
+   /*  background: linear-gradient(to top,#5f0808,#bc1616);*/
+  
+   background: linear-gradient( #880d0dda,#b912128b);
+    color: #f1f1f1;
   } 
   .card4{ 
-    background-color: #f1f1f1;
-    font-weight: 900;
-    color: white;
+   /* background: linear-gradient(to top,#186c71,#40b7bf);*/
+   background: linear-gradient( #0c2a4ada,#1565c08b);
+    color: #f1f1f1;
   } 
-  .card5{ 
-    background-color: #f1f1f1;
-    font-weight: 900;
-    color: white;
+  .card5{  
+      /* background: linear-gradient(to top,#2b68d8,#7394d3);*/
+      background: linear-gradient( #880d0dda,#b912128b);
+    color: #f1f1f1;
   } 
   
   .table-container {
     border-radius: 10px;
     box-shadow: 1px 2px 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .card1 {
@@ -124,15 +128,27 @@ h4{
     background-color: #0c2a4c;
     color: #dcc380;
   }  
-  
-.row1, .row2, .row3 {
-  display: inline-flex;
-  gap: 10px;
-  
-}
-.row2 {
-  margin-top: 6px;
+ 
+
+ /* Apply the Glassmorphism effect to mat-card */
+.glass-card {
+  height: 85px; 
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.29);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+margin:10px;
+position: relative;
+overflow: hidden;
+transition: transform 0.1s ease; 
+
 } 
-.row3 {
-  margin-top: 10px;
+.glass-card:hover{
+  transform: scale(0.9);
+}
+h2, h5{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

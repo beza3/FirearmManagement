@@ -8,6 +8,8 @@ import { FirearmService } from '../services/firearm.service';
 import { ReturnModalComponent } from '../return-modal/return-modal.component';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { OfficerModuleComponent } from '../officer-module/officer-module.component';
+import { DataSharingService } from '../data-sharing.service';
 
 // ...
 
@@ -24,8 +26,14 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 export class FirearmRegistryComponent implements OnInit {
   
   searchTerm: string = '';
+  showModal = false;
   
-  @ViewChild('table')
+  openModal() {
+    this.showModal = true;
+  }
+   
+
+
   table!: MatTable<any>;
 
 
@@ -37,6 +45,10 @@ export class FirearmRegistryComponent implements OnInit {
   dataFromApi: any;
   dataSource: MatTableDataSource<Firearm> = new MatTableDataSource<Firearm>() ;
   
+
+  
+
+
   displayedColumns: string[] = [
     'REF#',
     'FIREARM',
@@ -51,10 +63,14 @@ export class FirearmRegistryComponent implements OnInit {
     private dialog: MatDialog,
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private firearmService: FirearmService
+    private firearmService: FirearmService,
+    private dataSharingService: DataSharingService
   ) {}
+  dataToSend: any;
 
-
+  sendDataToChild(dataItem: any) {
+    this.dataToSend = dataItem;
+  }
   
   ngOnInit(): void {
     this.getAllFirearm();

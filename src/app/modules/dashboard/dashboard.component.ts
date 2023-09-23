@@ -7,11 +7,12 @@ import { FirearmService } from 'src/app/services/firearm.service';
   styleUrls: ['./dashboard.component.css']
 }) 
 
-export class DashboardComponent implements OnInit {
-  totalFirearms: number = 0;
+export class DashboardComponent implements OnInit { 
 
+  totalFirearms: number = 0;
+  totalMarked: number = 0;
   constructor(private firearmServices: FirearmService) { }
-          
+       
   ngOnInit(): void {
     this.firearmServices.getTotalFirearms().subscribe(
       (count) => {
@@ -21,7 +22,19 @@ export class DashboardComponent implements OnInit {
       (error) => {
         console.error('Error fetching total firearms:', error);
       }
+    );  
+
+    this.firearmServices.getTotalMarked() 
+      .subscribe(
+      (count) => {
+        this.totalMarked = count;
+        // Handle the count as needed, e.g., update your UI
+      },
+      (error) => {
+        console.error('Error fetching total firearms:', error);
+      }
     );
+    
   }
   displayedColumns = ['position', 'name', 'weight', 'symbol','symbolL'];
   dataSource = ELEMENT_DATA;

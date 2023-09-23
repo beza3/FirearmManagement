@@ -93,6 +93,9 @@ import { ReturnModalComponent } from './return-modal/return-modal.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component'; 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReportVisualizationComponent } from './report-visualization/report-visualization.component';
+import { IdModalComponent } from './id-modal/id-modal.component';
+import { MapComponent } from './map/map.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 const appRoutes: Routes = [
   {
     path: 'general', component: GeneralComponent
@@ -171,11 +174,15 @@ const appRoutes: Routes = [
     path: 'withdraw', component: WithdrawComponent
   },
   {
-    path: 'officer', component: OfficerComponent
+    path: 'officermodule', component: OfficerComponent
   },
   {
     path: 'ReportVisualization', component: ReportVisualizationComponent
-  }
+  } ,
+  {
+    path: 'map', component: MapComponent
+  } 
+
 ]
 
 @NgModule({
@@ -238,6 +245,9 @@ const appRoutes: Routes = [
     ReturnModalComponent,
     ConfirmationDialogComponent,
     ReportVisualizationComponent,
+    IdModalComponent,
+    MapComponent,
+
   
     
   ],
@@ -274,7 +284,8 @@ const appRoutes: Routes = [
     MatListModule,
     HttpClientModule,
     MatRadioModule,
-    NgxPrintModule
+    NgxPrintModule,
+    LeafletModule
 
   ],
   exports: [

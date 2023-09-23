@@ -33,12 +33,18 @@ export class OfficerComponent implements OnInit{
     this.showReturn = false;
   } 
   showReturn = false;
+  showLoss = false;
+  showDistruction = false;
   sidebar: any;
-  
+    openDistruction(){
+      this.showDistruction = true;
+    }
   openReturn() {
       this.showReturn = true;
     }
-
+openLoss(){
+  this.showLoss = true;
+}
     dataSource: MatTableDataSource<Officer> = new MatTableDataSource<Officer>();
   
     displayedColumns: string[] = [

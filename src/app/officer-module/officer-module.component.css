@@ -36,15 +36,14 @@
 
 
 button {
-   position: absolute;
+   margin-right: 20px; 
    right: 0;
-   margin-right: 200px;
-   margin-top: -10px;
 } 
 
 /* signup-form.css */
 .form-group {
   margin-bottom: 20px;
+
 }/* Add this CSS to your component's CSS file */
 
 

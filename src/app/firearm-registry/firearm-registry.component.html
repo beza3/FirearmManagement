@@ -437,7 +437,7 @@
       <td class="buttons" *matCellDef="let element"> {{ element.ACTION }} 
 
            <div>
-          <button mat-button (click)="showPopup(1)"><a style="text-decoration: none;"  ><span><mat-icon>group</mat-icon>Officer</span></a></button><br>
+          <button mat-button (click)="openModal()" (click)="sendDataToChild(element)"><a style="text-decoration: none;"><span><mat-icon>group</mat-icon>Officer</span></a></button><br>
           <button mat-button (click)="showPopup(5)"><a style="text-decoration: none;" ><span><mat-icon>perm_identity</mat-icon> Civillian</span></a></button><br>
            <button mat-button (click)="showPopup(3)"><a style="text-decoration: none;" ><span> 	<mat-icon>highlight_off</mat-icon>Report loss</span></a></button><br>
            <button mat-button (click)="showPopup(4)"><a style="text-decoration: none;"><span>	<mat-icon>health_and_safety</mat-icon>Recovery</span></a></button><br>
@@ -456,6 +456,7 @@
       </td>
     </ng-container>
   
+
     <ng-container matColumnDef="MANAGE">
       <th style="" mat-header-cell *matHeaderCellDef> MANAGE </th>
       <td mat-cell *matCellDef="let element"> {{ element.MANAGE }} 
@@ -466,10 +467,10 @@
   
     <!-- Define more columns similarly -->
   
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" style="height: 35px;"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </mat-table>
 </div>
-
+<app-officer-module *ngIf="showModal" (closeModal)="closeModal()"[childData]="dataToSend"></app-officer-module>
 </div>
 </div> 

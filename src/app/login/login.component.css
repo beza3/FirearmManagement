@@ -30,7 +30,8 @@
 
 .checkbox {
   margin-top: 5px;
-}
+} 
+
 mat-card {
   width: 860px;
    height:700px; 
@@ -38,7 +39,8 @@ mat-card {
    margin-top: 140px;
    background-color: rgb(238, 238, 238);
    box-shadow:  6px 4px 6px rgb(177, 15, 15);
-} 
+}  
+
 .card {
   margin-left: 5px;
   background: linear-gradient(to top, #d8c89b, #f9f9f9);
@@ -84,22 +86,18 @@ mat-card {
 
 .button:hover {
   background-color: #dcc380;
-  color: #0c2a4a;
+  color: #0c2a4a; 
 } 
-/* Form styles */
-/* Form styles */
-/* Mat-card styles */ 
-/* Mat-card styles */
-/* Mat-card styles */
-/* Mat-card styles */
+
 mat-card {
   width: 800px; /* Set a fixed width of 800px */
   margin: 20px auto; /* Center-align the card horizontally */
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(68, 59, 59, 0.664);
-  background: rgb(220,220,220);
-  background: linear-gradient(90deg, rgba(220,220,220,1) 0%, rgb(216, 213, 213) 87%);/* Change this color to your desired card background color */
+ background-color: #f4f4f4;
+  /* Change this color to your desired card background color */
   height: auto; /* Allow the card to expand to fit its content */
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 /* Form styles */

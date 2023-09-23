@@ -6,6 +6,14 @@ export interface Officer {
     email: string;
     phoneNumber: string;
     description: string;
+    firearmType: string;
+    firearmModel: string;
+    manufacturer: string;
+    firearmCalibre: string;
+    yearManufacture: string;
+    source: string;
+    firearmMechanism: string
+    manufacturerSerial: string;
     registeredPosition: string;
     registeredFullName: string;
     registeredTitle: string;

@@ -21,11 +21,11 @@ export class DialogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.myForm = this.formBuilder.group({
-      manufacturerSerial: ['', Validators.required],
-      isFirearm: [false, Validators.required],
+    this.myForm = this.formBuilder.group({ 
+      manufacturerSerial: ['',],
+      isFirearm: [ ],
       assignedSerial: [''],
-      dateMarked: [new Date(), Validators.required],
+      dateMarked: [new Date()],
       markedBy: [''],
       firearmType: [''],
       firearmModel: [''],
@@ -39,9 +39,9 @@ export class DialogComponent implements OnInit {
       additionalComment: ['']
     });
   }
+ 
 
   OnSubmit() {
- 
       // Send the payload to your API
       this.http.post('http://localhost:5141/api/Firearm', this.myForm.value).subscribe(
         (response) => {

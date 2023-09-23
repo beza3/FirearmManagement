@@ -20,7 +20,9 @@ export class PieComponent {
           plotBorderWidth: null,
           plotShadow: false,
           type: 'pie',
-          size: 600
+          backgroundColor: '#f1f1f1',
+          size: 600,
+          borderRadius: '10px'
       },
       title: {
           text: 'Firearm By Type',

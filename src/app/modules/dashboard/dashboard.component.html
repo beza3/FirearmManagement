@@ -1,14 +1,14 @@
 <app-header></app-header> 
-<div class="spacer">
+ <div >
 
-</div>
+ </div>
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="cards" style="margin: 40px 40px 40px 40px;">
 
   <mat-card fxFlex="25"  class="card1" style="height: 130px;"> 
-    <div class="text"> 
-      
-    <p style="font-size: 2em;"> {{ totalFirearms }} </p>
-      <p>FIREARMS</p>
+   
+    <div class="text">  
+    <p style="font-size: 2em;  font-weight: 900;"> {{ totalFirearms }} </p>
+      <p style="font-size: 12px;">TOTAL FIREARMS</p>
     </div>
   </mat-card>
 
@@ -16,30 +16,29 @@
 
     <div class="text">
    
-    <p style="font-size: 2em;"> 0</p>
-    <P>FIREARM HOLDERS</P>
+    <p style="font-size: 2em;  font-weight: 900;"> 0</p>
+    <P style="font-size: 12px;">FIREARM HOLDERS</P>
   </div>
   </mat-card> 
-
-  <mat-card fxFlex="25"  class="card3" style="height: 130px;">
-    <div class="text">
-    <P style="font-size: 2em;">43</P>
-    <P>DESTROYED</P>
-  </div>
-  </mat-card> 
-
   <mat-card fxFlex="25" class="card4"  style="height: 130px;">
     <div class="text">
-    <P style="font-size: 2em;">13</P>
-    <P>MARKED</P>
+    <P style="font-size: 2em;  font-weight: 900;">{{ totalMarked }}</P>
+    <P style="font-size: 12px;">MARKED FIREARMS</P>
   </div>
   </mat-card> 
 
   <mat-card fxFlex="25" class="card5"  style="height: 130px;">
     <div class="text">
-    <P style="font-size: 2em;">87%</P>
-    <P>MARKED BY PERCENTAGE<P>
+    <P style="font-size: 2em;  font-weight: 900;">8</P>
+    <P style="font-size: 12px;">LOST FIREARMS<P>
     </div>
+</mat-card> 
+
+<mat-card fxFlex="25"  class="card3" style="height: 130px;">
+  <div class="text">
+  <P style="font-size: 2em;  font-weight: 900;">43</P>
+  <P style="font-size: 12px;">DESTROYED FIREARMS</P>
+</div>
 </mat-card> 
 </div> 
 
@@ -47,28 +46,44 @@
    <div fxFlex="75">
     <app-widget-bar></app-widget-bar>
    </div> 
- <!-- 
+
+   <div fxFlex="" style=" background: linear-gradient( #0c2a4ada,#1565c08b); opacity: 1;
+   border-radius: 10px;">
+    
+    <mat-card class="row glass-card">
+      <!-- Card content goes here --> 
+      <div style="margin-top: 5px; "  routerLink="/map">
+        <h2 style="margin-left: 10px; font-size: 1.8em;  font-weight: 900; color: #f1f1f1;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: black;">location_on</mat-icon>MAP</h2>
+        <h5 style="margin-top: -17px; margin-left: 10px; color: #f1f1f1;">Track the Location of Firearm in a given region</h5>                
+      </div>
+
+    </mat-card>
+    
+    <mat-card class="row glass-card">
+      <!-- Card content goes here -->
+      <div style="margin-top: 5px;" routerLink="/">
+        <h2 style="margin-left: 10px; font-size: 1.8em;  font-weight: 900; color: #f1f1f1;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: black;">chat</mat-icon>Contact The Admin</h2>
+        <h5 style="margin-top: -17px; margin-left: 10px; color: #f1f1f1;">Send a message to the admin by using chatbot </h5>                
+      </div>
+    </mat-card>
+    
+    <mat-card class="row glass-card">
+      <!-- Card content goes here --> 
+      <div style="margin-top: 5px; ">
+        <h2 style="margin-left: 10px; font-size: 1.8em;  font-weight: 900; color: #f1f1f1;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: black;">receipt</mat-icon>Re-License</h2>
+        <h5 style="margin-top: -17px; margin-left: 10px; color: #f1f1f1;">license is lost re-generate the license again</h5>                
+      </div>
+    </mat-card>
+    
+    <mat-card class="row glass-card">
+      <!-- Card content goes here --> 
+      <div style="margin-top: 5px; ">
+        <h2 style="margin-left: 10px; font-size: 1.8em;  font-weight: 900; color: #f1f1f1;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: black;">pie_chart</mat-icon>Report & Visualisation </h2>
+        <h5 style="margin-top: -17px; margin-left: 10px; color: #f1f1f1;">Display the report and visualization of firearm action performed in the system </h5>                
+      </div>
+    </mat-card>
+  </div>
   
- -->
-   <div fxFlex="">
-   <!--row 1-->
-   <mat-card style="height: 80px; background-color: #f1f1f1; border-radius: 5px; margin-right: 40px;">
-      hello
-   </mat-card>
-   <br> 
-   <mat-card style="height: 80px; background-color: #f1f1f1; border-radius: 5px; margin-right: 40px;">
-    hello
- </mat-card>
- <br>
- <mat-card style="height: 80px; background-color: #f1f1f1; border-radius: 5px; margin-right: 40px;">
-  hello
-</mat-card> 
-<br>
-<mat-card style="height: 80px; background-color: #f1f1f1; border-radius: 5px; margin-right: 40px;">
-  hello
-</mat-card>
-          
-   </div>
 
 </div>
  

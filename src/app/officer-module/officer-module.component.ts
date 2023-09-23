@@ -1,18 +1,33 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataSharingService } from '../data-sharing.service';
 @Component({
   selector: 'app-officer-module',
   templateUrl: './officer-module.component.html',
   styleUrls: ['./officer-module.component.css']
 })
-export class OfficerModuleComponent implements OnInit{ 
+export class OfficerModuleComponent implements OnInit{
+  receiveDataFromParent(copiedData: any) {
+    throw new Error('Method not implemented.');
+  } 
 
   officerForm!: FormGroup;
-    
+  showPopupFlag = 0;
+  sharedData: any; 
+  showPoag = false;
+  sidebar: any;
   
+    openPoag() {
+      this.showPoag = true;
+    }
+  
+    
+    
+    
 
+  @Input() childData: any;
 
   @Output() closeModal = new EventEmitter<boolean>();
 
@@ -21,19 +36,20 @@ export class OfficerModuleComponent implements OnInit{
   }
   
   form!: FormGroup;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient,) {}
+  constructor(private formBuilder: FormBuilder, private http: HttpClient,private dataSharingService: DataSharingService) {}
 
   ngOnInit() {
+    this.sharedData = this.dataSharingService.sharedData;
     this.officerForm = this.formBuilder.group({
       // Personal Information
-      fullName: ['', Validators.required],
-      title: ['', Validators.required],
-      position: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', Validators.required],
-      description: ['', Validators.required],
+      fullName: ['', ],
+      title: ['', ],
+      position: ['', ],
+      email: ['',],
+      phoneNumber: ['',],
+      description: ['', ],
 //firearm Detail 
-manufacturerSerial: ['', Validators.required],
+manufacturerSerial: ['',],
 firearmType: [''],
 firearmModel: [''],
 firearmMechanism: [''],
@@ -41,20 +57,19 @@ firearmCalibre: [''],
 magazineCapacity: [''],
 manufacturer: [''],
 yearManufacture: [new Date().getFullYear()],
-//source: [''],
+source: [''],
       // The body that registered the weapon
-      registeredPosition: ['', Validators.required],
-      registeredFullName: ['', Validators.required],
-      registeredTitle: ['', Validators.required],
-      registeredEmail: ['', [Validators.required, Validators.email]],
-      registeredSignature: ['', Validators.required],
-      registeredDate: ['', Validators.required],
-
+      registeredPosition: ['',],
+      registeredFullName: ['', ],
+      registeredTitle: ['', ],
+      registeredEmail: ['',],
+      registeredSignature: ['', ],
+      registeredDate: ['',],
       // The registered body
-      registeredBodyFullName: ['', Validators.required],
-      registeredBodyResponsibility: ['', Validators.required],
-      registeredBodySignature: ['', Validators.required],
-      registeredBodyDate: ['', Validators.required],
+      registeredBodyFullName: ['',],
+      registeredBodyResponsibility: ['',],
+      registeredBodySignature: ['', ],
+      registeredBodyDate: ['',],
     });
   }
  
@@ -64,7 +79,8 @@ OnSubmit() {
   // Send the payload to your API
   this.http.post('http://localhost:5141/api/Officer', this.officerForm.value).subscribe(
     (response) => {
-      console.log('Successfully submitted:', response);
+      console.log('Successfully submitted:', response); 
+      alert('data sent');
       // Handle success, e.g., show a success message or redirect
     },
     
@@ -74,6 +90,14 @@ OnSubmit() {
     }
   );
 }
+showPopup(popupNumber: number): void {
+  this.showPopupFlag = popupNumber;
+}
 
+hidePopup(): void {
+  this.showPopupFlag = 1;
+  this.showPopupFlag = 2;
+  this.showPopupFlag = 3;
+}
   }
 

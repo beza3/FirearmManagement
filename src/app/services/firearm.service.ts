@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Firearm } from '../models/Firearm.model';
 import { ObserversModule } from '@angular/cdk/observers';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Officer } from '../models/Officer.model';
 
 @Injectable({
@@ -11,7 +11,9 @@ import { Officer } from '../models/Officer.model';
 export class FirearmService {
     baseUrl = 'http://localhost:5141/api/Firearm';
     OfficerUrl = 'http://localhost:5141/api/Officer';
-    allFirearmUrl = 'http://localhost:5141/api/Firearm/total-firearms';
+    allFirearmUrl = 'http://localhost:5141/api/Firearm/total-firearms'; 
+    markedUrl = 'http://localhost:5141/api/Firearm/count-true-firearms';
+    
   constructor(private http: HttpClient) { } 
 
   //Get 
@@ -24,10 +26,13 @@ export class FirearmService {
   //Total Firearm Review in the dashboard 
 getTotalFirearms(): Observable<number> {
   return this.http.get<number>(this.allFirearmUrl);
-}
+} 
+//total marked firearm 
+getTotalMarked(): Observable<number> {
+  return this.http.get<number>(this.markedUrl);
+} 
 
   addFirearm(firearm: Firearm): Observable<Firearm> { 
-    firearm.id = '00000000-0000-0000-0000-000000000000';
    return this.http.post<Firearm>(this.baseUrl, firearm);
   }
 }

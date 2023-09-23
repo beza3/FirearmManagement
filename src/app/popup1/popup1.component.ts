@@ -10,5 +10,18 @@ export class Popup1Component {
 
   onCloseClick() {
     this.close.emit();
-  }
+  } 
+  showPoag = false;
+  sidebar: any;
+  
+    openPoag() {
+      this.showPoag = true;
+    }
+  
+    
+    
+    closeModal() {
+      this.showPoag = false;
+    }
+  
 }

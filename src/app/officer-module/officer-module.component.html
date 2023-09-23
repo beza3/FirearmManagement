@@ -5,13 +5,13 @@
 
            </div>
               <span class="close">
-                <button mat-button (click)="onCloseModal()"><mat-icon>close</mat-icon></button>
+              <mat-icon (click)="onCloseModal()">close</mat-icon>
               </span>
              </mat-toolbar>
     
               <!-- First set of fields -->
-
-        
+              <app-popup1 *ngIf="showPopupFlag === 5"></app-popup1>
+              
         <form [formGroup]="officerForm" (ngSubmit)="OnSubmit()" class="three-column-form">
         
           <!-- First Column --> 
@@ -57,41 +57,39 @@
 
             <div class="form-group"> 
               <label for="FirearmType">Firearm Type</label> <br>
-              <input type="text" id="FirearmType" formControlName="firearmType" readonly>
+              <input type="text" id="FirearmType" formControlName="firearmType" [(ngModel)]="childData.firearmType" readonly>
             </div>
         
             <div class="form-group">
               <label for="firearmModel">Firearm Model</label><br>
-              <input type="text" id="firearmModel" formControlName="firearmModel" readonly>
+              <input type="text" id="firearmModel" formControlName="firearmModel" [(ngModel)]="childData.firearmModel" readonly>
             </div>
         
             <div class="form-group">
-              <label for="manufacturerSerial">Manufacture Serial</label><br>
-              <input type="text" id="manufacturerSerial" formControlName="manufacturerSerial" required>
+              <label for="manufacturer">Manufacture Serial</label><br>
+              <input type="text" id="manufacturer" formControlName="manufacturer" required [(ngModel)]="childData.manufacturer" readonly>
             </div>
         
             <div class="form-group">
               <label for="firearmMechanism">Firearm Mechanism</label><br>
-              <input type="text" id="firearmMechanism" formControlName="firearmMechanism" required>
+              <input type="text" id="firearmMechanism" formControlName="firearmMechanism" required [(ngModel)]="childData.firearmMechanism" readonly>
             </div>
         
             <div class="form-group">
               <label for="firearmCalibre">Firearm Calibre</label><br>
-              <input type="text" id="firearmCalibre" formControlName="firearmCalibre" required>
+              <input type="text" id="firearmCalibre" formControlName="firearmCalibre" required [(ngModel)]="childData.firearmCalibre" readonly>
             </div>
         
             <div class="form-group">
               <label for="comment">Magazine Capacity
               </label><br>
-              <input type="text" id="phone-number" formControlName="magazineCapacity" required>
-            </div>  
-            <div class="form-group">
-              <label for="manufacturer">Manufacturer</label><br>
-              <input type="text" id="manufacturer" formControlName="manufacturer" required>
-            </div>  
+              <input type="text" id="phone-number" formControlName="magazineCapacity" [(ngModel)]="childData.magazineCapacity">
+            </div>   
+
+          
             <div class="form-group">
               <label for="yearManufacture">Year Manufacture</label><br>
-              <input type="text" id="yearManufacture" formControlName="yearManufacture" required>
+              <input type="text" id="yearManufacture" formControlName="yearManufacture" required [(ngModel)]="childData.yearManufacture" readonly>
             </div>  
 
 
@@ -127,7 +125,8 @@
               <label for="comment">date</label><br>
               <input type="date" id="phone-number" formControlName="registeredDate" required>
             </div>  
-          </div>
+          </div> 
+
           <!-- Fourth Column -->
           <div class="form-column">
             <h2>The registered body</h2>
@@ -150,9 +149,9 @@
               <label for="comment">date</label><br>
               <input type="date" id="phone-number" formControlName="registeredBodyDate" required>
             </div>  
-
-            <div class="submit-button" style="margin-right: 200px;"> 
-              <button mat-raised-button (click)="OnSubmit()">Confirm</button>
+                     <br><br><br> <br><br><br> <br><br><br> <br><br><br>
+            <div class="submit-button"> 
+              <button mat-raised-button (click)="OnSubmit()" (click)="showPopup(5)">Confirm</button>
             </div>
 
         </div>

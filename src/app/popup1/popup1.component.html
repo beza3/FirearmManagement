@@ -1,10 +1,9 @@
 
-<mat-card routerLink="/civillian">
-  <div class="card-head">
 
-  </div>
+<app-id-modal *ngIf="showPoag"></app-id-modal>
   <div class="card-content"> 
       <br>
-        CIVILLIAN PENDING 
+        <button  (click)="openPoag()" >g</button>
+        
+      <p><mat-icon class="mat-18" style="color: green;">done_all</mat-icon>Officer Successfully Registered.<a  >Redirect to Officer page</a></p>
   </div>
-</mat-card> 

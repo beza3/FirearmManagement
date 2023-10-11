@@ -16,7 +16,9 @@
       <!-- Weight Column -->
       <ng-container matColumnDef="weight">
         <mat-header-cell *matHeaderCellDef> COMPUTER </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+        <mat-cell *matCellDef="let element"> 
+          {{userIPAddress}} <br>
+          {{browserInfo}}</mat-cell>
       </ng-container>
   
       <!-- Symbol Column -->

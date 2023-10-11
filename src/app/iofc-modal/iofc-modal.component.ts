@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { group } from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {  ViewChild } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -8,45 +10,87 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './iofc-modal.component.html',
   styleUrls: ['./iofc-modal.component.css']
 })
-export class IofcModalComponent {
+export class IofcModalComponent implements OnInit {
  
   option1: string = "";
   option2: string = "";
-  option3: string = "";
-   
-  @Output() closeModalEvent = new EventEmitter<boolean>();
-
-  closeModal() {
-    this.closeModalEvent.emit(true);
-  }
+  option3: string = ""; 
   
-  form!: FormGroup;
+  @Input() iofcData: any = {};  //read data fom the firearm table 
 
-  constructor(private formBuilder: FormBuilder) {}
+  
+  
+   iofcForm: FormGroup = new FormGroup({ });
+
+
+  constructor(private formBuilder: FormBuilder,
+    private http: HttpClient) {}
 
   ngOnInit() {
-    this.initializeForm();
+    this.iofcForm = this.formBuilder.group({ 
+
+      //iofc detail 
+      fullName: ['',], 
+      candidateCountry: ['',],
+      evidenceOfMedical: ['',],
+      passportNo: ['',],
+      reasonHeCame: ['',],
+      comingDate: [new Date()], 
+
+      countryOfResidence: ['',], 
+      region:	['',],
+      subcity:	['',],
+      district:	['',],
+      kebele:	['',],
+      specificArea:	['',],
+      phoneNumber:	['',],
+      email: ['',], 
+      
+      //firearm Detail  
+      manufacturerSerial: ['',],
+      isFirearm: ['', ],
+      dateMarked: [new Date()],
+      markedBy: [''],
+      firearmType: [''],
+      firearmModel: [''],
+      firearmMechanism: [''],
+      firearmCalibre: [''],
+      magazineCapacity: [''],
+      manufacturer: [''],
+      yearManufacture: [new Date()],
+      source: [''], 
+      store: [''],
+      additionalComment: [''],  
+      //the body who registed the weapon 
+      registeredBodyFullName: ['',], 
+      registeredBodyPosition: ['',],
+      registeredBodyResponsibility: ['',],
+      registeredBodySignature: ['', ],
+      registeredBodyDate: [new Date()],
+      //the registered body 
+      registeredPosition: ['',],
+      registeredFullName: ['', ],
+      registeredTitle: ['', ],
+      registeredResponsibility: ['',],
+      registeredSignature: ['', ],
+      registeredDate: [new Date()]
+    });
+
   }
 
-  initializeForm() {
-    this.form = this.formBuilder.group({
-      full_name: ['', Validators.required],
-      title: ['', Validators.required],
-      position: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone_number: ['', Validators.required],
-      comment: ['', Validators.required],
-      nameOfOrganization: ['',Validators.required]
-    });
-  }
+ 
 
   onSubmit() {
-    if (this.form.valid) {
-      console.log('Form submitted:', this.form.value);
-      // You can also send the form data to a server using HTTP requests.
-    } else {
-      console.log('Form is invalid. Please check the fields.');
-    }
+    this.http.post('http://localhost:5141/api/Iofc', this.iofcForm.value).subscribe(
+      (response) => {
+        console.log('Successfully submitted:', response);
+        alert('Successfully submitted');
+      },
+      (error) => {
+        console.error('Error:', error);
+        alert('Failed to Register');
+      }
+    );
   }
   
 }

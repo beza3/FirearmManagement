@@ -19,47 +19,63 @@
       padding-left: 0px;
       border-radius: 4px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      width: 50%; 
-      height: 70%; /* Set the desired height for your scrollable form */
-      overflow-y: auto; /* Enable vertical scrolling */
+      width: 800px; 
+      height: 600px; 
+      /* Set the desired height for your scrollable form */
       border: 1px solid #ccc;
       padding: 10px; 
       position: absolute; 
       top:50%;
       left: 50%;
-      width: 600px;
       padding: 40px;
       transform: translate(-50%, -50%);
       background:white;
       box-sizing: border-box;
       box-shadow: 0 8px 8px rgba(158, 158, 158, 0.6);
       border-radius: 10px; 
-      margin-right: 30px; 
+      margin-right: 30px;  
+      overflow-y: auto;
 }  
+.user-box {
+         margin-top: -10px;
+}
               
-  .loss-box h2 {
-    margin: 0 0 30px;
+.loss-box h2 {
+    margin: 0 0 3px;
     padding: 0;
     color: #fff;
     text-align: center;
-  }
+}
   
-  .loss-box .user-box {
-    position: relative;
-  }
+.loss-box .user-box {
+    position: relative; 
+
+}
   
-  .loss-box .user-box input {
-    width: 100%;
+.loss-box .user-bo input {
+
+  font-size: 12px;
+  color:  #0c2a4c;
+  border: none;
+  margin-top: -1px;
+  border-bottom: 1px solid #fff;
+  background-color: #f0efef80; 
+  margin-left: 30px; 
+} 
+.loss-box .user-box input {
+    width: 500px;
     padding: 10px 0;
     font-size: 12px;
     color:  #0c2a4c;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     border: none;
+    border-radius: 10px;
     border-bottom: 1px solid #fff;
     outline: none;
-    background: transparent;
-  }
-  .loss-box .user-box label {
+    background-color: #f0efef80;
+} 
+
+.loss-box .user-box label {
     position: absolute;
     top:0;
     left: 0;
@@ -67,10 +83,11 @@
     font-size: 16px;
     color: #0c2a4c;
     pointer-events: none;
-    transition: .5s;
-  }
+    transition: 0.5s; 
+    margin-top: 10px;
+}
   
-  .loss-box .user-box input:focus ~ label,
+  .loss-box .user-box input ~ label,
   .loss-box .user-box input:valid ~ label {
     top: -15px;
     left: 0;
@@ -91,15 +108,19 @@
     transition: .5s;
     margin-top: 1px;
     margin-left: 280px;
-    letter-spacing: 4px
-  }
-  
+    letter-spacing: 4px;
+  } 
+
   .loss-box a:hover {
     background: #0c2a4c;
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 1px #0c2a4c,      
-  }
-  
+  } 
+
+button {
+    display: absolute; 
+    right: 0;
+}
   
   

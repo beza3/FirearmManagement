@@ -12,6 +12,14 @@ import { FirearmService } from '../services/firearm.service';
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
+ 
+
+  isModalVisible: boolean = true;
+
+  // Function to close the modal
+  closeModal() {
+    this.isModalVisible = false;
+  } 
 
   myForm: FormGroup = new FormGroup({});
 
@@ -23,8 +31,7 @@ export class DialogComponent implements OnInit {
   ngOnInit() {
     this.myForm = this.formBuilder.group({ 
       manufacturerSerial: ['',],
-      isFirearm: [ ],
-      assignedSerial: [''],
+      isFirearm: [false, ],
       dateMarked: [new Date()],
       markedBy: [''],
       firearmType: [''],
@@ -33,10 +40,18 @@ export class DialogComponent implements OnInit {
       firearmCalibre: [''],
       magazineCapacity: [''],
       manufacturer: [''],
-      yearManufacture: [new Date().getFullYear()],
-      source: [''],
+      yearManufacture: [new Date()],
+      source: [''], 
       store: [''],
-      additionalComment: ['']
+      additionalComment: [''],  
+      //for the recovery
+      firearmReturnedTo: [''], 
+      reportedBy: ['',],
+      authorizedBy: ['',],
+      authorizedDate: [new Date()],
+      reasonToReturn: ['',], 
+      //to display the status 
+      status: ['New',],
     });
   }
  
@@ -46,14 +61,15 @@ export class DialogComponent implements OnInit {
       this.http.post('http://localhost:5141/api/Firearm', this.myForm.value).subscribe(
         (response) => {
           console.log('Successfully submitted:', response);
+          alert('Successfully submitted')
           // Handle success, e.g., show a success message or redirect
         },
         (error) => {
-          console.error('Error:', error);
+          console.error('Error:', error); 
+          alert('Fail To Register')
           // Handle error, e.g., display an error message
         }
       );
     }
-  }
-
+  }  
   

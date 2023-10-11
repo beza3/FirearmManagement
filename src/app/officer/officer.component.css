@@ -13,7 +13,7 @@
   .custom-select {
     position: relative;
     width: 200px;
-    height: 40px; 
+    height: 30px; 
   }
   .custom-select select {
     width: 100%;
@@ -22,18 +22,19 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #e7e7e7;
-    font-size: 12px;
+    font-size: 12px; 
+
   }
   
   .custom-select select:focus {
     outline: none;
-    border-color: #9ecaed;
-    box-shadow: 0 0 5px #9ecaed;
+    border-color: #0c2a4c;
+    box-shadow: 0 0 5px #0c2a4c;
   }
   
   .custom-select select option {
     background-color: #fff;
-    color: #333;
+    color: #0c2a4c;
   }
   
   .custom-select select option:hover {
@@ -44,7 +45,7 @@
     float: right; 
     justify-content: right; 
 
-    background-color: #0c2a4c;
+    background-color: #0f519d;
     color: white; 
     border-radius: 5px;
     margin-right: 62px;
@@ -85,7 +86,7 @@ th{
   
   .search-container input[type="text"] {
     width: 200px; 
-    height: 30px; 
+    height: 25px; 
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -104,7 +105,7 @@ th{
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    height: 42px;
+    height: 25px;
     width: 50px;
     color: #0c2a4c;
   }
@@ -168,8 +169,8 @@ th{
     border-radius: 3px;
   }
   
-  button {
-    color: #0c2a4c;
+  td button {
+    color: #0d488b;
     font-size: 12px;
     transition: width 0.3s ease-in-out;
   } 
@@ -187,25 +188,6 @@ th{
   color: #0c2a4c;
   font-size: 12px;
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
 .mat-toolbar {
   color: rgb(0, 0, 0);

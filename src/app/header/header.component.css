@@ -1,7 +1,9 @@
 .nav-center {
     display: inline-flex;
     align-items: center;
-    color:  #dcc380;   
+    color:  #dcc380;    
+    font-size: 12px;
+    height: auto;
 }  
 .nav-center span:hover{
    background-color: hsl(44, 57%, 68%);
@@ -15,7 +17,7 @@ span, i{
     color: #dcc380;
 } 
 .dropdown {
-    background-color: #0c2a4c;
+    background-color: #0c2a4c; 
 }
 .dropdown button{
     color: #dcc380;

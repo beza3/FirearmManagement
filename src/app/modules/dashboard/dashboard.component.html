@@ -2,24 +2,19 @@
  <div >
 
  </div>
+
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="cards" style="margin: 40px 40px 40px 40px;">
 
   <mat-card fxFlex="25"  class="card1" style="height: 130px;"> 
-   
     <div class="text">  
-    <p style="font-size: 2em;  font-weight: 900;"> {{ totalFirearms }} </p>
+    <p style="font-size: 2em;  font-weight: 900;"> {{ totalFirearms }}  </p>
       <p style="font-size: 12px;">TOTAL FIREARMS</p>
     </div>
   </mat-card>
 
-  <mat-card fxFlex="25" class="card2" style="height: 130px;">
 
-    <div class="text">
-   
-    <p style="font-size: 2em;  font-weight: 900;"> 0</p>
-    <P style="font-size: 12px;">FIREARM HOLDERS</P>
-  </div>
-  </mat-card> 
+
+
   <mat-card fxFlex="25" class="card4"  style="height: 130px;">
     <div class="text">
     <P style="font-size: 2em;  font-weight: 900;">{{ totalMarked }}</P>
@@ -29,17 +24,19 @@
 
   <mat-card fxFlex="25" class="card5"  style="height: 130px;">
     <div class="text">
-    <P style="font-size: 2em;  font-weight: 900;">8</P>
+    <P style="font-size: 2em;  font-weight: 900;">{{ totalLost }}</P>
     <P style="font-size: 12px;">LOST FIREARMS<P>
     </div>
 </mat-card> 
 
 <mat-card fxFlex="25"  class="card3" style="height: 130px;">
   <div class="text">
-  <P style="font-size: 2em;  font-weight: 900;">43</P>
+  <P style="font-size: 2em;  font-weight: 900;">{{ totalDestroyed }}</P>
   <P style="font-size: 12px;">DESTROYED FIREARMS</P>
 </div>
 </mat-card> 
+
+
 </div> 
 
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards" style="margin-left: 30px;"> 
@@ -47,46 +44,45 @@
     <app-widget-bar></app-widget-bar>
    </div> 
 
-   <div fxFlex="" style=" background: linear-gradient( #0c2a4ada,#1565c08b); opacity: 1;
+   <div fxFlex="" style=" background: linear-gradient( #0c2a4a6a,#16844d5f,1565c05f,1565c05f); opacity: 1;
    border-radius: 10px;">
     
     <mat-card class="row glass-card">
       <!-- Card content goes here --> 
       <div style="margin-top: 5px; "  routerLink="/map">
-        <h2 style="margin-left: 10px; font-size: 1.8em;  font-weight: 900; color: #f1f1f1;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: black;">location_on</mat-icon>MAP</h2>
-        <h5 style="margin-top: -17px; margin-left: 10px; color: #f1f1f1;">Track the Location of Firearm in a given region</h5>                
+        <h2 style="margin-left: 10px; font-size: 1.2em;  font-weight: 500; color: #414141;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: #414141;">location_on</mat-icon>Map</h2>
+        <h5 style="margin-top: -17px; margin-left: 10px; color: #414141;">Track the Location of Firearm in a given region</h5>                
       </div>
 
     </mat-card>
     
     <mat-card class="row glass-card">
       <!-- Card content goes here -->
-      <div style="margin-top: 5px;" routerLink="/">
-        <h2 style="margin-left: 10px; font-size: 1.8em;  font-weight: 900; color: #f1f1f1;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: black;">chat</mat-icon>Contact The Admin</h2>
-        <h5 style="margin-top: -17px; margin-left: 10px; color: #f1f1f1;">Send a message to the admin by using chatbot </h5>                
+      <div style="margin-top: 5px;" (click)="Openchat()">
+        <h2 style="margin-left: 10px; font-size: 1.4em;  font-weight: 500; color: #414141;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: #414141;">chat</mat-icon>Contact The Admin</h2>
+        <h5 style="margin-top: -17px; margin-left: 10px; color: #292626;">Send a message to the admin by using chatbot </h5>                
+      </div>
+    </mat-card>
+    
+    <mat-card class="row glass-card">
+      <!-- Card content goes here --> 
+      <div style="margin-top: 5px;" routerLink="/MenuCards">
+        <h2 style="margin-left: 10px; font-size: 1.4em;  font-weight: 500; color: #414141;"><mat-icon class="mat-18" style="margin-bottom: -4px; color:#414141">receipt</mat-icon>Re-License</h2>
+        <h5 style="margin-top: -17px; margin-left: 10px; color: #414141;">license is lost re-generate the license again</h5>                
       </div>
     </mat-card>
     
     <mat-card class="row glass-card">
       <!-- Card content goes here --> 
       <div style="margin-top: 5px; ">
-        <h2 style="margin-left: 10px; font-size: 1.8em;  font-weight: 900; color: #f1f1f1;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: black;">receipt</mat-icon>Re-License</h2>
-        <h5 style="margin-top: -17px; margin-left: 10px; color: #f1f1f1;">license is lost re-generate the license again</h5>                
-      </div>
-    </mat-card>
-    
-    <mat-card class="row glass-card">
-      <!-- Card content goes here --> 
-      <div style="margin-top: 5px; ">
-        <h2 style="margin-left: 10px; font-size: 1.8em;  font-weight: 900; color: #f1f1f1;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: black;">pie_chart</mat-icon>Report & Visualisation </h2>
-        <h5 style="margin-top: -17px; margin-left: 10px; color: #f1f1f1;">Display the report and visualization of firearm action performed in the system </h5>                
+        <h2 style="margin-left: 10px; font-size: 1.4em;  font-weight: 500; color: #111;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: #414141;">pie_chart</mat-icon>Report & Visualisation </h2>
+        <h5 style="margin-top: -17px; margin-left: 10px; color: #414141;">Display the report and visualization of firearm action performed in the system </h5>                
       </div>
     </mat-card>
   </div>
   
 
 </div>
- 
   <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards" style="margin:40px 40px 40px 40px;">
     <div fxFlex="40">
         <app-widget-pie></app-widget-pie>
@@ -152,11 +148,14 @@
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
+
+    
   </div>
-   
+                          
 </div>
 
- </div>
- 
+ </div> 
+
+ <app-chat *ngIf="showchat"></app-chat>
    
  <app-footer></app-footer>

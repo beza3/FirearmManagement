@@ -1,6 +1,6 @@
-
-#map {
-    height: 10vh;
-    width: 300%;
-  }
-  
+.custom-map {
+  width: 600px; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */ 
+  overflow-x: none;
+  max-width: 500px;
+}

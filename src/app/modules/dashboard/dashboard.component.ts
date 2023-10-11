@@ -1,5 +1,11 @@
 import { Component,OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { count } from 'rxjs';
+import { ChatComponent } from 'src/app/chat/chat.component';
+import { HmtsModalComponent } from 'src/app/hmts-modal/hmts-modal.component';
+import { MapComponent } from 'src/app/map/map.component';
 import { FirearmService } from 'src/app/services/firearm.service';
+import { UserInfoService } from 'src/app/user-info.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +16,28 @@ import { FirearmService } from 'src/app/services/firearm.service';
 export class DashboardComponent implements OnInit { 
 
   totalFirearms: number = 0;
-  totalMarked: number = 0;
-  constructor(private firearmServices: FirearmService) { }
+  totalMarked: number = 0; 
+  totalDestroyed: number = 0; 
+  totalLost: number = 0; 
+  totalOfficer: number = 0; 
+  
+  showchat = false;   
+
+
+
+  Openchat(): void {
+    this.showchat = true; 
+    this.dialog.open(ChatComponent)
+  } 
+  constructor(private firearmServices: FirearmService,
+    private dialog: MatDialog,
+    private userInfoService: UserInfoService) { }
        
-  ngOnInit(): void {
+
+
+  ngOnInit(): void { 
+   
+  
     this.firearmServices.getTotalFirearms().subscribe(
       (count) => {
         this.totalFirearms = count;
@@ -33,9 +57,45 @@ export class DashboardComponent implements OnInit {
       (error) => {
         console.error('Error fetching total firearms:', error);
       }
-    );
-    
-  }
+    ); 
+
+    this.firearmServices.getTotalDestroyed().subscribe(
+      (count) => {
+        this.totalDestroyed = count;
+      },
+    ) 
+
+    this.firearmServices.getTotalLost().subscribe(
+      (count) => {
+        this.totalLost = count;
+      },
+      (error) => {
+        console.error('Error fetching total firearms:', error);
+      }
+    );  
+   
+    this.firearmServices.getTotalOfficer().subscribe(
+      (count) => {
+        this.totalOfficer = count ;
+      },
+      (error) => {
+        console.error('Error fetching total firearms:', error);
+      }
+    );  
+ 
+     
+  } 
+
+
+
+
+
+
+
+
+
+
+
   displayedColumns = ['position', 'name', 'weight', 'symbol','symbolL'];
   dataSource = ELEMENT_DATA;
 }
@@ -54,5 +114,13 @@ const ELEMENT_DATA: Element[] = [
   {position: '15-JUN-2023', name: '07:43', weight: 'some operations', symbol: 'something has changed'},
   {position: '15-JUN-2023', name: '07:43', weight: 'some operations', symbol: 'something has changed'},
 ];
+
+
+
+
+
+
+
+
 
 

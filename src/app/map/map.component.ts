@@ -17,7 +17,7 @@ export class MapComponent implements OnInit {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Add a marker for Ethiopia (Add more markers or custom features as needed)
+    // Add a marker for Ethiopia
     L.marker([9.145, 40.489673]).addTo(map)
       .bindPopup('Ethiopia');
 

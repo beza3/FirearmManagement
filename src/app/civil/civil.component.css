@@ -12,16 +12,23 @@
 }
 
 .modal-content {
-  margin-top: 10px;
-  background-color: #fff;
-  width: 800px;
+  background-color: #ffff;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  width: 1700px; 
-  height: auto;  
+  width: 1200px;
   color: black;
+  height: 650px; 
+  font-size: 12px;
+} 
 
-}
+.option-input {
+  width: 200px; 
+  height: 30px;
+  background-color: #e1e1e1; 
+  font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+} 
 
 .mat-toolbar {
   display: flex;
@@ -47,9 +54,6 @@ button:hover{
   color: white;
 }
 /* signup-form.css */
-.form-group {
-  margin-bottom: 20px;
-}/* Add this CSS to your component's CSS file */
 
 
 .form-container {
@@ -61,8 +65,7 @@ button:hover{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 10px;
-  margin-left: 10px;
+  padding: 10px;
 }
 
 .form-column {
@@ -71,10 +74,14 @@ button:hover{
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 /* Customize as needed */
+label {
+  color: #0c2a4a;
+  font-size: 12px;
+}
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -85,7 +92,10 @@ input[type="date"],
 textarea {
   width: 200px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: none;
+  outline: none;
+  background-color: #f1f1f1;
+  color: #0c2a4a;
   border-radius: 4px;
 } 
 img {

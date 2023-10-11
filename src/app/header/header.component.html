@@ -53,13 +53,12 @@
      
     <mat-menu #Firearm Registry="matMenu">
         
-          <div class="dropdown">
-        <button mat-menu-item ><a href="/FirearmRegistryManagement" >Firearm Registration and Management</a></button>
-        <button mat-menu-item ><a href="/PendingFirearmOperation">Pending Firearm Operations</a></button> 
-        <button mat-menu-item ><a href="/ReportVisualization">Report And Visualization</a></button> 
+          <div class="dropdown" style="width: 100%;">
+        <button mat-menu-item ><a href="/FirearmRegistryManagement" >Firearm Registration &  Management </a></button> 
+        <button mat-menu-item [matMenuTriggerFor]="FirearmStatus"><a href="/FirearmStatus" >Firearm Status</a></button>
         <button mat-menu-item [matMenuTriggerFor]="FirearmHolder"><a href="/FireamHolder">Firearm Holder</a></button>  
-
-    </div>
+    </div> 
+    
     </mat-menu> 
   
 
@@ -76,11 +75,17 @@
             <div class="dropdown">
         <button mat-menu-item><a href="/backup">Automated Task and Backup</a></button> 
             </div>   
-            <mat-menu #FirearmHolder="matMenu">  
+            <mat-menu #FirearmStatus="matMenu">  
                 <div class="dropdown">
-                    <button mat-menu-item><a href="/officer">Officer</a></button> 
-                    <button mat-menu-item><a href="/civillian">Civillian</a></button> 
-                    <button mat-menu-item><a href="/poag">Private and Govermental Org</a></button> 
-                    <button mat-menu-item><a href="/iofc">International And Foreign</a></button> 
-                    <button mat-menu-item><a href="/hmts">Hunting , Celebration and Various Scenes</a></button> 
+                    <button mat-menu-item><a href="/lossTable">Lost Firearm</a></button> 
+                    <button mat-menu-item><a href="/destroyedTable">Destroyed Firearm</a></button> 
+              
                         </div>     
+                        <mat-menu #FirearmHolder="matMenu">  
+                            <div class="dropdown">
+                                <button mat-menu-item><a href="/officer">Officer</a></button> 
+                                <button mat-menu-item><a href="/civillian">Civillian</a></button> 
+                                <button mat-menu-item><a href="/poag">Private and Govermental Org</a></button> 
+                                <button mat-menu-item><a href="/iofc">International And Foreign</a></button> 
+                                <button mat-menu-item><a href="/hmts">Hunting , Celebration and Various Scenes</a></button> 
+                                    </div>     

@@ -45,12 +45,12 @@ export class BarComponent implements OnInit {
         type: 'column',
         name: 'Day',
         color: '#dcc380',
-    
+        data: [156, 345, 125, 240, 167]
       }, {
         type: 'column',
         name: 'Week',
         color: '#0c2a4c',
-        data: [6, 345, 125, 240, 167]
+        data: [65, 345, 125, 240, 167]
       }, {
         type: 'column',
         name: 'Month',

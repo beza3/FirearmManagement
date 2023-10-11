@@ -20,35 +20,34 @@ import { MatTabGroup } from '@angular/material/tabs';
     const selectedCheckbox = event.target as HTMLInputElement;
     this.Loginicon = selectedCheckbox.nextElementSibling?.textContent || '';
   }
-    @Output() closeuser = new EventEmitter<boolean>();
-    constructor(public dialogRef: MatDialogRef<UserModalComponent>,private formBuilder: FormBuilder, private http: HttpClient) {
+    @Output() closeuser = new EventEmitter<boolean>(); 
+    encryptedData!: string; 
+
+    
+    constructor(public dialogRef: MatDialogRef<UserModalComponent>,
+      private formBuilder: FormBuilder, 
+      private http: HttpClient,
+      
+      ) {
       this.signupForm = this.formBuilder.group({
         firstname: [''],
         middlename: [''],
         lastname: [''],
         efpid: [''],
         job: [''],
-        jobtype: [''],
         unit: [''],
-        organization: [''],
-        telephone: [''],
         extension : [''],
         mobile : [''],
         email : [''],
-        address : [''],
-        town : [''],
-        country: [''],
         accounttype : [''],
         Loginicon: [''],
         username : [''],
-        status : [''],
         password: [''],
         
         // ... other form fields ...
       });
     }
-   
-     
+  
     signup() {
       console.log(this.signupForm.value);
 
@@ -56,18 +55,18 @@ import { MatTabGroup } from '@angular/material/tabs';
     .subscribe(
       response => {
         console.log('Data sent successfully:', response);
-        this.signupForm.reset(); // Reset the form after successful submission
-      },
+        this.signupForm.reset(); 
+        alert('sucsse') // Reset the form after successful submission
+      },   
       error => {
         console.error('Error sending data:', error);
       }
     );
   
-    } 
+    }  
+    
     onClose(): void {
       // Handle closing the modal
-      
-
   this.dialogRef.close();
 }
     }

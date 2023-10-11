@@ -2,13 +2,13 @@
 
 
     <nav class="navbar ">
-      <div class="container-fluid">
-        <h3 style="color: #343a40;">Access Control Management</h3>
-      </div>
+      <br>
+      <br>
     </nav>
      <div>
-      <span><h4 style="color: green; font-weight: bold;">System User Account</h4></span>
-     </div> 
+      <span><h4 style="color: rgb(86, 88, 86); font-weight: bold;">System User Account</h4></span>
+     </div>  
+     <br> 
    <div class="btn">
     <button mat-button type="button" (click)="openUserModal()">
       <mat-icon style="margin-right: 5px; float: right;">add</mat-icon>
@@ -16,13 +16,15 @@
     </button>
    </div>   
    <br>
-
+   <br> 
+   <br>
      <mat-card> 
-      <br>
-  <div class="search">
-    <button mat-button>Go</button>
+      <br>  
+  <div class="btn1">
     <input type="text" placeholder="Search here" style="margin-right: 5px;">
   </div>
+ <br>  
+ <br> 
  <br>
   <div class="row">
     <div class="select-wrapper col-md-3" style="width: 195px;">
@@ -52,7 +54,7 @@
       <option value="Special Squad>Homicide">Special Squad>Homicide </option>
     </select>
   </div> 
-
+    <br>
   <div class="select-wrapper col-md-3" style="width: 195px;">
     <select id="organization" class="form-control">
       <option value="">Select Organization </option>
@@ -108,11 +110,93 @@
                 [pageSize]="10"
                 [pageSizeOptions]="[5, 10, 25]"
                 aria-label="Select page">
-  </mat-paginator>
-  <table class="table table-bordered"> 
-    <thead class="bg-dark text-white">
-      <tr>
-        <th scope="col">REF#</th>
+  </mat-paginator> 
+  
+  <mat-table [dataSource]="dataSource"  class="table">
+    <!-- Define your table columns here -->
+    <ng-container style="height: 1px;" matColumnDef="REF#">
+      
+        <th  mat-header-cell *matHeaderCellDef> REF# </th>
+      
+      
+      <td  *matCellDef="let element"> {{ element['REF#'] }} <span>#REF</span>
+        {{ element['Id'] }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="NAME">
+      <div >
+      <th style=" " mat-header-cell *matHeaderCellDef> NAME </th>
+    </div>
+      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element.NAME }} 
+    
+        {{element.firstname}} 
+        {{element.middlename}} 
+        {{element.lastname}} <br>
+        {{element.efpid}} 
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="UNIT">
+      <th style=" " mat-header-cell *matHeaderCellDef> UNIT </th>
+      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element.UNIT }} 
+        {{element.unit}} 
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="JOB">
+      <th style=" " mat-header-cell *matHeaderCellDef> JOB </th>
+      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element.JOB }}
+        {{element.job}}
+        
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="JOB TYPE">
+      <th style="" mat-header-cell *matHeaderCellDef> JOB TYPE </th>
+      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element['JOB TYPE'] }} 
+            {{element.jobtype}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ACCOUNT TYPE">
+      <th style="" mat-header-cell *matHeaderCellDef> ACCOUNT TYPE </th>
+      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element['ACCOUNT TYPE'] }} 
+                         {{element.accounttype}} 
+                          {{element.Loginicon}} <br>
+                          {{element.username}} <br> 
+                          {{element.password}}
+
+      </td>
+    </ng-container>
+  
+    <!-- Define more columns similarly -->
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" style="height: 35px; background-color: #f1f1f1;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </mat-table>
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--    
+    <th scope="col">REF#</th>
         <th scope="col">NAME</th>
         <th scope="col">UNIT</th>
         <th scope="col">JOB</th>
@@ -121,82 +205,4 @@
         <th scope="col">STATUS</th>
         <th scope="col">MANAGE</th>
         <th scope="col"> </th>
-
-      </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>1</td>
-      <td>Abraham Shiferaw</td>
-      <td>Regular>Patrol</td>
-      <td>Firearms Management Officer</td>
-      <td>Consultant</td>
-      <td>Users</td>
-      <td>Active</td>
-      <td><mat-icon class="menu-icon">menu</mat-icon></td>
-      <td><mat-icon class="small-icon">create</mat-icon></td>
-    </tr>
-  
-    <tr>
-      <td>2</td>
-      <td>Dagmawit Tsegaye</td>
-      <td>Regular>Patrol</td>
-      <td>Firearms Management Officer</td>
-      <td>Consultant</td>
-      <td>Supervisors</td>
-      <td>Active</td>
-      <td><mat-icon class="menu-icon">menu</mat-icon></td>
-      <td><mat-icon class="small-icon">create</mat-icon></td>
-    </tr>
-  
-   <tr>
-      <td>3</td>
-      <td>Bezawit Solomon</td>
-      <td>Regular>Patrol</td>
-      <td>Firearms Management Officer</td>
-      <td>Consultant</td>
-      <td>Users</td>
-      <td>Active</td>
-      <td><mat-icon class="menu-icon">menu</mat-icon></td>
-      <td><mat-icon class="small-icon">create</mat-icon></td>
-    </tr>
-  
-  <tr>
-      <td>4</td>
-      <td>Abraham Shiferaw</td>
-      <td>Regular>Patrol</td>
-      <td>Firearms Management Officer</td>
-      <td>Permanent</td>
-      <td>Users</td>
-      <td>Active</td>
-      <td><mat-icon class="menu-icon">menu</mat-icon></td>
-      <td><mat-icon class="small-icon">create</mat-icon></td>
-    </tr>
-  
-  <tr>
-      <td>5</td>
-      <td>Dagmawit Tsegaye</td>
-      <td>Regular>Patrol</td>
-      <td>Firearms Management Officer</td>
-      <td>Temporary</td>
-      <td>Users</td>
-      <td>Active</td>
-      <td><mat-icon class="menu-icon">menu</mat-icon></td>
-      <td><mat-icon class="small-icon">create</mat-icon></td>
-  </tr>
-  
-  <tr>
-      <td>6</td>
-      <td>Bezawit Tsegaye</td>
-      <td>Regular>Patrol</td>
-      <td>Firearms Management Officer</td>
-      <td>Consultant</td>
-      <td>Users</td>
-      <td>Active</td>
-      <td><mat-icon class="menu-icon">menu</mat-icon></td>
-      <td><mat-icon class="small-icon">create</mat-icon></td>
-  </tr>
-     
-    </tbody>
-  </table>
-  
+  -->

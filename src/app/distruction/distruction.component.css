@@ -14,11 +14,10 @@
   }
   
   .modal-content {
-  
         padding-left: 0px;
         border-radius: 4px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        width: 70%; 
+        width: 800px; 
         height: 90%; /* Set the desired height for your scrollable form */
         overflow-y: auto; /* Enable vertical scrolling */
         border: 1px solid #ccc;
@@ -59,36 +58,48 @@
         }
 
         .destruction-box .user-box input {
-            width: 100%;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #0c2a4c;
-            margin-bottom: 30px;
-            border: none;
-            border-bottom: 1px solid #fff;
-            outline: none;
-            background: transparent;
+            width: 500px;
+    padding: 10px 0;
+    font-size: 12px;
+    color:  #0c2a4c;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background-color: #f0efef80;
+          
         }
 
         .destruction-box .user-box label {
             position: absolute;
-            top:0;
-            left: 0;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #0c2a4c;
-            pointer-events: none;
-            transition: .5s;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #0c2a4c;
+    pointer-events: none;
+    transition: 0.5s;
+       
         }
 
-        .destruction-box .user-box input:focus ~ label,
+        .destruction-box .user-box input ~ label,
         .destruction-box .user-box input:valid ~ label {
             top: -20px;
             left: 0;
             color:  #14173d;
             font-size: 12px;
         }
+        .destruction-box .user-bo input {
 
+            font-size: 12px;
+            color:  #0c2a4c;
+            border: none;
+            margin-top: -1px;
+            border-bottom: 1px solid #fff;
+            background-color: #f0efef80; 
+            margin-left: 30px; 
+          } 
         .destruction-box form a {
             position: relative;
             display: inline-block;

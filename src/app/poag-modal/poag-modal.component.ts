@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {  ViewChild } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -8,46 +9,83 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './poag-modal.component.html',
   styleUrls: ['./poag-modal.component.css']
 })
-export class PoagModalComponent { 
-
+export class PoagModalComponent implements OnInit{  
+  
+  @Input() poagData: any = {};//
   @Output() closeModalEvent = new EventEmitter<boolean>();
 
   closeModal() {
     this.closeModalEvent.emit(true);
   }
-  
-  
+   poagForm: FormGroup = new FormGroup({});
   option1: string = "";
   option2: string = "";
-  option3: string = "";
-   
+  option3: string = ""; 
+
+  
   
   form!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,
+     private http: HttpClient, 
+     ) {}
 
   ngOnInit() {
-    this.initializeForm();
+         this.poagForm = this.formBuilder.group({ 
+          
+nameOfOrganisation:	['',],
+sector:	['',],
+sizeOfCapital:	['',],
+region:	['',],
+subcity:	['',],
+district:	['',],
+kebele:	['',],
+specificArea:	['',],
+phoneNumber:	['',],
+email: ['',],
+          //
+          manufacturerSerial: ['',],
+          isFirearm: ['', ],
+          dateMarked: [new Date()],
+          markedBy: [''],
+          firearmType: [''],
+          firearmModel: [''],
+          firearmMechanism: [''],
+          firearmCalibre: [''],
+          magazineCapacity: [''],
+          manufacturer: [''],
+          yearManufacture: [new Date()],
+          source: [''], 
+          store: [''],
+          additionalComment: [''],  
+          // 
+          registeredPosition: ['',],
+          registeredFullName: ['', ],
+          registeredTitle: ['', ],
+          registeredResponsibility: ['',],
+          registeredSignature: ['', ],
+          registeredDate: [new Date()],
+          // The registered body
+          registeredBodyFullName: ['',],
+          registeredBodyResponsibility: ['',],
+          registeredBodySignature: ['', ],
+          registeredBodyDate: [new Date()]
+         });
+
   }
 
-  initializeForm() {
-    this.form = this.formBuilder.group({
-      full_name: ['', Validators.required],
-      title: ['', Validators.required],
-      position: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone_number: ['', Validators.required],
-      comment: ['', Validators.required],
-      nameOfOrganization: ['',Validators.required]
-    });
-  }
 
   onSubmit() {
-    if (this.form.valid) {
-      console.log('Form submitted:', this.form.value);
-      // You can also send the form data to a server using HTTP requests.
-    } else {
-      console.log('Form is invalid. Please check the fields.');
-    }
-  }
+    this.http.post('http://localhost:5141/api/Poag', this.poagForm.value).subscribe(
+      (response) => {
+        console.log('Successfully submitted:', response);
+        alert('Successfully submitted');
+      },
+      (error) => {
+        console.error('Error:', error);
+        alert('Failed to Register');
+      }
+    );
+  } 
+  
 }

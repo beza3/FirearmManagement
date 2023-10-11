@@ -5,9 +5,8 @@
        
 <div class="destruction-box">
   
-       
-  
-  <form [formGroup]="confirmdestructionForm"(ngSubmit)="onSubmit()">
+      
+  <form [formGroup]="destructionForm" >
     <div>
       <h2 style="color:  #0c2a4c">Firearm Distruction Authorization</h2>
       <p > To complete the transfer of firearms listed alongside,Kindly fill all the information in this form.When satisfied,that all the details are correct ,click on the <strong>"CONFIRM DISTRUCTION" </strong>button below</p>
@@ -16,55 +15,70 @@
     <mat-card style="height:90px; background: linear-gradient(to top, #ed9a9a, #f9f9f9);">
       <img style="width: 70px; margin-top: 10px;" src="assets/warning.png" class="img-warn" alt="warn">
        <p style="margin-left: 70px;margin-top: -60px; " >Please Note:Once you click on the "CONFIRM DISTRUCTION" button below,the firearms listed will be marked as destroyed.This procedure is<strong style="color:red">&nbsp;NOT REVERSABLE</strong></p>
-    </mat-card>
- <br>
-    
+    </mat-card> 
+ <br>  
+   
+ <div class="user-bo">
+
+  <p>Selected Firearm To Be Destroyed
+  </p>
+<input type="text" name="manufacturerSerial"  id="manufacturerSerial" formControlName="manufacturerSerial" [(ngModel)]="distructionData.manufacturerSerial"readonly>
+<input type="text" name="isFirearm"  id="isFirearm" formControlName="isFirearm" [(ngModel)]="distructionData.isFirearm"readonly>
+<input type="text" name="dateMarked"  id="dateMarked" formControlName="dateMarked" [(ngModel)]="distructionData.dateMarked"readonly>
+<input type="text" name="markedBy"  id="markedBy" formControlName="markedBy" [(ngModel)]="distructionData.markedBy"readonly>
+<input type="text" name="firearmType"  id="firearmType" formControlName="firearmType" [(ngModel)]="distructionData.firearmType"readonly>
+<input type="text" name="firearmModel"  id="firearmModel" formControlName="firearmModel" [(ngModel)]="distructionData.firearmModel  "readonly>
+<input type="text" name="firearmMechanism"  id="firearmMechanism" formControlName="firearmMechanism" [(ngModel)]="distructionData.firearmMechanism "readonly>
+<input type="text" name="firearmCalibre"  id="firearmCalibre" formControlName="firearmCalibre" [(ngModel)]="distructionData.firearmCalibre "readonly>
+<input type="text" name="magazineCapacity"  id="magazineCapacity" formControlName="magazineCapacity" [(ngModel)]="distructionData.magazineCapacity "readonly>
+<input type="text" name="yearManufacture"  id="yearManufacture" formControlName="yearManufacture" [(ngModel)]="distructionData.yearManufacture "readonly>
+<input type="text" name="source"  id="source" formControlName="source" [(ngModel)]="distructionData.source "readonly>
+<input type="text" name="store"  id="store" formControlName="store" [(ngModel)]="distructionData.store "readonly>
+<input type="text" name="additionalComment"  id="additionalComment" formControlName="additionalComment" [(ngModel)]="distructionData.additionalComment "readonly>
+
+</div> 
+<br>
+
     <div class="user-box">
       <br>
-      <br>
-      <input type="date" name="" required="" value=""formControlName="destructiondate"[class.invalid]="confirmdestructionForm.get('destructiondate')?.invalid &&( confirmdestructionForm.get('destructiondate')?.dirty||confirmdestructionForm.get('destructiondate')?.touched||isSubmitted)">
-      <label>Distruction Date: <span *ngIf="confirmdestructionForm.get('destructiondate')?.invalid &&( confirmdestructionForm.get('destructiondate')?.dirty||confirmdestructionForm.get('destructiondate')?.touched||isSubmitted)"class="error" style="color: rgb(236, 114, 114);"><mat-icon >info</mat-icon>&nbsp;Fillout the following information its required </span></label>
-      
-  </div>
-  <div class="user-box">
-    <input type="text" name="" required="" value=""formControlName="venue"[class.invalid]="confirmdestructionForm.get('venue')?.invalid &&( confirmdestructionForm.get('venue')?.dirty||confirmdestructionForm.get('venue')?.touched||isSubmitted)">
-    <label>Venue: <span *ngIf="confirmdestructionForm.get('venue')?.invalid &&( confirmdestructionForm.get('venue')?.dirty||confirmdestructionForm.get('venue')?.touched||isSubmitted)"class="error" style="color:  rgb(236, 114, 114);"><mat-icon >info</mat-icon>&nbsp;Fillout the following information its required </span></label>
-    
-  </div>
-  <div class="user-box">
-    <input type="text" name="" required=""formControlName="destructionrequestedby"[class.invalid]="confirmdestructionForm.get('destructionrequestedby')?.invalid &&( confirmdestructionForm.get('destructionrequestedby')?.dirty||confirmdestructionForm.get('destructionrequestedby')?.touched||isSubmitted)">
-    <label>Destruction Requested By: <span *ngIf="confirmdestructionForm.get('destructionrequestedby')?.invalid &&( confirmdestructionForm.get('destructionrequestedby')?.dirty||confirmdestructionForm.get('destructionrequestedby')?.touched||isSubmitted)"class="error" style="color:  rgb(236, 114, 114)"><mat-icon >info</mat-icon>&nbsp;Fillout the following information its required</span></label>
-    
-  </div>
-  <div class="user-box">
-    <input type="text" name="" required="" formControlName="reasonfordestruction"[class.invalid]="confirmdestructionForm.get('reasonfordestruction')?.invalid &&( confirmdestructionForm.get('reasonfordestruction')?.dirty||confirmdestructionForm.get('reasonfordestruction')?.touched||isSubmitted)">
-    <label>Reason For Destruction: <span *ngIf="confirmdestructionForm.get('reasonfordestruction')?.invalid &&( confirmdestructionForm.get('dreasonfordestruction')?.dirty||confirmdestructionForm.get('reasonfordestruction')?.touched||isSubmitted)"class="error" style="color:  rgb(236, 114, 114)"><mat-icon >info</mat-icon>&nbsp;Fillout the following information its required </span></label>
-    
-  </div>
-  <div class="user-box">
-    <input type="text" name="" required=""formControlName="authorizedby"[class.invalid]="confirmdestructionForm.get('authorizedby')?.invalid &&( confirmdestructionForm.get('authorizedby')?.dirty||confirmdestructionForm.get('authorizedby')?.touched||isSubmitted)">
-    <label>Authorized By: <span *ngIf="confirmdestructionForm.get('authorizedby')?.invalid &&( confirmdestructionForm.get('authorizedby')?.dirty||confirmdestructionForm.get('authorizedby')?.touched||isSubmitted)"class="error" style="color:  rgb(236, 114, 114)"><mat-icon >info</mat-icon>&nbsp;Fillout the following information its required </span></label>
-    
-  </div>
-  <div class="user-box">
-    <input type="number" name="" required=""formControlName="referencenumber"[class.invalid]="confirmdestructionForm.get('referencenumber')?.invalid &&( confirmdestructionForm.get('referencenumber')?.dirty||confirmdestructionForm.get('referencenumber')?.touched||isSubmitted)">
-    <label>Reference Number:  <span *ngIf="confirmdestructionForm.get('referencenumber')?.invalid &&( confirmdestructionForm.get('referencenumber')?.dirty||confirmdestructionForm.get('referencenumber')?.touched||isSubmitted)"class="error" style="color: rgb(236, 114, 114)"><mat-icon >info</mat-icon>&nbsp;Fillout the following information its required </span></label>
-   
-  </div>
-  <div class="user-box">
+      <input id="destructionDate" type="date" name="" required="" value="" formControlName="destructionDate" > <br>
+      <label for="destructionDate">Distruction Date: </label>
+  </div> 
+
+  
+
+  <div class="user-box"> 
     <br>
+    <input id="destructionRequestedBy" type="text" name="" required="" formControlName="destructionRequestedBy" > <br>
+    <label for="destructionRequestedBy">Destruction Requested By: </label>
+  </div> 
+
+  <div class="user-box"> 
     <br>
-    <input type="date" name="" required="" value=""formControlName="authorizationdate"[class.invalid]="confirmdestructionForm.get('authorizationdate')?.invalid &&( confirmdestructionForm.get('authorizationdate')?.dirty||confirmdestructionForm.get('authorizationdate')?.touched||isSubmitted)">
-    <label>Authorization Date: <span *ngIf="confirmdestructionForm.get('authorizationdate')?.invalid &&( confirmdestructionForm.get('authorizationdate')?.dirty||confirmdestructionForm.get('authorizationdate')?.touched||isSubmitted)"class="error" style="color:  rgb(236, 114, 114)"><mat-icon >info</mat-icon>&nbsp;Fillout the following information its required </span></label>
-    
-</div>
-  <label>
-<p>Issued/Transfered By:-&nbsp;&nbsp; <strong>System Administrator</strong> </p>
+    <input id="reasonForDestruction" type="text" name="" required="" formControlName="reasonForDestruction" > <br>
+    <label for="reasonForDestruction">Reason For Destruction: </label>
+  </div> 
+
+  <div class="user-box"> <br>
+    <input id="authorizedBy" type="text" name="" required="" formControlName="authorizedBy" > <br>
+    <label for="authorizedBy">Authorized By: </label>
+  </div>
+ 
+  
+  
+
+<label>
 </label>
 <br>
 <br>
     
-     <button mat-raised-button style="text-transform: uppercase;color:  rgb(70, 69, 69);font-size: 12px; position: absolute; right: 0; margin-right: 10px;" type="submit" > Confirm Distruction</button>
+     <button mat-raised-button (click)="OnSubmit()" style="text-transform: uppercase;
+     color:  rgb(70, 69, 69);
+     font-size: 12px; 
+     position: absolute; 
+     right: 0; 
+     margin-right: 10px;" 
+     type="submit" > Confirm Distruction</button>
     
     <br>
     <br>
@@ -75,7 +89,8 @@
 </label>
 </mat-card>
 
-  </form>
+  </form> 
+ 
 </div> 
 
 

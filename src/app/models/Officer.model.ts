@@ -1,5 +1,5 @@
 export interface Officer {
-    id: string;
+    id: number;
     fullName: string;
     title:string;
     position:  string;
@@ -11,7 +11,8 @@ export interface Officer {
     manufacturer: string;
     firearmCalibre: string;
     yearManufacture: string;
-    source: string;
+    source: string; 
+    oholder: string;
     firearmMechanism: string
     manufacturerSerial: string;
     registeredPosition: string;

@@ -1,0 +1,19 @@
+<!-- success-popup.component.html -->
+<div> 
+
+  <div style="color: rgb(14, 101, 188);"> 
+     <mat-icon class="mat-18" style="color:rgb(25, 186, 71);">done</mat-icon>  
+
+      Registerd Successfully.<br>
+    Do you want to Generate ID Card/License? 
+  </div>
+   <br>
+   <br>
+ <div>
+  <button mat-button routerLink="/OfficerLicense" (click)="closeDialog()">Yes</button>
+  <button class="nobutton" style="position: absolute;
+   right: 0;" mat-button  (click)="closeDialog()">No</button>
+ </div>
+
+</div>
+

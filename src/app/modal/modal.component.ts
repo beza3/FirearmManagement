@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FirearmService } from '../services/firearm.service';
 
 @Component({
   selector: 'app-modal',
@@ -30,5 +31,9 @@ export class ModalComponent {
     this.closeModal.emit(true); 
 
   } 
-  
+  user: any;
+
+  constructor(private firearmService: FirearmService) {
+    this.user = this.firearmService.getUser();
+  }
 }

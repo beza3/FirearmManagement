@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class DataSharingService {
   sharedData: any; // Define a property to store the shared data
-
+  
   constructor() {}
 }

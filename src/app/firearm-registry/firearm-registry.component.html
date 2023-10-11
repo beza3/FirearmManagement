@@ -4,7 +4,35 @@
                 <div class="container-for-siderbtn-and-heading">
        
     <h2>Firearm Registration & Management</h2> 
-  </div>
+  </div> 
+
+  <div style="visibility: hidden;">
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm"  
+  (input)="filter()"> 
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm2"  
+  (input)="filter2()"> 
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm3"  
+  (input)="filter3()"> 
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm4"  
+  (input)="filter4()"> 
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm5"  
+  (input)="filter5()"> 
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm6"  
+  (input)="filter6()">  
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm7"  
+  (input)="filter7()"> 
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm8"  
+  (input)="filter8()"> 
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm9"  
+  (input)="filter9()"> 
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm10"  
+  (input)="filter10()"> 
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm11"  
+  (input)="filter11()"> 
+  <input type="text" placeholder="Search.." name="search"  [(ngModel)]="filterTerm12"  
+  (input)="filter12()"> 
+</div>
+
 
    <div class="btn">
     <button mat-button (click)="openDialog()" ><mat-icon>add</mat-icon>New Firearm</button>
@@ -16,15 +44,16 @@
 <div class="container">
   <br><br>
    <div class="btn1">
-      <input type="text" placeholder="Search.." name="search"  [(ngModel)]="searchTerm"> 
-      <button (click)="search()">GO</button>
+      <input type="text" placeholder="Search.." name="search"  [(ngModel)]="searchTerm" (input)="search()"> 
+     
+     
    </div>
   </div>
-   <br>
+   
    <div class="row">
-     <div class="select-wrapper col-md-3" style="width: 200px; margin-top: 1px; ">
-       <select id="source" class="form-control">
-         <option value="">Select source</option>
+     <div class="select-wrapper col-md-3" style="width: 200px; margin-top: 1px;" >
+       <select id="source" class="form-control" [(ngModel)]="filterTerm" (ngModelChange)="filter()">
+         <option value="" >Select source</option>
          <option value="Amnesty">Amnesty </option>
          <option value="Civilian Owned">Civilian Owned </option>
          <option value="Disarmament">Disarmament </option>
@@ -34,18 +63,20 @@
          <option value="Seizure">Seizure </option>
          <option value="State Owned">State Owned </option>
        </select>
-     </div> 
+     </div>  
+
      <div class="select-wrapper col-md-3" style="width: 200px; margin-top: 1px; ">
-       <select id="registered" class="form-control">
+       <select id="registered" class="form-control" [(ngModel)]="filterTerm2" (ngModelChange)="filter2()">
          <option value="">Select Registered</option>
          <option value="2015">2015 </option>
          <option value="2020">2020 </option>
          <option value="2022">2022 </option>
          <option value="2023">2023 </option>
        </select>
-     </div>
+     </div> 
+
      <div class="select-wrapper col-md-3" style="width: 200px;">
-     <select id="yearOfImport" class="form-control">
+     <select id="yearOfImport" class="form-control" [(ngModel)]="filterTerm3" (ngModelChange)="filter3()" >
        <option value="">Select Year Of Import </option>
        <option value="(unknown)">(unknown) </option>
        <option value="1939">1939 </option>
@@ -67,8 +98,9 @@
        <option value="1955">1955 </option>
        <option value="1956">1956 </option>
      </select>
-   </div>
-   <div class="select-wrapper col-md-3" style="width: 200px;">
+   </div> 
+
+   <div class="select-wrapper col-md-3" style="width: 200px;"  [(ngModel)]="filterTerm4" (ngModelChange)="filter4()">
      <select id="type" class="form-control">
        <option value="">Select type </option>
        <option value="(unknown)">(unknown) </option>
@@ -89,7 +121,7 @@
      </select>
    </div>
    <div class="select-wrapper col-md-3" style="width: 200px; ">
-     <select id="model" class="form-control">
+     <select id="model" class="form-control"  [(ngModel)]="filterTerm5" (ngModelChange)="filter5()">
        <option value="">Select Model </option>
        <option value="(unknown)">(unknown) </option>
        <option value="AL Kadesih rifle (Iraq)">AL Kadesih rifle (Iraq) </option>
@@ -223,7 +255,7 @@
      </select>
    </div>
    <div class="select-wrapper col-md-3" style="width: 200px;">
-     <select id="calibre" class="form-control">
+     <select id="calibre" class="form-control"  [(ngModel)]="filterTerm6" (ngModelChange)="filter6()">
        <option value="">Select Calibre </option>
        <option value="(unknown)">(unknown) </option>
        <option value=".17 HM2(4.4-18.1MM)">.17 HM2(4.4-18.1MM) </option>
@@ -267,7 +299,7 @@
    
    <div class="row">
      <div class="select-wrapper col-md-3" style="width: 200px; margin-top: 5px;">
-       <select id="manufacturer" class="form-control">
+       <select id="manufacturer" class="form-control" [(ngModel)]="filterTerm7" (ngModelChange)="filter7()">
          <option value="">Select Manufacturer</option>
          <option value="(Unknown Manufacturer)">(Unknown Manufacturer) </option>
          <option value="አገር መከላከያ">አገር መከላከያ </option>
@@ -293,14 +325,14 @@
        </select>
      </div>
      <div class="select-wrapper col-md-3" style="width: 200px; margin-top: 5px;">
-       <select id="marked" class="form-control">
+       <select id="marked" class="form-control" [(ngModel)]="filterTerm8" (ngModelChange)="filter8()">
          <option value="">Select Marked?</option>
          <option value="NO">NO </option>
          <option value="YES">YES </option>
        </select>
      </div>
      <div class="select-wrapper col-md-3" style="width: 200px; margin-top: 5px;">
-     <select id="marker" class="form-control">
+     <select id="marker" class="form-control" [(ngModel)]="filterTerm9" (ngModelChange)="filter9()">
        <option value="">Select Marker </option>
        <option value="Deme Geto Shume">Deme Geto Shume </option>
        <option value="Jack Anonymous Daniels">Jack Anonymous Daniels </option>
@@ -311,7 +343,7 @@
      </select>
    </div>
    <div class="select-wrapper col-md-3" style="width: 200px; margin-top: 5px;">
-     <select id="administrative" class="form-control">
+     <select id="administrative" class="form-control" [(ngModel)]="filterTerm10" (ngModelChange)="filter10()">
        <option value="">Select Administrative </option>
        <option value="Bangui North"> North </option>
        <option value="Bangui South">South </option>
@@ -323,9 +355,10 @@
        <option value="Western">Western </option>
        <option value="2">2 </option>
      </select>
-   </div>
+   </div> 
+
    <div class="select-wrapper col-md-3" style="width: 200px; margin-top: 5px;">
-     <select id="alloteeType" class="form-control">
+     <select id="alloteeType" class="form-control" [(ngModel)]="filterTerm11" (ngModelChange)="filter11()">
        <option value="">Select Holder</option>
        <option value="Civilian">Civilian </option>
        <option value="Department"></option>
@@ -333,22 +366,14 @@
        <option value="Private Security Company">Private Security Company </option>
        <option value="Store">Store </option>
      </select>
-   </div>
+   </div> 
+
    <div class="select-wrapper col-md-3" style="width: 200px; margin-top: 3px;">
-     <select id="status" class="form-control">
+     <select id="status" class="form-control" [(ngModel)]="filterTerm12" (ngModelChange)="filter12()">
        <option value="">Select Status </option>
-       <option value="Assigned">Assigned </option>
-       <option value="Destroyed">Destroyed </option>
-       <option value="Exported">Exported </option>
-       <option value="Lost">Lost </option>
-       <option value="Pending Destruction">Pending Destruction </option>
-       <option value="Pending Export">"Pending Export </option>
-       <option value="Pending Loss Report">Pending Loss Report </option>
-       <option value="Pending Recovery">Pending Recover </option>
-       <option value="Pending Registration">Pending Registration </option>
-       <option value="Pending Transfer">Pending Transfer </option>
+       <option value="New">New </option>
        <option value="Recovered">Recovered </option>
-       <option value="Registered">Registered </option>
+       
        <option value="Unknown">Unknown </option>
      </select>
    </div>
@@ -358,22 +383,7 @@
    <br>
   </mat-card>
   <br><br>
-   <div class="popup-container">
-   <app-popup-child1 *ngIf="showPopupFlag === 1" (close)="hidePopup()" ></app-popup-child1>
-
-
-
-
-
-
-   <app-popup-child2 *ngIf="showPopupFlag === 2" (close)="hidePopup()"></app-popup-child2>
-   <app-popup-child3 *ngIf="showPopupFlag === 3" (close)="hidePopup()"></app-popup-child3>
-   <app-popup *ngIf="showPopupFlag === 4"></app-popup>
-   <app-popup1 *ngIf="showPopupFlag === 5"></app-popup1>
-   <app-popup-child4 *ngIf="showPopupFlag === 6" (close)="hidePopup()"></app-popup-child4>
-   <app-popup-child5 *ngIf="showPopupFlag === 7" (close)="hidePopup()"></app-popup-child5>
-   <app-popup-child6 *ngIf="showPopupFlag === 8" (close)="hidePopup()"></app-popup-child6>
-   </div> 
+  
 
    <mat-paginator [length]="10"
                  [pageSize]="10"
@@ -397,9 +407,9 @@
       <div >
       <th style=" " mat-header-cell *matHeaderCellDef> FIREARM </th>
     </div>
-      <td mat-cell *matCellDef="let element"> {{ element.FIREARM }} 
+      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element.FIREARM }} 
        <span style="font-weight: bold;"> {{ element.firearmType }} 
-        {{ element.firearmModel }}</span> <br>
+        {{ element.firearmModel }}</span> <br> 
         <span>Manufacturer:</span>{{ element.manufacturer }} <br>
         <span>Calibre:</span>{{ element.firearmCalibre }} <br>
         <span>Year Of Manufacture:</span>{{ element.yearManufacture }} <br>
@@ -410,8 +420,8 @@
   
     <ng-container matColumnDef="SERIAL NO">
       <th style=" " mat-header-cell *matHeaderCellDef> SERIAL NO </th>
-      <td mat-cell *matCellDef="let element"> {{ element['SERIAL NO'] }} 
-        <span>Manufacture Serial:</span>{{ element.manufacturerSerial }} <br>
+      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element['SERIAL NO'] }} 
+        <span>Manufacture Serial:</span>{{ element.manufactureSerial }} <br> 
         <span>Assigned Serial:</span>{{ element.assignedSerial }} <br>
         <span>Marked By:</span>{{ element.isFirearm }} <br>
       </td>
@@ -419,7 +429,7 @@
   
     <ng-container matColumnDef="HOLDER">
       <th style=" " mat-header-cell *matHeaderCellDef> HOLDER </th>
-      <td mat-cell *matCellDef="let element"> {{ element.HOLDER }}
+      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element.HOLDER }}
         <span>Store:</span>{{ element.store }} <br>
         
       </td>
@@ -427,39 +437,33 @@
   
     <ng-container matColumnDef="STATUS">
       <th style="" mat-header-cell *matHeaderCellDef> STATUS </th>
-      <td mat-cell *matCellDef="let element"> {{ element.STATUS }} 
-             <span>Status:</span>
+      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element.STATUS }} 
+             <span>Status:</span> {{element.status}}
       </td>
     </ng-container>
+
+   
   
     <ng-container matColumnDef="ACTION">
       <th style=" " mat-header-cell *matHeaderCellDef> ACTION </th>
-      <td class="buttons" *matCellDef="let element"> {{ element.ACTION }} 
-
+      <td class="action-buttons" *matCellDef="let element" > {{ element.ACTION }} 
            <div>
-          <button mat-button (click)="openModal()" (click)="sendDataToChild(element)"><a style="text-decoration: none;"><span><mat-icon>group</mat-icon>Officer</span></a></button><br>
-          <button mat-button (click)="showPopup(5)"><a style="text-decoration: none;" ><span><mat-icon>perm_identity</mat-icon> Civillian</span></a></button><br>
-           <button mat-button (click)="showPopup(3)"><a style="text-decoration: none;" ><span> 	<mat-icon>highlight_off</mat-icon>Report loss</span></a></button><br>
-           <button mat-button (click)="showPopup(4)"><a style="text-decoration: none;"><span>	<mat-icon>health_and_safety</mat-icon>Recovery</span></a></button><br>
-          </div> 
-          &nbsp; &nbsp; &nbsp;
-          <div>
-            <button mat-button (click)="showPopup(2)"><a style="text-decoration: none;"><span>	<mat-icon> report_problem </mat-icon>Destruction</span></a></button><br>
-            <button mat-button (click)="showPopup(6)"><a style="text-decoration: none;" ><span><mat-icon>account_balance</mat-icon>
+          <button mat-button (click)="openOfficer()" (click)="sendDataToChild(element)" ><a style="text-decoration: none;"><span><mat-icon>group</mat-icon>Officer</span></a></button><br>
+          <button mat-button (click)="openCivill()" (click)="sendDataToCivil(element)" ><a style="text-decoration: none;" ><span><mat-icon>perm_identity</mat-icon> Civillian</span></a></button><br>                         
+            <button mat-button (click)="OpenPoagModal()" (click)="sendDataToPoag(element)" ><a style="text-decoration: none;" ><span><mat-icon>account_balance</mat-icon>
               Poag</span></a></button><br>
-           <button mat-button  (click)="showPopup(7)"><a  style="text-decoration: none;" ><span>	<mat-icon>language</mat-icon>
+           <button mat-button  (click)="OpeniofcModal()" (click)="sendDataToIofc(element)"><a  style="text-decoration: none;" ><span>	<mat-icon>language</mat-icon>
             iofc</span> </a></button><br>
-           <button mat-button (click)="showPopup(8)"><a style="text-decoration: none;" ><span> 	<mat-icon>party_mode</mat-icon>
-            hmts</span></a></button><br> <br>
+           <button mat-button (click)=" OpenHmtsModal()" (click)="sendDataToHmts(element)"><a style="text-decoration: none;" ><span> 	<mat-icon>party_mode</mat-icon>
+            hmts</span></a></button> 
           </div>
-  
       </td>
     </ng-container>
   
 
     <ng-container matColumnDef="MANAGE">
       <th style="" mat-header-cell *matHeaderCellDef> MANAGE </th>
-      <td mat-cell *matCellDef="let element"> {{ element.MANAGE }} 
+      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element.MANAGE }} 
         <button style="background-color: white;" type="button" data-bs-toogle="modal" data-bs-target="#exampleModal"><mat-icon style="background-color: white;">menu</mat-icon></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            <button style="background-color: white;" class="edit"><mat-icon>edit</mat-icon></button>
       </td>
@@ -467,10 +471,20 @@
   
     <!-- Define more columns similarly -->
   
-    <tr mat-header-row *matHeaderRowDef="displayedColumns" style="height: 35px;"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" style="height: 35px; background-color: #f1f1f1;"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </mat-table>
-</div>
-<app-officer-module *ngIf="showModal" (closeModal)="closeModal()"[childData]="dataToSend"></app-officer-module>
-</div>
 </div> 
+
+
+<!--all components modal's -->
+<app-officer-module *ngIf="showOfficer"  [childData]="dataToSend"></app-officer-module>
+<app-civil *ngIf="showCivill" [civilData]="civilData"></app-civil> 
+<app-poag-modal *ngIf="showPoagmodal" [poagData]="poagData" ></app-poag-modal>
+<app-iofc-modal *ngIf="showIofcmodal"   [iofcData]="iofcData"> </app-iofc-modal> 
+<app-hmts-modal *ngIf="showhmtsmodal" [hmtsData]="hmtsData"></app-hmts-modal>
+
+
+
+</div>
+</div>        

@@ -1,11 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SharedService } from '../shared-service.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Officer } from '../models/Officer.model';
 import { Firearm } from '../models/Firearm.model';
 import { FirearmService } from '../services/firearm.service';
-import { FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms'; 
+import { LossComponent } from '../loss/loss.component';  
+
+
 @Component({
   selector: 'app-officer',
   templateUrl: './officer.component.html',
@@ -23,12 +26,37 @@ export class OfficerComponent implements OnInit{
   errorMessage: string | undefined;
   formValue!: FormGroup;
   dataFromApi: any;
+  
+  //to copy the data to the modal component 
+   
+  lossData: any = {};
+  returnData: any = {}; 
+  distructionData: any = {};
+
+  @Output() SendDataToLossEvent = new EventEmitter<any>(); 
+  @Output() SendDataToReturnEvent = new EventEmitter<any>(); 
+  @Output() SendDataToDistructionEvent = new EventEmitter<any>();
+
+  sendDataToLoss(dataItem: any) { 
+    this.SendDataToLossEvent.emit(dataItem)
+    this.lossData = dataItem;
+  }   
+
+sendDataToReturn(dataItem: any) {
+  this.SendDataToReturnEvent.emit(dataItem)
+  this.returnData = dataItem;
+}
  
-  openModal() {
+
+sendDataToDistruction(dataItem: any) {
+  this.SendDataToDistructionEvent.emit(dataItem)
+  this.distructionData = dataItem;
+}
+openModal() {
     this.showModal = true;
   }
 
-  closeModal() {
+closeModal() {
     this.showModal = false;
     this.showReturn = false;
   } 
@@ -41,7 +69,8 @@ export class OfficerComponent implements OnInit{
     }
   openReturn() {
       this.showReturn = true;
-    }
+    } 
+
 openLoss(){
   this.showLoss = true;
 }
@@ -50,7 +79,7 @@ openLoss(){
     displayedColumns: string[] = [
       'REF#',
       'NAME',
-      'PHONE NUMBER',
+      'FIREARM',
       'WHO REGISTERD THE FIREARM',
        'REGISTERED BODY',
       'ACTION',
@@ -58,16 +87,14 @@ openLoss(){
     ];
   
 
-  
-
-
-constructor(private sharedService: SharedService, private cdr: ChangeDetectorRef, private firearmService: FirearmService) {}
+constructor(private cdr: ChangeDetectorRef, 
+  private firearmService: FirearmService) {}
 // second.component.ts
 ngOnInit(): void {
          
    this.getAllOfficer();
+  }  
 
-  }
   getAllOfficer(): void {
     this.firearmService.getAllOfficers().subscribe(
       (response: Officer[]) => {

@@ -1,8 +1,9 @@
 .ag-format-container {
-    width: 1142px;
+    width: 100%;
     margin: 0 auto;
     margin-bottom:300px ;
-    margin-top: 100px;
+    margin-top: 100px; 
+    margin-left: 250px;
   }
   body {
     background-color: #aa2424;
@@ -36,16 +37,7 @@
     text-decoration: none;
     position: relative;
   }
-  .ag-courses-item_link:hover,
-  .ag-courses-item_link:hover .ag-courses-item_date {
-    text-decoration: none;
-    color: #000000;
-  }
-  .ag-courses-item_link:hover .ag-courses-item_bg {
-    -webkit-transform: scale(10);
-    -ms-transform: scale(10);
-    transform: scale(10);
-  }
+
   .ag-courses-item_title {
     min-height: 87px;
     margin: 0 0 25px;

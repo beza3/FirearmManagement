@@ -96,7 +96,17 @@ import { ReportVisualizationComponent } from './report-visualization/report-visu
 import { IdModalComponent } from './id-modal/id-modal.component';
 import { MapComponent } from './map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-const appRoutes: Routes = [
+import { LossTableComponent } from './loss-table/loss-table.component';
+import { DestroyedTableComponent } from './destroyed-table/destroyed-table.component';
+import { SuccessPopupComponent } from './success-popup/success-popup.component';
+import { ErrorPopupComponent } from './error-popup/error-popup.component';
+import { ChatComponent } from './chat/chat.component';
+import { IdCardComponent } from './id-card/id-card.component';
+import { ReportComponent } from './report/report.component';
+import { LicenseComponent } from './license/license.component';
+
+
+const appRoutes: Routes = [ 
   {
     path: 'general', component: GeneralComponent
   },
@@ -181,7 +191,23 @@ const appRoutes: Routes = [
   } ,
   {
     path: 'map', component: MapComponent
+  } , 
+  {
+    path: 'lossTable', component: LossTableComponent
+  } , 
+  {
+    path: 'destroyedTable', component: DestroyedTableComponent
+  } ,
+  {
+    path: 'OfficerLicense', component: IdCardComponent
+  } , 
+  {
+    path: 'id', component: IdComponent
+  } ,
+  {
+    path: 'license', component: LicenseComponent
   } 
+
 
 ]
 
@@ -247,9 +273,14 @@ const appRoutes: Routes = [
     ReportVisualizationComponent,
     IdModalComponent,
     MapComponent,
-
-  
-    
+    LossTableComponent,
+    DestroyedTableComponent,
+    SuccessPopupComponent,
+    ErrorPopupComponent,
+    ChatComponent,
+    IdCardComponent,
+    ReportComponent, 
+    LicenseComponent
   ],
   imports: [
     BrowserModule,
@@ -285,13 +316,14 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatRadioModule,
     NgxPrintModule,
-    LeafletModule
+    LeafletModule,
 
   ],
   exports: [
     // ...
     FirearmRegistryComponent,
-    DataTableComponent
+    DataTableComponent,
+  
   ],
   providers: [ToastrService],
 
@@ -299,10 +331,5 @@ const appRoutes: Routes = [
 })
 
 export class AppModule {
-
-  
- 
-
-
 
 } 

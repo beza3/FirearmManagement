@@ -1,7 +1,7 @@
 .container {
     display: flex;
-    justify-content: flex-end;
     text-align: center;
+    margin-left: 1639px;
   }
   .rectangle {
     width: 130px; 
@@ -60,9 +60,11 @@
     outline: none; 
     background-color: transparent; 
   }
-  .input-one{
+  .input-one {
     position: relative;
-  }
+    width: 2400px;
+}
+
   .bottom-line-input-one {
     border: none;
     border-bottom: 1px solid black; 
@@ -74,12 +76,13 @@
   
   .input-two{
     position: relative;
+    width: 1900px;
   }
   .bottom-line-input-two {
     border: none;
     border-bottom: 1px solid black; 
     padding: 5px;
-    width: 9%;
+    width: 8%;
     outline: none; 
     background-color: transparent; 
   }

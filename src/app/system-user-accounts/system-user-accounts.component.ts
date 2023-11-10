@@ -35,7 +35,6 @@ export class SystemUserAccountsComponent implements OnInit {
     'NAME',
     'UNIT',
     'JOB',
-    'JOB TYPE',
     'ACCOUNT TYPE',
    
   ];

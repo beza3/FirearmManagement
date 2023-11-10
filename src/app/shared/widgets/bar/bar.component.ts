@@ -45,27 +45,27 @@ export class BarComponent implements OnInit {
         type: 'column',
         name: 'Day',
         color: '#dcc380',
-        data: [156, 345, 125, 240, 167]
+        data: [33, 5, 12, 24, 16]
       }, {
         type: 'column',
         name: 'Week',
         color: '#0c2a4c',
-        data: [65, 345, 125, 240, 167]
+        data: [65, 34, 25, 24, 16]
       }, {
         type: 'column',
         name: 'Month',
         color: '#7394d3',
-        data: [58, 123, 75, 250, 176]
+        data: [43, 12, 75, 25, 17]
       }, {
         type: 'column',
         name: 'Year',
         color: '#4b7d81',
-        data: [58, 88, 75, 290, 16]
+        data: [18, 88, 7, 29, 16]
       }, {
         type: 'spline',
         name: 'Average',
         color: '#20A4DD',
-        data: [47, 83.33, 70.66, 239.33, 175.66],
+        data: [47,33, 21, 23, 17],
         marker: {
           lineWidth: 2,
           fillColor: 'white'

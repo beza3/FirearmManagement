@@ -3,12 +3,13 @@
 
     <nav class="navbar ">
       <br>
-      <br>
+     
     </nav>
-     <div>
-      <span><h4 style="color: rgb(86, 88, 86); font-weight: bold;">System User Account</h4></span>
-     </div>  
+     <div class="container-for-siderbtn-and-heading">
+      <h2>System User Account</h2> 
+    </div> 
      <br> 
+     <br>
    <div class="btn">
     <button mat-button type="button" (click)="openUserModal()">
       <mat-icon style="margin-right: 5px; float: right;">add</mat-icon>
@@ -65,10 +66,10 @@
   <div class="select-wrapper col-md-3" style="width: 195px;">
     <select id="jobgroup" class="form-control">
       <option value="">Select Jobgroup </option>
-      <option value="Destruction Officers">2 </option>
-      <option value="Investigation Officer">2 </option>
-      <option value="Issueing Officer">2 </option>
-      <option value="Markers & Registers">2 </option>
+      <option value="Inspector">Inspector</option>
+      <option value="Constable">Constable </option>
+      <option value="Special Agents">Special Agents </option>
+      <option value="Border Patrol Agents">Border Patrol Agents </option>
     </select>
   </div>
   
@@ -151,15 +152,10 @@
       </td>
     </ng-container>
   
-    <ng-container matColumnDef="JOB TYPE">
-      <th style="" mat-header-cell *matHeaderCellDef> JOB TYPE </th>
-      <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element['JOB TYPE'] }} 
-            {{element.jobtype}}
-      </td>
-    </ng-container>
+    
 
     <ng-container matColumnDef="ACCOUNT TYPE">
-      <th style="" mat-header-cell *matHeaderCellDef> ACCOUNT TYPE </th>
+      <th style="" mat-header-cell *matHeaderCellDef> ACCOUNT DETAIL </th>
       <td mat-cell *matCellDef="let element" style=" border: 1px solid rgb(235, 235, 235);"> {{ element['ACCOUNT TYPE'] }} 
                          {{element.accounttype}} 
                           {{element.Loginicon}} <br>

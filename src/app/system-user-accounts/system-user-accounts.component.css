@@ -384,3 +384,6 @@ mat-header-cell {
     overflow-x: auto; /* Add horizontal scroll for smaller screens */
   }
 }
+.container-for-siderbtn-and-heading {
+  display: inline-flex;
+}

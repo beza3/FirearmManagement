@@ -49,7 +49,7 @@
     
     <mat-card class="row glass-card">
       <!-- Card content goes here --> 
-      <div style="margin-top: 5px; "  routerLink="/map">
+      <div style="margin-top: 5px;cursor: pointer; "  routerLink="/map">
         <h2 style="margin-left: 10px; font-size: 1.2em;  font-weight: 500; color: #414141;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: #414141;">location_on</mat-icon>Map</h2>
         <h5 style="margin-top: -17px; margin-left: 10px; color: #414141;">Track the Location of Firearm in a given region</h5>                
       </div>
@@ -58,7 +58,7 @@
     
     <mat-card class="row glass-card">
       <!-- Card content goes here -->
-      <div style="margin-top: 5px;" (click)="Openchat()">
+      <div style="margin-top: 5px;cursor: pointer;" (click)="Openchat()">
         <h2 style="margin-left: 10px; font-size: 1.4em;  font-weight: 500; color: #414141;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: #414141;">chat</mat-icon>Contact The Admin</h2>
         <h5 style="margin-top: -17px; margin-left: 10px; color: #292626;">Send a message to the admin by using chatbot </h5>                
       </div>
@@ -66,7 +66,7 @@
     
     <mat-card class="row glass-card">
       <!-- Card content goes here --> 
-      <div style="margin-top: 5px;" routerLink="/MenuCards">
+      <div style="margin-top: 5px;cursor: pointer;" routerLink="/MenuCards">
         <h2 style="margin-left: 10px; font-size: 1.4em;  font-weight: 500; color: #414141;"><mat-icon class="mat-18" style="margin-bottom: -4px; color:#414141">receipt</mat-icon>Re-License</h2>
         <h5 style="margin-top: -17px; margin-left: 10px; color: #414141;">license is lost re-generate the license again</h5>                
       </div>
@@ -74,7 +74,7 @@
     
     <mat-card class="row glass-card">
       <!-- Card content goes here --> 
-      <div style="margin-top: 5px; ">
+      <div style="margin-top: 5px;cursor: pointer;" routerLink="/visualization" >
         <h2 style="margin-left: 10px; font-size: 1.4em;  font-weight: 500; color: #111;"><mat-icon class="mat-18" style="margin-bottom: -4px; color: #414141;">pie_chart</mat-icon>Report & Visualisation </h2>
         <h5 style="margin-top: -17px; margin-left: 10px; color: #414141;">Display the report and visualization of firearm action performed in the system </h5>                
       </div>
@@ -141,7 +141,7 @@
       </ng-container> 
 
       <ng-container matColumnDef="symbolL">
-      <mat-header-cell *matHeaderCellDef> DESCRIPTION</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> COMMENT</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
     </ng-container>
   

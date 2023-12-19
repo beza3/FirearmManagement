@@ -102,7 +102,7 @@ import { SuccessPopupComponent } from './success-popup/success-popup.component';
 import { ErrorPopupComponent } from './error-popup/error-popup.component';
 import { ChatComponent } from './chat/chat.component';
 import { IdCardComponent } from './id-card/id-card.component';
-import { ReportComponent } from './report/report.component';
+
 import { LicenseComponent } from './license/license.component';
 
 
@@ -206,7 +206,9 @@ const appRoutes: Routes = [
   } ,
   {
     path: 'license', component: LicenseComponent
-  } 
+  } , {
+    path: 'visualization', component: ReportVisualizationComponent
+  }
 
 
 ]
@@ -279,7 +281,6 @@ const appRoutes: Routes = [
     ErrorPopupComponent,
     ChatComponent,
     IdCardComponent,
-    ReportComponent, 
     LicenseComponent
   ],
   imports: [

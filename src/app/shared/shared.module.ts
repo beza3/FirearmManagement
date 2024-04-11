@@ -10,6 +10,25 @@ import { TableAComponent } from './widgets/table-a/table-a.component';
 import { TableBComponent } from './widgets/table-b/table-b.component';
 import { MatTableModule } from '@angular/material/table';
 import { DonutComponent } from './widgets/donut/donut.component';
+import { HeaderComponent } from './Layouts/header/header.component'; 
+import { FooterComponent } from './Layouts/footer/footer.component'; 
+import { ModalComponent } from './Layouts/header/modal/modal.component';
+//modules 
+import { MatCardModule } from '@angular/material/card'; 
+import { MatToolbarModule } from '@angular/material/toolbar';  
+import { MatButtonModule } from '@angular/material/button';
+// import { MatIconModule } from '@angular/material/icon'; 
+import { MatMenuModule } from '@angular/material/menu'; 
+// import { MatSidenavModule } from '@angular/material/sidenav'; 
+// import { MatToolbarModule } from '@angular/material/toolbar'; // Import MatToolbarModule for toolbar
+import { MatSidenavModule } from '@angular/material/sidenav'; // Import MatSidenavModule for sidenav
+import { MatListModule } from '@angular/material/list'; // Import MatListModule for list
+import { MatExpansionModule } from '@angular/material/expansion'; // Import MatExpansionModule for expansion panel
+import { MatIconModule } from '@angular/material/icon';
+import { BannerComponent } from './Layouts/banner/banner.component';
+import { BarWeeklyComponent } from './widgets/bar-weekly/bar-weekly.component';
+import { BarMonthlyComponent } from './widgets/bar-monthly/bar-monthly.component';
+import { BarYearlyComponent } from './widgets/bar-yearly/bar-yearly.component'; // Import MatIconModule for icons 
 
 @NgModule({
   declarations: [
@@ -20,14 +39,29 @@ import { DonutComponent } from './widgets/donut/donut.component';
     PieBComponent,
     TableAComponent,
     TableBComponent,
-    DonutComponent
-  ],
+    DonutComponent,
+    HeaderComponent,
+    FooterComponent,
+    ModalComponent,
+    BannerComponent,
+    BarWeeklyComponent,
+    BarMonthlyComponent,
+    BarYearlyComponent,
+  ], 
   imports: [
     CommonModule,
     HighchartsChartModule,
-    MatTableModule
-  
-  ],
+    MatTableModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule, 
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule, 
+    MatButtonModule
+    
+  ], 
   exports: [
     CardComponent,
     PieComponent,
@@ -36,8 +70,13 @@ import { DonutComponent } from './widgets/donut/donut.component';
     TableAComponent,
     TableBComponent,
     DonutComponent,
-    BarComponent
-
+    BarComponent,
+    HeaderComponent, 
+    FooterComponent, 
+    BannerComponent, 
+    BarMonthlyComponent, 
+    BarWeeklyComponent, 
+    BarYearlyComponent
   ]
 })
 export class SharedModule { } 

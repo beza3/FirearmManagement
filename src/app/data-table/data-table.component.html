@@ -16,25 +16,32 @@
   <tbody>
     <tr *ngFor="let item of postedData">
       <td>{{ item.assignedserial }}</td>
-      <td>{{ item.firearmtype }}    <br>
-        {{ item.manufacturer }} <br>
-        {{ item.firearmcalibre }} <br>
-        {{ item.firearmcalibre }} <br>
-        {{ item.yearmanufacture }} <br>
-        {{ item.source }} </td> 
-
-      <td>{{ item.manufactureserial }} <br>
-        {{ item.assignedserial }} <br>
-        {{ item.markedby }} 
-          </td>
-
-
-
-      <td>{{ item.store }}</td> 
-
-      <td>{{ item.Datemarked }}</td> 
       <td>
-        <button type="button" data-bs-toggle="modal" data-bs-taget="#exampleModal">Edit</button>
+        {{ item.firearmtype }} <br />
+        {{ item.manufacturer }} <br />
+        {{ item.firearmcalibre }} <br />
+        {{ item.firearmcalibre }} <br />
+        {{ item.yearmanufacture }} <br />
+        {{ item.source }}
+      </td>
+
+      <td>
+        {{ item.manufactureserial }} <br />
+        {{ item.assignedserial }} <br />
+        {{ item.markedby }}
+      </td>
+
+      <td>{{ item.store }}</td>
+
+      <td>{{ item.Datemarked }}</td>
+      <td>
+        <button
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-taget="#exampleModal"
+        >
+          Edit
+        </button>
         <button>Delete</button>
       </td>
       <!-- Display other properties -->

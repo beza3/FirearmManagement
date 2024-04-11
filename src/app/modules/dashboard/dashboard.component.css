@@ -62,7 +62,6 @@ h4{
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
-
   }
   
   .card1:hover {
@@ -128,12 +127,11 @@ h4{
     background-color: #0c2a4c;
     color: #dcc380;
   }  
- 
 
  /* Apply the Glassmorphism effect to mat-card */
 .glass-card {
 height: 85px; 
-background: rgba(207, 207, 207, 0.779);
+background: rgb(255, 255, 255);
 border-radius: 10px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
@@ -149,4 +147,17 @@ transition: transform 0.5s ease;
 }
 h2, h5{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+mat-sidenav {
+  width: 350px;
+} 
+mat-toolbar {
+  background-color: #0c2a4c;
+} 
+mat-icon {
+  color: #dcc380;
+} 
+span {
+  font-size: x-small; 
+  color: #dcc380;
 }

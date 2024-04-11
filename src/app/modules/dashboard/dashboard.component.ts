@@ -1,10 +1,10 @@
 import { Component,OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { count } from 'rxjs';
-import { ChatComponent } from 'src/app/chat/chat.component';
-import { HmtsModalComponent } from 'src/app/hmts-modal/hmts-modal.component';
-import { MapComponent } from 'src/app/map/map.component';
-import { FirearmService } from 'src/app/services/firearm.service';
+import { ChatComponent } from 'src/app/modules/chat/chat.component';
+import { HmtsModalComponent } from 'src/app/Pages/hmts/hmts-modal/hmts-modal.component';
+import { MapComponent } from 'src/app/modules/map/map.component';
+import { FirearmService } from 'src/app/Core/services/firearm.service';
 import { UserInfoService } from 'src/app/user-info.service';
 
 @Component({

@@ -1,0 +1,257 @@
+<app-banner></app-banner>
+<mat-toolbar
+  ><button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span >Firearm Management System</span>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <!-- Side Navigation (App Header) -->
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <app-header></app-header>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Your dashboard content here -->
+    <!-- Include the main content of your dashboard -->
+    <nav class="navbar">
+      <br />
+    </nav>
+    <div class="container-for-siderbtn-and-heading">
+      <h2>System User Account</h2>
+    </div>
+    <br />
+    <br />
+    <div class="btn">
+      <button mat-button type="button" (click)="openUserModal()">
+        <mat-icon style="margin-right: 5px; float: right">add</mat-icon>
+        New System User
+      </button>
+    </div>
+    <br />
+    <br />
+    <br />
+    <mat-card>
+      <br />
+      <div class="btn1">
+        <input type="text" placeholder="Search here" style="margin-right: 5px" />
+      </div>
+      <br />
+      <br />
+      <br /> 
+      
+      <div class="row">
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select mat-select id="accountType" class="form-control">
+            <option mat-option value="">Select Account Type</option>
+            <option value="Administrators">Administrators</option>
+            <option value="Supervisors">Supervisors</option>
+            <option value="Users">Users</option>
+          </select>
+        </div>
+    
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="department" class="form-control">
+            <option value="">Select Department</option>
+            <option value="Main Department">Main Department</option>
+          </select>
+        </div>
+    
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="unit" class="form-control">
+            <option value="">Select Unit</option>
+            <option value="Regular>Patrol">Regular>Patrol</option>
+            <option value="Regular>Rapid Response">Regular>Rapid Response</option>
+            <option value="Regular>Traffic">Regular>Traffic</option>
+            <option value="Special Squad>Cyber Crime Unit">
+              Special Squad>Cyber Crime Unit
+            </option>
+            <option value="Special Squad>Firearms">Special Squad>Firearms</option>
+            <option value="Special Squad>Homicide">Special Squad>Homicide</option>
+          </select>
+        </div>
+        <br />
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="organization" class="form-control">
+            <option value="">Select Organization</option>
+            <option value="The National Police">The National Police</option>
+          </select>
+        </div>
+    
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="jobgroup" class="form-control">
+            <option value="">Select Jobgroup</option>
+            <option value="Inspector">Inspector</option>
+            <option value="Constable">Constable</option>
+            <option value="Special Agents">Special Agents</option>
+            <option value="Border Patrol Agents">Border Patrol Agents</option>
+          </select>
+        </div>
+    
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="joblevel" class="form-control">
+            <option value="">Select Joblevel</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+    
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="job" class="form-control">
+            <option value="">Select Job</option>
+            <option value="Firearm Management Officer">
+              Firearm Management Officer
+            </option>
+          </select>
+        </div>
+    
+        <div class="select-wrapper col-md-3" style="width: 195px">
+          <select id="jobstep" class="form-control">
+            <option value="">Select Jobstep</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+      </div>
+    </mat-card>
+    <br />
+    
+    <mat-table [dataSource]="dataSource" class="table">
+      <!-- Define your table columns here -->
+      <ng-container style="height: 1px" matColumnDef="REF#">
+        <th mat-header-cell *matHeaderCellDef>REF#</th>
+    
+        <td *matCellDef="let element">
+          {{ element["REF#"] }} <span>#REF</span> {{ element["Id"] }}
+        </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="NAME">
+        <div>
+          <th style="" mat-header-cell *matHeaderCellDef>NAME</th>
+        </div>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          style="border: 1px solid rgb(235, 235, 235)"
+        >
+          {{ element.NAME }}
+    
+          {{ element.firstname }}
+          {{ element.middlename }}
+          {{ element.lastname }} <br />
+          {{ element.efpid }}
+        </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="UNIT">
+        <th style="" mat-header-cell *matHeaderCellDef>UNIT</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          style="border: 1px solid rgb(235, 235, 235)"
+        >
+          {{ element.UNIT }}
+          {{ element.unit }}
+        </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="JOB">
+        <th style="" mat-header-cell *matHeaderCellDef>JOB</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          style="border: 1px solid rgb(235, 235, 235)"
+        >
+          {{ element.JOB }}
+          {{ element.job }}
+        </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="ACCOUNT TYPE">
+        <th style="" mat-header-cell *matHeaderCellDef>ACCOUNT DETAIL</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          style="border: 1px solid rgb(235, 235, 235)"
+        >
+          {{ element["ACCOUNT TYPE"] }}
+          {{ element.accounttype }}
+          {{ element.Loginicon }} <br />
+          {{ element.username }} <br />
+          {{ element.password }}
+        </td>
+      </ng-container>
+    
+      <!-- Define more columns similarly -->
+    
+      <tr
+        mat-header-row
+        *matHeaderRowDef="displayedColumns"
+        style="height: 35px; background-color: #f1f1f1"
+      ></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </mat-table>
+      
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    
+    <th scope="col">REF#</th>
+        <th scope="col">NAME</th>
+        <th scope="col">UNIT</th>
+        <th scope="col">JOB</th>
+        <th scope="col">JOBTYPE</th>
+        <th scope="col">ACCOUNT TYPE</th>
+        <th scope="col">STATUS</th>
+        <th scope="col">MANAGE</th>
+        <th scope="col"> </th>
+  -->

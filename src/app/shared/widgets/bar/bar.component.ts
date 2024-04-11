@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import * as Highcharts from 'highcharts';
+import { ThisReceiver } from '@angular/compiler';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import Chart from 'chart.js/auto';
+import { FirearmService } from 'src/app/Core/services/firearm.service';
 
 @Component({
   selector: 'app-widget-bar',
@@ -8,95 +9,114 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./bar.component.css']
 })
 export class BarComponent implements OnInit {
-  Highcharts = Highcharts;
-  chartOptions: Highcharts.Options = {}; // Specify the chartOptions type
-  chart!: Highcharts.Chart;
+  lossData: any; 
+  dailyDestroyedData: any; 
+  dailyReturnedData: any; 
+  dailyRecoveredData: any; 
+  dailyWithdrawData: any;  
 
-  constructor(private http: HttpClient) {}
+  @ViewChild('barChartCanvas') barChartCanvas!: ElementRef<HTMLCanvasElement>;
+  barChart: Chart | undefined;
 
-  ngOnInit() {
-    this.chartOptions = {
-      chart: {
-        type: 'column',
-        backgroundColor: '#f1f1f1',
+  constructor(private firearmService: FirearmService) { }
 
-      },
-      title: {
-        text: 'Firearm Activity',
-        align: 'left'
-      },
-      xAxis: {
-        categories: ['Withdraw', 'Loss', 'Recovery', 'Destruction', 'Export']
-      },
-      yAxis: {
-        title: {
-          text: 'Firearm'
-        }
-      },
-      tooltip: {
-        valueSuffix: ' Firearm'
-      },
-      plotOptions: {
-        series: {
-    
-        }
-      },
-      series: [{
-        type: 'column',
-        name: 'Day',
-        color: '#dcc380',
-        data: [33, 5, 12, 24, 16]
-      }, {
-        type: 'column',
-        name: 'Week',
-        color: '#0c2a4c',
-        data: [65, 34, 25, 24, 16]
-      }, {
-        type: 'column',
-        name: 'Month',
-        color: '#7394d3',
-        data: [43, 12, 75, 25, 17]
-      }, {
-        type: 'column',
-        name: 'Year',
-        color: '#4b7d81',
-        data: [18, 88, 7, 29, 16]
-      }, {
-        type: 'spline',
-        name: 'Average',
-        color: '#20A4DD',
-        data: [47,33, 21, 23, 17],
-        marker: {
-          lineWidth: 2,
-          fillColor: 'white'
-        }
-      }]
-    };
-
-    // Initialize the chart
-    this.chart = Highcharts.chart('your-chart-container', this.chartOptions);
-
-    this.getDayOfficerCount();
+  ngOnInit(): void {
+    this.loadLossData(); 
+    this.loadDailyDestroyedData(); 
+    this.loadDailyReturnedData(); 
+    this.loadDailyRecoveredData(); 
+    this.loadDailyWithdrawData();
   }
 
-  getDayOfficerCount() {
-    this.http.get<number>('http://localhost:5141/api/Officer/total-officer').subscribe(
-      (count) => {
-        // Update your chart data here with the retrieved officer count
-        const newData = [count, count, count, count, count]; // Assuming "Day" is the first category
+  loadLossData(): void {
+    this.firearmService.getallDailyLossFirearm().subscribe(data => {
+      // Assuming data contains the loss count for the day
+      this.lossData = data; // Adjust this according to your API response
+      this.createBarChart();
+    });
+  } 
+  
+  loadDailyDestroyedData(): void {
+    this.firearmService.getallDailyDestroyedFirearm().subscribe(data => {
+      console.log('Daily Destroyed Data:', data);
+      this.dailyDestroyedData = data; // Assuming data contains the destroyed count for the day
+      this.createBarChart();
+    });
+  }    
 
-        // Use the update method to set new data for the "Day" series
-        this.chart.series[0].update({
-          data: newData,
-          type: 'column'
-        });
+  loadDailyReturnedData(): void {
+    this.firearmService.getallDailyReturnedFirearm().subscribe(data => {
+      console.log(data); 
+      this.dailyReturnedData = data; 
+      this.createBarChart();
+    })
+  } 
 
-        // Optional: You can also update the title to reflect the new data
-        this.chart.setTitle({ text: `Firearm Activity (Day: ${count})` });
+  loadDailyRecoveredData(): void {
+    this.firearmService.getallDailyRecoveredFirearm().subscribe(data => {
+      console.log(data); 
+      this.dailyRecoveredData = data; 
+      this.createBarChart();
+    })
+  } 
+
+  loadDailyWithdrawData(): void {
+    this.firearmService.getallDailyWithdrawFirearm().subscribe((data: any) => {
+      console.log(data); 
+      this.dailyWithdrawData = data; 
+      this.createBarChart();
+    })
+  }
+
+  createBarChart(): void {
+    if (!this.barChartCanvas || !this.barChartCanvas.nativeElement) {
+      console.error('Canvas element not found.');
+      return;
+    }
+
+    const ctx = this.barChartCanvas.nativeElement.getContext('2d');
+    if (!ctx) {
+      console.error('Canvas context not found.');
+      return;
+    }
+
+    if (this.barChart) {
+      this.barChart.destroy(); // Destroy existing chart if it exists
+    }
+
+    this.barChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Loss', 'Destruction', 'Return', 'withdraw', 'Recovery'],
+        datasets: [{
+          label: 'Count',
+          data: [this.lossData, this.dailyDestroyedData, this.dailyReturnedData,this.dailyWithdrawData,this.dailyReturnedData],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)', // Loss color
+            'rgba(54, 162, 235, 0.2)', 
+            'blue'  // Destroyed color
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+          ],
+          borderWidth: 1
+        }]
       },
-      (error) => {
-        console.error('Error fetching officer count', error);
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          } 
+        } , 
+        plugins: {
+          title: {
+            display: true,
+            text: 'Firearm Daily Activities'
+          }
+        }
       }
-    );
-  }
+    });
+  } 
 }

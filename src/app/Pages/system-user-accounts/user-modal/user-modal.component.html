@@ -1,0 +1,292 @@
+<div class="modal">
+  <div class="modal small">
+    <div class="modal-content">
+      <mat-toolbar>
+        New System User
+        <span class="spacer"></span>
+        <button
+          mat-raised-button
+          (click)="onClose()"
+          style="
+            background-color: #0c2a4a;
+            position: absolute;
+            margin-left: 725px;
+          "
+        >
+          <mat-icon style="color: red">close</mat-icon>
+        </button>
+      </mat-toolbar>
+      <form [formGroup]="signupForm">
+        <!-- First set of fields -->
+        <br />
+       
+        <div class="form-row">
+          <!-- First Column -->
+          <div class="form-column">
+            <h2>General Information</h2>
+            <div class="form-group">
+              <label for="firstname">First Name</label> <br />
+              <input formControlName="firstname" type="text" id="firstname" />
+            </div>
+            <div class="form-group">
+              <label for="middlename">Middle Name</label> <br />
+              <input formControlName="middlename" type="text" id="middlename" />
+            </div>
+            <div class="form-group">
+              <label for="lastname">Last Name</label> <br />
+              <input formControlName="lastname" type="text" id="lastname" />
+            </div>
+            <div class="form-group">
+              <label for="efpid">EFPID:</label> <br />
+              <input
+                style="
+                  width: 200px;
+                  padding: 8px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                "
+                formControlName="efpid"
+                type="number"
+                id="efpid"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="full-name">Extension</label> <br />
+              <input formControlName="extension" type="text" id="Jobtype" />
+            </div>
+
+            <div class="form-group">
+              <label for="full-name">Mobile</label> <br />
+              <input formControlName="mobile" type="text" id="Mobile" />
+            </div>
+
+            <div class="form-group">
+              <label for="full-name">Email</label> <br />
+              <input formControlName="email" type="email" id="Email" />
+            </div>
+          </div>
+
+          <!-- Second Column -->
+
+          <div class="form-column">
+            <h2>Job Information</h2>
+            <div class="form-group">
+              <label for="job">Job</label> <br />
+              <input formControlName="job" type="text" id="job" />
+            </div>
+
+            <div class="form-group">
+              <label for="Unit">Unit</label> <br />
+              <input formControlName="unit" type="text" id="Unit" />
+            </div>
+          </div>
+
+          <!-- Third Column -->
+
+          <!-- Fourth Column -->
+          <div class="form-column">
+            <h2>Login Information</h2>
+
+            <div class="select-wrapper col-md-3" style="width: 195px">
+              <label for="accountType">Account Type</label>
+              <select
+                mat-select
+                id="accountType"
+                class="form-control"
+                formControlName="accounttype"
+              >
+                <option value="Administrators">Administrators</option>
+                <option value="Users">Users</option>
+                <option value="Guest">Guest</option>
+              </select>
+            </div>
+            <br />
+
+            <div class="custom-select">
+              <label for="">Login Icon</label>
+              <mat-select
+                id="accountType"
+                class="form-control"
+                formControlName="Loginicon"
+              >
+                <mat-option value="car">
+                  <img
+                    src="assets/car.png"
+                    alt="Administrator"
+                    class="option-image"
+                  />
+                  Car
+                </mat-option>
+                <mat-option value="grenade">
+                  <img
+                    src="assets/grenade.png"
+                    alt="User"
+                    class="option-image"
+                  />
+                  Grenade
+                </mat-option>
+                <mat-option value="handcuff">
+                  <img
+                    src="assets/handcuff.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Handcuff
+                </mat-option>
+                <mat-option value="vest">
+                  <img src="assets/vest.jpg" alt="Guest" class="option-image" />
+                  Vest
+                </mat-option>
+                <mat-option value="walkie">
+                  <img
+                    src="assets/walkie.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Walkie
+                </mat-option>
+                <mat-option value="hellicopter">
+                  <img
+                    src="assets/hellicopter.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Hellicopter
+                </mat-option>
+                <mat-option value="gun">
+                  <img src="assets/gun.jpeg" alt="Guest" class="option-image" />
+                  Gun
+                </mat-option>
+                <mat-option value="millitary">
+                  <img
+                    src="assets/military.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Millitary
+                </mat-option>
+                <mat-option value="officerCup">
+                  <img
+                    src="assets/officercup.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Officer Cup
+                </mat-option>
+                <mat-option value="shoes">
+                  <img
+                    src="assets/shoes.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Shoes
+                </mat-option>
+                <mat-option value="bullet">
+                  <img
+                    src="assets/bullet.png"
+                    alt="Guest"
+                    class="option-image"
+                  />
+                  Bullet
+                </mat-option>
+                <mat-option value="tank">
+                  <img src="assets/tank.png" alt="Guest" class="option-image" />
+                  Tank
+                </mat-option>
+              </mat-select>
+            </div>
+
+            <div class="form-group">
+              <label for="full-name">Username</label> <br />
+              <input formControlName="username" type="text" id="Username" />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label> <br />
+              <input formControlName="password" type="password" id="password" />
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <button mat-raised-button type="submit" (click)="signup()">
+              Register
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--   
+   <mat-card>
+    <p style="color: rgb(196, 99, 99);">Choose only one  icon from the given alternative </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); grid-gap: 7px; margin-left: -5px;">
+
+      <div class="icon"><img src="assets/car.png" alt="Lock">
+        <input type="checkbox" id="checkbox1" (change)="updateInput($event)">
+        <label for="checkbox1">car</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/grenade.png" alt="Key">
+        <input type="checkbox" id="checkbox2" (change)="updateInput($event)">
+        <label for="checkbox2">grenade</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/handcuff.png" alt="Fingerprint" id="Handcuff">
+        <input type="checkbox" id="checkbox3" (change)="updateInput($event)">
+        <label for="checkbox3">handcuff</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/vest.jpg" alt="Fingerprint" id="Handcuff">
+        <input type="checkbox" id="checkbox4" (change)="updateInput($event)">
+        <label for="checkbox4">vest</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/walkie.png" alt="Fingerprint" id="Handcuff">
+        <input type="checkbox" id="checkbox5" (change)="updateInput($event)">
+        <label for="checkbox5">walkie</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/hellicopter.png" alt="Fingerprint" id="Handcuff">
+        <input type="checkbox" id="checkbox6" (change)="updateInput($event)">
+        <label for="checkbox6">helicopter</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/gun.jpeg" alt="Fingerprint" id="Handcuff">
+        <input type="checkbox" id="checkbox7" (change)="updateInput($event)">
+        <label for="checkbox7">gun</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/military.png" alt="Fingerprint" id="Handcuff">
+        <input type="checkbox" id="checkbox8" (change)="updateInput($event)">
+        <label for="checkbox8">military</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/officercup.png" alt="Fingerprint" id="Handcuff">
+        <input type="checkbox" id="checkbox9" (change)="updateInput($event)">
+        <label for="checkbox9">officer</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/shoes.png" alt="Fingerprint" id="Handcuff">
+        <input type="checkbox" id="checkbox10" (change)="updateInput($event)">
+        <label for="checkbox10">boots</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/bullet.png" alt="Fingerprint" id="Handcuff" style="width: 42px;">
+        <input type="checkbox" id="checkbox11" (change)="updateInput($event)">
+        <label for="checkbox11">bullet</label><br>
+      </div>
+    
+      <div class="icon"><img src="assets/tank.png" alt="Fingerprint" id="Handcuff">
+        <input type="checkbox" id="checkbox12" (change)="updateInput($event)">
+        <label for="checkbox12">tank</label><br>
+      </div>
+    
+      <input type="text" id="inputBox" [value]="Loginicon" readonly style="visibility: hidden;"zzzz formControlName="Loginicon">
+    </div>
+</mat-card>
+-->

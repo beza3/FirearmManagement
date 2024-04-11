@@ -1,0 +1,50 @@
+
+      <!-- Your side navigation content here --> 
+ 
+       <mat-nav-list>
+          <mat-expansion-panel [expanded]="true" style="font-size: larger;">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Home</mat-panel-title>
+            </mat-expansion-panel-header>
+            <a mat-list-item href="/dashboard">Dashboard</a>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title style="">Firearm Registry</mat-panel-title>
+            </mat-expansion-panel-header>
+            <a mat-list-item href="/FirearmRegistryManagement">Firearm Registration & Management</a>
+          </mat-expansion-panel>
+         
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Firearm Status</mat-panel-title>
+            </mat-expansion-panel-header>
+            <a mat-list-item href="/lossTable">Lost Firearm</a>
+            <a mat-list-item href="/destroyedTable">Destroyed Firearm</a> 
+            <a mat-list-item href="/PendingOperation">Pending Operations</a>
+          </mat-expansion-panel> 
+
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Firearm Holder</mat-panel-title>
+            </mat-expansion-panel-header>
+            <a mat-list-item href="/officer">Officer</a>
+            <a mat-list-item href="/civillian">Civillian</a>
+            <a mat-list-item href="/poag">Private and Govermental Org</a>
+            <a mat-list-item href="/iofc">International And Foreign</a>
+            <a mat-list-item href="/hmts">Hunting, Celebration and Various Scenes</a>
+          </mat-expansion-panel> 
+
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>System User Account</mat-panel-title>
+            </mat-expansion-panel-header>
+            <a mat-list-item href="/SystemUserAccount">User Account Management</a>
+            <a mat-list-item href="/AccessControlList">Access Control list</a>
+            <a mat-list-item href="/AccessLog">Access Log</a>
+            <a mat-list-item href="/backup">Automated Task and Backup</a>
+          </mat-expansion-panel> 
+
+        
+        </mat-nav-list>

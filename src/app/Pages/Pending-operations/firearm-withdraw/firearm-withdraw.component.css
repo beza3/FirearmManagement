@@ -1,0 +1,30 @@
+mat-sidenav-container {
+    height: 100%;
+}     
+
+mat-tab-group {
+    width: 90%; 
+    left: 50%;
+   /* Set desired width */
+    position: absolute;
+    left: 50%; /* Move the left edge of the panel to the center */
+    transform: translateX(-50%); /* Translate the panel back by half its width */
+    justify-content: center; /* Horizontal centering */
+    text-align: center;
+} 
+td {
+    border: 1px solid #f1f1f1;
+}    
+th {
+    width: 90%;  
+    height: 90px;
+} 
+mat-expansion-panel-header {
+    height: 80px; 
+    margin-top: 20px; 
+    background-color: rgba(136, 223, 255, 0.13);
+}
+mat-panel-description mat-table{
+    background-color: rgba(136, 223, 255, 0.13);
+
+}

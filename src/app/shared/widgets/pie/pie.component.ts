@@ -1,81 +1,65 @@
 import { Component, OnInit } from '@angular/core';
-import * as Highcharts from 'highcharts'; 
+import  Chart from 'chart.js/auto';
+import { FirearmService } from 'src/app/Core/services/firearm.service'; 
 
 @Component({
   selector: 'app-widget-pie',
   templateUrl: './pie.component.html',
   styleUrls: ['./pie.component.css']
 })
-export class PieComponent {
-    Highcharts = Highcharts;
-    chartOptions = {};
-  
-  constructor() {
+export class PieComponent implements OnInit {
+  constructor(private dataService: FirearmService) { }
 
-  } 
-  ngOnInit() {
-  this.chartOptions = {
-      chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false,
-          type: 'pie',
-          backgroundColor: '#f1f1f1',
-          size: 600,
-          borderRadius: '10px'
-      },
-      title: {
-          text: 'Firearm By Type',
-          align: 'left'
-      },
-      tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-      },
-      accessibility: {
-          point: {
-              valueSuffix: '%'
-          }
-      },
-      plotOptions: {
-          pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                  enabled: true,
-                  format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-              }
-          }
-      },
-      exporting:{
-        enabled: false
-      },
-      credit:{
-        enabled: true
-      },
-      series: [{
-          name: 'Firearm By Type ',
-          colorByPoint: true,
-          data: [{
-              name: 'Assault rifle',
-              y: 70.67,
-              color:'#0c3d4c',
-              sliced: true,
-              selected: true
-          }, {
-              name: 'portable tank',
-              color:'#dcc380',
-              y: 14.77
-          },  {
-              name: 'acid tank',
-              color:'#7394d3',
-              y: 4.86
-          }, {
-              name: 'gun pistol',
-              color:'#a8a9a8',
-              y: 2.63
-          }]
-      }]
-  }
-  }
+  ngOnInit(): void {
+    this.loadDataAndCreateChart();
   }
 
+  loadDataAndCreateChart(): void {
+    this.dataService.getallFirearmByType().subscribe(data => {
+      const firearmTypes = data.map(item => item.firearmType);
+      const firearmCounts = data.map(item => item.count);
+
+      this.createPieChart(firearmTypes, firearmCounts);
+    });
+  }
+
+  createPieChart(labels: string[], data: number[]): void {
+    // Clear the canvas before creating the chart
+    const ctx = document.getElementById('pieChart1') as HTMLCanvasElement;
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: data,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Firearm Types'
+          }
+        }
+      }
+    });
+  }
+}

@@ -36,7 +36,8 @@ export class SystemUserAccountsComponent implements OnInit {
     'UNIT',
     'JOB',
     'ACCOUNT TYPE',
-   
+    'ACTION',
+    'STATUS'
   ];
 
   ngOnInit(): void { 
@@ -59,7 +60,6 @@ export class SystemUserAccountsComponent implements OnInit {
         if (response && response.length > 0 ) {
           this.dataSource.data = response; // Assign the data to the data source
           console.log("Connected Successfully", response);
-      
         } else {
           console.error('API response is empty or undefined');
         } 

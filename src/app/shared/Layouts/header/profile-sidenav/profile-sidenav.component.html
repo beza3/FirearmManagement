@@ -1,0 +1,27 @@
+
+<div class="container" style="right: 0">
+  <mat-dialog-content class="content">
+    <div class="profile-container"> 
+       
+      <img src="assets/man.jpg" alt="Profile" class="profile-image" />
+      <div>
+        <p class="username">Username</p>
+        <p class="edit-account">Edit My Account</p>  
+      </div> 
+	<mat-icon >close</mat-icon>
+
+    </div>
+
+    <div class="actions">
+      <button mat-dialog-close mat-button (click)="navigateTo('/settings')">
+        <mat-icon>settings</mat-icon>
+        Settings
+      </button> 
+    
+      <hr>
+      
+      <button mat-button><mat-icon>exit_to_app</mat-icon>Sign Out</button>
+    </div>
+  </mat-dialog-content>
+
+</div>

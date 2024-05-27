@@ -10,7 +10,7 @@ import { Firearm } from '../../Core/models/Firearm.model';
 import { FirearmService } from '../../Core/services/firearm.service';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-import { SuccessPopupComponent } from '../../success-popup/success-popup.component';
+
 
 @Component({
   selector: 'app-recovery',

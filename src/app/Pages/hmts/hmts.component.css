@@ -7,7 +7,7 @@
 
 h2 {
   color: #cccccc;
-   font-family:cursive
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .btn button {
@@ -96,7 +96,7 @@ select {
   font-size: 12px;
   width: 100%; 
   
-  color: #0c2a4c; 
+  color: #595c60; 
 
 } 
 
@@ -136,14 +136,14 @@ td {
   border: 1px solid rgb(199, 199, 199);
    width: 400px;
    font-size: 12px;   
-   color: #0c2a4c;  
+   color: #595c60;  
    background-color: rgb(255, 255, 255);
 }
 
 th {
   border: 1px solid rgb(199, 199, 199);
   background-color: #f1f1f1;
-  color: #0c2a4cb8;
+  color: #595c60;
   font-size: 12px; 
   text-align: center;
   margin-bottom: -19px;
@@ -377,15 +377,20 @@ mat-header-cell {
 /* Add CSS styles for larger screens */
 .table-responsive {
   overflow-x: auto; /* Add horizontal scroll for small screens */
-}  
-
+} 
 mat-sidenav-container {
   height: 100%;
- }
+} 
+
+p {
+  color: rgb(31, 155, 31); 
+  font-size: large; 
+  margin: 10px;
+}
 
 /* Apply specific styles for smaller screens (adjust breakpoints as needed) */
 @media (max-width: 768px) {
   .table-responsive {
     overflow-x: auto; /* Add horizontal scroll for smaller screens */
   }
-}        
+}

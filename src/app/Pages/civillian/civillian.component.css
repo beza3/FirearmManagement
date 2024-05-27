@@ -362,6 +362,11 @@ th {
   }
 }
 
+p {
+  color: rgb(31, 155, 31); 
+  font-size: large; 
+  margin: 10px;
+}
 .toggle-button {
   position: fixed;
   top: 0px;

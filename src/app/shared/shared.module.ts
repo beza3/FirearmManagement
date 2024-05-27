@@ -7,7 +7,6 @@ import { PieComponent } from './widgets/pie/pie.component';
 import { PieAComponent } from './widgets/pie-a/pie-a.component';
 import { PieBComponent } from './widgets/pie-b/pie-b.component';
 import { TableAComponent } from './widgets/table-a/table-a.component';
-import { TableBComponent } from './widgets/table-b/table-b.component';
 import { MatTableModule } from '@angular/material/table';
 import { DonutComponent } from './widgets/donut/donut.component';
 import { HeaderComponent } from './Layouts/header/header.component'; 
@@ -28,7 +27,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { BannerComponent } from './Layouts/banner/banner.component';
 import { BarWeeklyComponent } from './widgets/bar-weekly/bar-weekly.component';
 import { BarMonthlyComponent } from './widgets/bar-monthly/bar-monthly.component';
-import { BarYearlyComponent } from './widgets/bar-yearly/bar-yearly.component'; // Import MatIconModule for icons 
+import { BarYearlyComponent } from './widgets/bar-yearly/bar-yearly.component';
+import { ProfileSidenavComponent } from './Layouts/header/profile-sidenav/profile-sidenav.component'; // Import MatIconModule for icons 
+import { MatDialogModule } from '@angular/material/dialog'; 
+import {MatTooltipModule} from '@angular/material/tooltip'; 
+import {MatBadgeModule} from '@angular/material/badge';  
+import { RouterModule } from '@angular/router';
+import { WarningCardComponent } from './widgets/warning-card/warning-card.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,7 @@ import { BarYearlyComponent } from './widgets/bar-yearly/bar-yearly.component'; 
     PieAComponent,
     PieBComponent,
     TableAComponent,
-    TableBComponent,
+    
     DonutComponent,
     HeaderComponent,
     FooterComponent,
@@ -47,6 +52,9 @@ import { BarYearlyComponent } from './widgets/bar-yearly/bar-yearly.component'; 
     BarWeeklyComponent,
     BarMonthlyComponent,
     BarYearlyComponent,
+    ProfileSidenavComponent,
+    WarningCardComponent,
+
   ], 
   imports: [
     CommonModule,
@@ -59,8 +67,11 @@ import { BarYearlyComponent } from './widgets/bar-yearly/bar-yearly.component'; 
     MatSidenavModule,
     MatListModule,
     MatExpansionModule, 
-    MatButtonModule
-    
+    MatButtonModule,
+    MatDialogModule,
+    MatTooltipModule,
+    MatBadgeModule,
+    RouterModule,
   ], 
   exports: [
     CardComponent,
@@ -68,7 +79,6 @@ import { BarYearlyComponent } from './widgets/bar-yearly/bar-yearly.component'; 
     PieAComponent,
     PieBComponent,
     TableAComponent,
-    TableBComponent,
     DonutComponent,
     BarComponent,
     HeaderComponent, 
@@ -76,7 +86,11 @@ import { BarYearlyComponent } from './widgets/bar-yearly/bar-yearly.component'; 
     BannerComponent, 
     BarMonthlyComponent, 
     BarWeeklyComponent, 
-    BarYearlyComponent
+    BarYearlyComponent ,
+    ProfileSidenavComponent, 
+    ModalComponent, 
+    WarningCardComponent, 
+
   ]
 })
 export class SharedModule { } 

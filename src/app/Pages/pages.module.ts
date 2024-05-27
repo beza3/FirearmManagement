@@ -37,7 +37,22 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FirearmWithdrawComponent } from './Pending-operations/firearm-withdraw/firearm-withdraw.component';
 import {MatExpansionModule} from '@angular/material/expansion'; 
 import { MatButtonModule } from '@angular/material/button'; 
-import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatTabsModule} from '@angular/material/tabs';
+// import { SettingsComponent } from './settings/settings.component';  
+// import { ModalComponent } from '../shared/Layouts/header/modal/modal.component'; 
+import { MatSelectModule } from '@angular/material/select';
+import { LostDestroyedComponent } from './lost-destroyed/lost-destroyed.component';
+import { FirearmHolderCatagoriesComponent } from './firearm-holder-catagories/firearm-holder-catagories.component';
+import { OfficerPendingComponent } from './Pending-operations/Pendings/officer-pending/officer-pending.component';
+import { CivillianPendingComponent } from './Pending-operations/Pendings/civillian-pending/civillian-pending.component';
+import { PoagPendingComponent } from './Pending-operations/Pendings/poag-pending/poag-pending.component';
+import { IofcPendingComponent } from './Pending-operations/Pendings/iofc-pending/iofc-pending.component';
+import { HmtsPendingComponent } from './Pending-operations/Pendings/hmts-pending/hmts-pending.component';
+import { LossPendingComponent } from './Pending-operations/Pendings/loss-pending/loss-pending.component';
+import { DistructionPendingComponent } from './Pending-operations/Pendings/distruction-pending/distruction-pending.component';
+import { RecoverPendingComponent } from './Pending-operations/Pendings/recover-pending/recover-pending.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +75,21 @@ import {MatTabsModule} from '@angular/material/tabs';
     UserModalComponent ,
     LossComponent,
     LossTableComponent,
-    FirearmWithdrawComponent
+    FirearmWithdrawComponent,
+    LostDestroyedComponent,
+    FirearmHolderCatagoriesComponent,
+    OfficerPendingComponent,
+    CivillianPendingComponent,
+    PoagPendingComponent,
+    IofcPendingComponent,
+    HmtsPendingComponent,
+    LossPendingComponent,
+    DistructionPendingComponent,
+    RecoverPendingComponent,
+
+
+    // ModalComponent
+    // SettingsComponent
   ],
 
   imports: [
@@ -68,7 +97,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatIconModule,
     MatCardModule,
     MatTableModule,
-    SharedModule,
+    SharedModule, 
     FormsModule,
     MatOptionModule,
     MatToolbarModule,
@@ -76,14 +105,17 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatSidenavModule,
     MatExpansionModule,
     MatButtonModule, 
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule,
+    MatSlideToggleModule
   ], 
 
   exports: [
     OfficerModuleComponent,
     PoagModalComponent,
     ReturnModalComponent,
-    RecoveryComponent
+    RecoveryComponent,
+    LostDestroyedComponent
   ]
 }) 
 

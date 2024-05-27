@@ -36,8 +36,8 @@ export class PieAComponent implements OnInit {
         datasets: [{
           data: data,
           backgroundColor: [
-            'red',
-            'rgba(54, 162, 235, 0.2)',
+            '#0c2a4ada',
+            '#dcc380',
             'rgba(255, 206, 86, 0.2)',
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',

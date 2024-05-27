@@ -7,7 +7,6 @@ import { Officer } from '../../Core/models/Officer.model';
 import { Firearm } from '../../Core/models/Firearm.model';
 import { FirearmService } from '../../Core/services/firearm.service';
 import { FormGroup } from '@angular/forms'; 
-import { LossComponent } from './loss/loss.component';
 import { Loss } from '../../Core/models/Loss.model';
 @Component({
   selector: 'app-loss-table',
@@ -105,7 +104,6 @@ hidePopup() {
 } 
 function openModel() {
   throw new Error('Function not implemented.');
-
 
 
 

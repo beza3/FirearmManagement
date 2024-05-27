@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SuccessPopupComponent } from '../../../success-popup/success-popup.component';
+
 // import { ErrorPopupComponent } from '../../error-popup/error-popup.component';
 
 import { FirearmService } from '../../../Core/services/firearm.service';
@@ -62,7 +62,7 @@ OnSubmit() {
   this.http.post('http://localhost:5141/api/Destroyed', this.destructionForm.value).subscribe(
     (response) => {
       console.log('Successfully submitted:', response);
-      this.showSuccessPopup(); 
+ 
       alert("sucssfull")
       // Handle success, e.g., show a success message or redirect
     },
@@ -75,29 +75,5 @@ OnSubmit() {
     }
   );
 }
-
-showSuccessPopup() {
-  const dialogRef = this.dialog.open(SuccessPopupComponent, {
-    width: '300px',
-    // You can adjust the width as needed
-  });
-
-  dialogRef.afterClosed().subscribe(() => {
-    // Handle the success popup close event if needed
-  });
-}
-
-// showErrorPopup() {
-//   const dialogRef = this.dialog.open(ErrorPopupComponent, {
-//     width: '300px', // You can adjust the width as needed
-//   });
-
-//   dialogRef.afterClosed().subscribe(() => {
-//     // Handle the error popup close event if needed
-//   });
-// }
-
-
  
-}   
-
+}

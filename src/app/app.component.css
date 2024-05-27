@@ -1,11 +1,12 @@
-app-footer{
-    margin-top: 100%;
-}  
-mat-slide-toggle {
-    margin-top: 50%;
-    position: fixed;
-    margin-left: 0px;
-    float: left;
-    z-index: 999;
-
-}
+.drawer-container {
+    height: 100vh;
+  }
+  
+  mat-drawer {
+    width: 300px; /* Adjust as needed */
+  }
+  
+  mat-drawer-content {
+    padding: 20px;
+  }
+  

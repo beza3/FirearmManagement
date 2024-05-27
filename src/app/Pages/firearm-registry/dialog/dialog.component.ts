@@ -59,10 +59,11 @@ export class DialogComponent implements OnInit {
 
   OnSubmit() {
       // Send the payload to your API
-      this.http.post('http://localhost:5000/api/Firearm', this.myForm.value).subscribe(
+      this.http.post('http://localhost:5141/api/Firearm', this.myForm.value).subscribe(
         (response) => {
           console.log('Successfully submitted:', response);
-          alert('Successfully submitted')
+          alert('Successfully submitted') 
+          window.location.reload();
           // Handle success, e.g., show a success message or redirect
         },
         (error) => {

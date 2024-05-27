@@ -14,28 +14,39 @@ import { AccessControlListComponent } from './Auth/Pages/access-control-list/acc
 import { AutomatedTasksComponent } from './Pages/automated-tasks/automated-tasks.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { FirearmWithdrawComponent } from './Pages/Pending-operations/firearm-withdraw/firearm-withdraw.component';
+import { SettingsComponent } from './Pages/settings/settings.component';
+import { LostDestroyedComponent } from './Pages/lost-destroyed/lost-destroyed.component';
+import { FirearmHolderCatagoriesComponent } from './Pages/firearm-holder-catagories/firearm-holder-catagories.component';
+import { AuthGuard } from './Core/Guards/auth.guard';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent }, 
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'FirearmRegistryManagement', component: FirearmRegistryComponent },
-  { path: 'lossTable', component:LossTableComponent },
-  { path: 'destroyedTable', component:DestroyedTableComponent },
+  { path: 'lossTable', component: LossTableComponent },
+  { path: 'destroyedTable', component: DestroyedTableComponent },
   // { path: 'PendingOperation', component: PendingOperationComponent}
-  { path: 'officer', component: OfficerComponent},
+  { path: 'officer', component: OfficerComponent },
   { path: 'civillian', component: CivillianComponent },
-  { path: 'poag', component: PoagComponent},
+  { path: 'poag', component: PoagComponent },
   { path: 'iofc', component: IofcComponent },
-  { path: 'hmts', component: HmtsComponent},
-  { path: 'SystemUserAccount', component: SystemUserAccountsComponent },
-  { path: 'AccessControlList', component: AccessControlListComponent},
-  { path: 'backup', component: AutomatedTasksComponent}, 
-  { path: 'PendingOperation', component: FirearmWithdrawComponent}
+  { path: 'hmts', component: HmtsComponent },
+  { path: 'SystemUserAccount', component: SystemUserAccountsComponent, canActivate: [AuthGuard] },
+  { path: 'AccessControlList', component: AccessControlListComponent },
+  { path: 'backup', component: AutomatedTasksComponent },
+  { path: 'Pending', component: FirearmWithdrawComponent},
+  { path: 'lostDestroyed', component: LostDestroyedComponent },
+  {
+    path: 'firearmHOlderCatagories',
+    component: FirearmHolderCatagoriesComponent,
+  },
+  { path: 'settings', component: SettingsComponent },  
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

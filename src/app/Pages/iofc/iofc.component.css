@@ -6,8 +6,7 @@
 }
 
 h2 {
-  color: #cccccc;
-   font-family:cursive
+  color: #57dd52;
 }
 
 .btn button {
@@ -96,7 +95,7 @@ select {
   font-size: 12px;
   width: 100%; 
   
-  color: #0c2a4c; 
+  color: #595c60; 
 
 } 
 
@@ -126,27 +125,26 @@ button a:hover {
 }
 
 
-td .action-buttons {
-  color: #7c0000;
-}
-
-
+.table{
+  width: 98%;  
+  margin-left: 20px; 
+  border-collapse: collapse;
+} 
 
 td {
-  border: 1px solid rgb(199, 199, 199);
-   width: 400px;
-   font-size: 12px;   
-   color: #0c2a4c;  
-   background-color: rgb(255, 255, 255);
+border: 1px solid rgb(161, 161, 161);
+padding: 8px; 
+font-size: 12px; 
+color: #094a8b;
+} 
+button a span {
+  color: #0c2a4c;
 }
-
-th {
-  border: 1px solid rgb(199, 199, 199);
-  background-color: #f1f1f1;
-  color: #0c2a4cb8;
-  font-size: 12px; 
-  text-align: center;
-  margin-bottom: -19px;
+th{
+background-color: #ccc; 
+color: #333;
+border: 1px solid rgb(161, 161, 161);
+font-size: 12px;
 }
 
 .form-control {
@@ -377,15 +375,19 @@ mat-header-cell {
 /* Add CSS styles for larger screens */
 .table-responsive {
   overflow-x: auto; /* Add horizontal scroll for small screens */
-}      
-
- mat-sidenav-container {
+} 
+mat-sidenav-container {
   height: 100%;
- }
+}
 
+p {
+    color: rgb(31, 155, 31); 
+    font-size: large; 
+    margin: 10px;
+  }
 /* Apply specific styles for smaller screens (adjust breakpoints as needed) */
 @media (max-width: 768px) {
   .table-responsive {
     overflow-x: auto; /* Add horizontal scroll for smaller screens */
   }
-}
+} 

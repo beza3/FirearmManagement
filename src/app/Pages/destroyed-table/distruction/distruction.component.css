@@ -126,16 +126,7 @@
                         0 0 5px #0c2a4c;
         }
 
-        .table {
-          position:absolute;
-            width: 90%;
-            max-width: 800px;
-            margin: 30px auto;
-            float: right;
-            flex: 1;
-            max-width: 600px;
-            margin-right: 10px;
-        }
+       
 
         th {
             text-align: left;

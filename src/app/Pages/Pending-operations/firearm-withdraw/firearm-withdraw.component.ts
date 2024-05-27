@@ -27,7 +27,6 @@ export class FirearmWithdrawComponent implements OnInit{
       private firearmService: FirearmService) {}
     // second.component.ts
     ngOnInit(): void {
-             
        this.getOfficerPending();
       }  
     
@@ -47,6 +46,5 @@ export class FirearmWithdrawComponent implements OnInit{
             this.errorMessage = 'An error occurred while fetching data from the API.';
           }
         );
-      }
-    
+      }   
 }

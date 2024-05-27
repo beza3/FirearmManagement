@@ -9,7 +9,7 @@ import { Firearm } from '../../../Core/models/Firearm.model';
 import { FirearmService } from '../../../Core/services/firearm.service';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-import { SuccessPopupComponent } from '../../../success-popup/success-popup.component';
+
 // import { ErrorPopupComponent } from '../../error-popup/error-popup.component';
 //import { FormGroup } from '@angular/forms';
 @Component({
@@ -109,19 +109,10 @@ deleteOfficerById(id: number) {
 }
 
 
-showSuccessPopup() {
-  const dialogRef = this.dialog.open(SuccessPopupComponent, {
-    width: '300px',
-    // You can adjust the width as needed
-  });
-
-  dialogRef.afterClosed().subscribe(() => {
-    // Handle the success popup close event if needed
-  });
-}
 
 
 }
+
 
 
  

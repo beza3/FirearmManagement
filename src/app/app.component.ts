@@ -11,5 +11,9 @@ export class AppComponent {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
-   
+  isSidenavOpen = false;
+
+  toggleSidenav() {
+    this.isSidenavOpen = !this.isSidenavOpen;
+  }
 }

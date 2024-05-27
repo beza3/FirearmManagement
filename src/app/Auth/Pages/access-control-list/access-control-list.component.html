@@ -1,79 +1,117 @@
-<app-header></app-header>
-<br>
-    <nav class="navbar ">
-      <div class="container-fluid">
-        <h2 style="color: #0c2a4c;">Access Control Management</h2>
+<app-banner></app-banner>
+<mat-toolbar>
+  <img 
+    class="toggle-btn"
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    src="assets/flogo.png"
+    alt="logo"
+    style="width: 60px; height: 60px; cursor: pointer;"
+  />
+
+  <app-modal></app-modal>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <!-- Side Navigation (App Header) -->
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <app-header></app-header>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="Roles-class">
+      <div class="text">
+        <p class="head">Roles</p>
+        <p>
+          Manage and create roles to control access and permissions within the
+          system.
+        </p>
       </div>
-    </nav>
-    <mat-toolbar style="color: rgb(8, 126, 8); background-color:white;">  
-      <span><h2>Access Control Lists </h2></span>
-    </mat-toolbar>
-    <br>
-    <table class="table table-bordered"> 
-      <thead style="background-color:#ccc; color: black; height: 30px;" >
-        <tr>
-          <th scope="col">TITLE</th>
-          <th scope="col">ACCESS CONTROL</th>
-          <th scope="col"> </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-            <td>Root/ (Select/Mark)</td>
-            <td><mat-icon>done</mat-icon>GROUP: Administrators<br>
-                <mat-icon>done</mat-icon>GROUP: Supervisors<br>
-                <mat-icon>done</mat-icon>GROUP: Users</td>
-            <td><mat-icon class="small-icon">create</mat-icon></td>
-        </tr>
+      <div class="create-role-btn">
+        <button mat-raised-button>
+          <mat-icon>add</mat-icon>Create New Role
+        </button>
+      </div>
+    </div>
 
-        <tr>
-            <td>Root/ Access Control Management/ Access Control List</td>
-            <td><mat-icon>done</mat-icon>GROUP: Administrators<br>
-                <mat-icon>done</mat-icon>USER: Tesfaye Chuba<br>
-            <td><mat-icon class="small-icon">create</mat-icon></td>
-        </tr>
+    <div class="default-class">
+      <div class="default-text">
+        <h2>Default roles</h2>
+        <p>
+          Manage and create roles to control access and permissions within the
+          system.
+        </p>
+        <hr />
+      </div>
 
-        <tr>
-            <td>Root/ (Select/Mark)</td>
-            <td><mat-icon>done</mat-icon>GROUP: Administrators<br>
-                <mat-icon>done</mat-icon>GROUP: Supervisors<br>
-                <mat-icon>done</mat-icon>GROUP: Users</td>
-            <td><mat-icon class="small-icon">create</mat-icon></td>
-        </tr>
+      <div class="admin-text">
+        <div class="description">
+          <h3>Admin</h3>
+          <p>
+            The Admin role oversees the entire system, with full access to all
+            features and functionalities.
+          </p>
+        </div>
 
-        <tr>
-            <td>Root/ Access Control Management/ Access Logs</td>
-            <td><mat-icon>done</mat-icon>GROUP: Administrators<br>
-                <mat-icon>done</mat-icon>USER: Jean Claude<br>
-                <mat-icon>done</mat-icon>USER: Tesfaye Chufa</td>
-            <td><mat-icon class="small-icon">create</mat-icon></td>
-        </tr>
+        <div class="add-role-btn">
+          <button mat-button><mat-icon>add</mat-icon>Add New User</button>
+        </div>
+      </div>
+      <hr />
+      <div class="Manager-text">
+        <div class="description">
+          <h3>Manager</h3>
+          <p>
+            Managers focus on specific system aspects, controlling user
+            permissions and overseeing departmental activities.
+          </p>
+        </div>
+        <div class="add-role-btn">
+          <button mat-button><mat-icon>add</mat-icon>Add New User</button>
+        </div>
+      </div>
+      <hr />
+      <div class="Guest-text">
+        <div class="description">
+          <h3>Guest</h3>
+          <p>
+            Guests have limited access to view specific information and perform
+            certain tasks within the system.
+          </p>
+        </div>
+        <div class="add-role-btn">
+          <button mat-button><mat-icon>add</mat-icon>Add New User</button>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="Custom-roles">
+      <div class="default-text">
+        <h2>Custom roles</h2>
+        <p>Custom roles are reusable sets of permissions</p>
+        <hr />
+      </div>
 
-        <tr>
-            <td>Root/ Access Control Management/ System User Accounts</td>
-            <td><mat-icon>done</mat-icon>GROUP: Administrators<br>
-            <td><mat-icon class="small-icon">create</mat-icon></td>
-        </tr>
+      <div class="heading">
+        <div class="roles">
+          <h3>Roles</h3>
+        </div>
+        <div class="users">
+          <h3>Users</h3>
+        </div>
+      </div>
 
-        <tr>
-            <td>Root/ Dashboard</td>
-            <td><mat-icon>done</mat-icon>GROUP: Administrators<br>
-                <mat-icon>done</mat-icon>GROUP: Supervisors<br>
-                <mat-icon>done</mat-icon>GROUP: Users<br>
-                <mat-icon>done</mat-icon>USER: Teshale Duketo<br>
-                <mat-icon>done</mat-icon>USER: Yidnekachew Megersa</td>
-            <td><mat-icon class="small-icon">create</mat-icon></td>
-        </tr>
+      <div class="roles">
+        <div class="roles-description">
+          <h4>Administrator</h4>
+          <p>User with this role can do anything</p>
+        </div>
 
-        <tr>
-            <td>Root/ Dashboard/ Firearm Add</td>
-            <td><mat-icon>done</mat-icon>DEPT: Main Department<br>
-                <mat-icon>done</mat-icon>GROUP: Supervisors<br>
-                <mat-icon>done</mat-icon>GROUP: Users<br>
-                <mat-icon>done</mat-icon>USER: Almaz Endale<br>
-                <mat-icon>done</mat-icon>USER: Gemechis Daba<br>
-                <mat-icon>done</mat-icon>USER: Mulugeta Belayneh</td>
-            <td><mat-icon class="small-icon">create</mat-icon></td>
-        </tr>
-      </tbody>
-    </table>
+        <div class="add-user-btn">
+          <button mat-button><mat-icon>add</mat-icon>Add User</button>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

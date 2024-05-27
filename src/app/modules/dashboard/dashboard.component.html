@@ -1,10 +1,17 @@
 <app-banner></app-banner>
-<mat-toolbar
-  ><button mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span >Firearm Management System</span>
-</mat-toolbar>
+<mat-toolbar>
+  <img 
+    class="toggle-btn"
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    src="assets/flogo.png"
+    alt="logo"
+    style="width: 60px; height: 60px; cursor: pointer;"
+  />
+
+  <app-modal></app-modal>
+</mat-toolbar> 
+
 <mat-sidenav-container class="sidenav-container">
   <!-- Side Navigation (App Header) -->
   <mat-sidenav #sidenav mode="side" opened class="sidenav">
@@ -12,15 +19,13 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <!-- Your dashboard content here -->
-    <!-- Include the main content of your dashboard -->
     <div
       fxLayout="row"
       fxLayoutAlign="space-between center"
       fxLayoutGap="20px"
       class="cards"
       style="margin: 40px 40px 40px 40px"
-    >    
+    >
       <mat-card fxFlex="25" class="card1" style="height: 130px">
         <div class="text">
           <p style="font-size: 2em; font-weight: 900">{{ totalFirearms }}</p>
@@ -56,21 +61,26 @@
       fxLayoutGap="10px"
       class="stats-cards"
       style="margin-left: 30px"
-    >     
-    <br> 
-    <br>
+    >
+      <br />
+      <br />
       <div fxFlex="100">
         <mat-grid-list cols="2" rowHeight="2:1">
           <mat-grid-tile><app-widget-bar></app-widget-bar></mat-grid-tile>
-          <mat-grid-tile><app-widget-bar-weekly></app-widget-bar-weekly></mat-grid-tile>
-          <mat-grid-tile><app-widget-bar-monthly></app-widget-bar-monthly></mat-grid-tile>
-          <mat-grid-tile><app-widget-bar-yearly></app-widget-bar-yearly></mat-grid-tile>
+          <mat-grid-tile
+            ><app-widget-bar-weekly></app-widget-bar-weekly
+          ></mat-grid-tile>
+          <mat-grid-tile
+            ><app-widget-bar-monthly></app-widget-bar-monthly
+          ></mat-grid-tile>
+          <mat-grid-tile
+            ><app-widget-bar-yearly></app-widget-bar-yearly
+          ></mat-grid-tile>
         </mat-grid-list>
-        
-      </div> 
+      </div>
     </div>
 
-      <!-- <div
+    <!-- <div
         fxFlex=""
         style="
           background: linear-gradient(#0c2a4a6a, #16844d5f, 1565c05f, 1565c05f);
@@ -174,7 +184,7 @@
           </div>
         </mat-card>
       </div> -->
-    
+
     <div
       fxLayout="row"
       fxLayoutAlign="space-between center"
@@ -204,61 +214,9 @@
         <app-widget-table-a></app-widget-table-a>
       </div>
       <!--Recent table-->
-
-      <div class="tableB">
-        <h4>Recent Operations</h4>
-        <div class="example-container mat-elevation-z8">
-          <mat-table #table [dataSource]="dataSource">
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-              <mat-header-cell *matHeaderCellDef> DATE </mat-header-cell>
-              <mat-cell *matCellDef="let element">
-                {{ element.position }}
-              </mat-cell>
-            </ng-container>
-
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-              <mat-header-cell *matHeaderCellDef> TIME</mat-header-cell>
-              <mat-cell *matCellDef="let element">
-                {{ element.name }}
-              </mat-cell>
-            </ng-container>
-
-            <!-- Weight Column -->
-            <ng-container matColumnDef="weight">
-              <mat-header-cell *matHeaderCellDef> DATABASE </mat-header-cell>
-              <mat-cell *matCellDef="let element">
-                {{ element.weight }}
-              </mat-cell>
-            </ng-container>
-
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="symbol">
-              <mat-header-cell *matHeaderCellDef> OPERATION </mat-header-cell>
-              <mat-cell *matCellDef="let element">
-                {{ element.symbol }}
-              </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="symbolL">
-              <mat-header-cell *matHeaderCellDef> COMMENT</mat-header-cell>
-              <mat-cell *matCellDef="let element">
-                {{ element.symbol }}
-              </mat-cell>
-            </ng-container>
-
-            <mat-header-row
-              *matHeaderRowDef="displayedColumns"
-            ></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-          </mat-table>
-        </div>
-      </div>
     </div>
 
     <app-chat *ngIf="showchat"></app-chat>
-
-    <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
+<app-footer></app-footer>

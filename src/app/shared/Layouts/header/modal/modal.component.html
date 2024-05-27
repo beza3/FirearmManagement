@@ -1,39 +1,24 @@
-<div class="modal">
-    <div class="modal-content"> 
-          <mat-card class="id-card">
-            <mat-toolbar >Root  
-               <div class="spacer"></div>
-              <button mat-button (click)="onCloseModal()"> <mat-icon>close</mat-icon>  </button>
-            </mat-toolbar> 
-            <mat-card-header>
-              <div mat-card-avatar class="card-avatar"></div>
-              <mat-card-title>{{ person.name }}</mat-card-title>
-              <mat-card-subtitle>{{ person.designation }}</mat-card-subtitle>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
-  
-            </mat-card-header>
-            <img mat-card-image [src]="person.picture" alt="ID Card Picture" style="border-radius:50%; width: 80px; height: 80px; margin-top: -95px; margin-left: 67.1px;">
-            <mat-card-content class="account-detail">
-              <p>Username:&nbsp; <span>{{ person.Username }}</span></p>
-              <p>EFPID: &nbsp;{{ person.EFPID }}</p>
-              <p>Unit:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ person.Unit}}</p>
-              <p>Email: &nbsp;{{ person.Email }}</p>
-              <p>Extension: &nbsp;{{ person.Extension }}</p>
-             
-              <a href="/general"  fragment="education" style="">
-                Edit My Account 
-              </a>
-              <!-- Add more details as needed --> 
-             
-                <span>
-                </span>
-                <span></span>
-                <span></span>
-                <span></span>
-           
-            </mat-card-content>
-          </mat-card>
-     
+<mat-toolbar>
+  <div class="container">
+    <div class="title">
+      <p>Ethiopian Federal Police</p>
+      <p>Small Arms / Light Weapons Tracing System V.0.0</p>
     </div>
   </div>
+  <div class="toolbar-right">
+    <!-- Vertical line separator -->
+    <p class="date">{{ currentDateTime | date : "mediumDate" }}</p>
+    <div class="separator"></div>
+    <p
+      class="profile-image"
+      (click)="openProfileDialog()"
+      matTooltip="User Profile"
+    >
+      {{ fullName }}
+    </p> 
+    <div class="separator"></div>
+  
+      <a  class="logout" matTooltip="sign out" (click)="logout()">Log out</a>
+    <!-- <img  src="assets/man.jpg" alt="Profile" class="profile-image" (click)="openProfileDialog()" matTooltip="User Profile"> -->
+  </div>
+</mat-toolbar>

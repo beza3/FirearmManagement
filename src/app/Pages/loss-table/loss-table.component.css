@@ -40,14 +40,8 @@
     background-color: #9ecaed;
     color: #fff;
   }
-  .btn {
-    float: right; 
-    justify-content: right; 
-
-    background-color: #0c2a4c;
-    color: white; 
-    border-radius: 5px;
-    margin-right: 62px;
+  .btn button{   
+   background-color: #094a8b;
   } 
   .btn button{
     color: white;

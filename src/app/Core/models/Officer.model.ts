@@ -1,20 +1,27 @@
 export interface Officer {
     id: number;
     fullName: string;
-    title:string;
-    position:  string;
+    fpId: string;
+    title: string;
+    position: string;
     email: string;
     phoneNumber: string;
     description: string;
+    manufacturerSerial: string;
+    isFirearm: boolean;
+    dateMarked: Date;
+    markedBy: string;
     firearmType: string;
     firearmModel: string;
-    manufacturer: string;
+    firearmMechanism: string;
     firearmCalibre: string;
-    yearManufacture: string;
-    source: string; 
+    magazineCapacity: string;
+    manufacturer: string;
+    yearManufacture: Date;
+    source: string;
+    store: string;
     holder: string;
-    firearmMechanism: string
-    manufacturerSerial: string;
+    additionalComment: string;
     registeredPosition: string;
     registeredFullName: string;
     registeredTitle: string;
@@ -25,4 +32,4 @@ export interface Officer {
     registeredBodyResponsibility: string;
     registeredBodySignature: string;
     registeredBodyDate: Date;
-} 
+}

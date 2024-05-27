@@ -3,7 +3,9 @@
     <mat-toolbar> 
      Firearm Registration Form in private hands
       <span class="spacer"></span>
-      <mat-icon >close</mat-icon>
+      <button mat-button (click)="closeModal()">
+        <mat-icon>close</mat-icon>
+      </button>
     </mat-toolbar>
     <form [formGroup]="CivillianForm" class="three-column-form">
       <!-- First set of fields -->

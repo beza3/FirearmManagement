@@ -3,15 +3,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataSharingService } from '../../../data-sharing.service';
-import { SuccessPopupComponent } from '../../../success-popup/success-popup.component';
-// import { ErrorPopupComponent } from '../error-popup/error-popup.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Firearm } from '../../../Core/models/Firearm.model';
-import { Officer } from '../../../Core/models/Officer.model';
 import { FirearmService } from '../../../Core/services/firearm.service';
-// import { PopupChild1Component } from '../../../popup-child1/popup-child1.component';
-// import { Popup1Component } from '../../../popup1/popup1.component';
 
 @Component({
   selector: 'app-officer-module',
@@ -87,27 +82,28 @@ export class OfficerModuleComponent implements OnInit {
 
   OnSubmit() {
     // Send the payload to your API to create a new firearm record
-    this.http.post('http://localhost:5000/api/OfficerPending', this.officerForm.value).subscribe(
-      (response: any) => {
-        console.log('Successfully submitted:', response); 
-   
-        // After successful submission, get the ID of the created firearm
-        const createdFirearmId = response.id;
-        console.log('Created Firearm ID:', createdFirearmId); 
-        this.deleteFirearmById(createdFirearmId);
-        // Use the service method to delete the firearm by ID 
-       
-        this.postWithdrawalFirearm();   
-        this.postFirearmHolder();
-        
- 
-      },
-      (error) => {
-        console.error('Error:', error);
-        alert('Failed to Register');
-      }
-    );
-  }  
+    this.http
+      .post('http://localhost:5141/api/OfficerPending', this.officerForm.value)
+      .subscribe(
+        (response: any) => {
+          console.log('Successfully submitted:', response);
+
+          // After successful submission, get the ID of the created firearm
+          const createdFirearmId = response.id;
+          console.log('Created Firearm ID:', createdFirearmId);
+          this.deleteFirearmById(createdFirearmId);
+          // Use the service method to delete the firearm by ID
+          this.postWithdrawalFirearm();
+          this.postFirearmHolder();
+          window.location.reload();
+
+        },
+        (error) => {
+          console.error('Error:', error);
+          alert('Failed to Register');
+        }
+      );
+  }
 
   deleteFirearmById(id: number) {
     this.firearmService.deleteFirearmById(id).subscribe(
@@ -118,7 +114,7 @@ export class OfficerModuleComponent implements OnInit {
         console.error('Error deleting firearm:', error);
       }
     );
-  }   
+  }
 
   postWithdrawalFirearm() {
     const postData = {
@@ -126,7 +122,7 @@ export class OfficerModuleComponent implements OnInit {
       withdrawalDate: new Date().toISOString(), // Example: Use the current date or the date you want to send
     };
 
-    this.http.post('http://localhost:5000/api/Withdrawals', postData).subscribe(
+    this.http.post('http://localhost:5141/api/Withdrawals', postData).subscribe(
       () => {
         console.log('Withdrawal successfully posted.');
       },
@@ -143,7 +139,7 @@ export class OfficerModuleComponent implements OnInit {
     };
 
     this.http
-      .post('http://localhost:5000/api/FirearmHolder', postData)
+      .post('http://localhost:5141/api/FirearmHolder', postData)
       .subscribe(
         () => {
           console.log('Firearm Holder successfully posted.');
@@ -153,30 +149,4 @@ export class OfficerModuleComponent implements OnInit {
         }
       );
   }
-
-  showSuccessPopup() {
-    this.dialog.open(SuccessPopupComponent, {
-      width: '300px', // You can adjust the width as needed
-    });
-  }
-
-  // showErrorPopup() {
-  //   const dialogRef = this.dialog.open(ErrorPopupComponent, {
-  //     width: '300px', // You can adjust the width as needed
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(() => {
-  //     // Handle the error popup close event if needed
-  //   });
 }
-
-// showPopup(popupNumber: number): void {
-//   this.showPopupFlag = popupNumber;
-// }
-
-// hidePopup(): void {
-//   this.showPopupFlag = 1;
-//   this.showPopupFlag = 2;
-//   this.showPopupFlag = 3;
-// }
-//   }

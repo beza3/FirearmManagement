@@ -1,10 +1,18 @@
 <app-banner></app-banner>
-<mat-toolbar
-  ><button mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span >Firearm Management System</span>
-</mat-toolbar>
+<mat-toolbar>
+  <img 
+    class="toggle-btn"
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    src="assets/flogo.png"
+    alt="logo"
+    style="width: 60px; height: 60px; cursor: pointer;"
+  />
+
+  <app-modal></app-modal>
+</mat-toolbar> 
+
+
 <mat-sidenav-container class="sidenav-container">
   <!-- Side Navigation (App Header) -->
   <mat-sidenav #sidenav mode="side" opened class="sidenav">
@@ -18,16 +26,20 @@
       <br />
     </nav>
     <div class="container-for-siderbtn-and-heading">
-      <h2>System User Account</h2>
+      <p>System User Account</p>
     </div>
     <br />
-    <br />
+    <br /> 
+
+
     <div class="btn">
-      <button mat-button type="button" (click)="openUserModal()">
-        <mat-icon style="margin-right: 5px; float: right">add</mat-icon>
-        New System User
+      <button mat-button class="add-button" type="button" (click)="openUserModal()">
+        <mat-icon>add</mat-icon>
+        Add System User
       </button>
-    </div>
+    </div> 
+
+
     <br />
     <br />
     <br />
@@ -36,6 +48,7 @@
       <div class="btn1">
         <input type="text" placeholder="Search here" style="margin-right: 5px" />
       </div>
+
       <br />
       <br />
       <br /> 
@@ -104,7 +117,7 @@
             </option>
           </select>
         </div>
-    
+     <br>
         <div class="select-wrapper col-md-3" style="width: 195px">
           <select id="jobstep" class="form-control">
             <option value="">Select Jobstep</option>
@@ -116,82 +129,100 @@
     </mat-card>
     <br />
     
-    <mat-table [dataSource]="dataSource" class="table">
-      <!-- Define your table columns here -->
-      <ng-container style="height: 1px" matColumnDef="REF#">
+    <mat-table [dataSource]="dataSource" class="custom-table" mat-table>
+      <!-- REF# Column -->
+      <ng-container matColumnDef="REF#">
         <th mat-header-cell *matHeaderCellDef>REF#</th>
-    
-        <td *matCellDef="let element">
+        <td mat-cell *matCellDef="let element">
           {{ element["REF#"] }} <span>#REF</span> {{ element["Id"] }}
         </td>
       </ng-container>
     
+      <!-- NAME Column -->
       <ng-container matColumnDef="NAME">
-        <div>
-          <th style="" mat-header-cell *matHeaderCellDef>NAME</th>
-        </div>
-        <td
-          mat-cell
-          *matCellDef="let element"
-          style="border: 1px solid rgb(235, 235, 235)"
-        >
+        <th mat-header-cell *matHeaderCellDef>NAME</th>
+        <td mat-cell *matCellDef="let element">
           {{ element.NAME }}
-    
-          {{ element.firstname }}
-          {{ element.middlename }}
-          {{ element.lastname }} <br />
-          {{ element.efpid }}
+          <div class="sub-text"> 
+            <span>Fullname: </span>
+            {{ element.firstname }} {{ element.middlename }} {{ element.lastname }} <br />
+            <span>EFP-ID: </span>{{ element.efpid }}
+          </div>
         </td>
       </ng-container>
     
+      <!-- UNIT Column -->
       <ng-container matColumnDef="UNIT">
-        <th style="" mat-header-cell *matHeaderCellDef>UNIT</th>
-        <td
-          mat-cell
-          *matCellDef="let element"
-          style="border: 1px solid rgb(235, 235, 235)"
-        >
+        <th mat-header-cell *matHeaderCellDef>UNIT</th>
+        <td mat-cell *matCellDef="let element"> 
+          <span>Unit</span>
           {{ element.UNIT }}
-          {{ element.unit }}
+          <div class="sub-text">{{ element.unit }}</div>
         </td>
       </ng-container>
     
+      <!-- JOB Column -->
       <ng-container matColumnDef="JOB">
-        <th style="" mat-header-cell *matHeaderCellDef>JOB</th>
-        <td
-          mat-cell
-          *matCellDef="let element"
-          style="border: 1px solid rgb(235, 235, 235)"
-        >
+        <th mat-header-cell *matHeaderCellDef>JOB</th>
+        <td mat-cell *matCellDef="let element">
           {{ element.JOB }}
-          {{ element.job }}
+          <div class="sub-text"> <span>Job :</span>{{ element.job }}</div>
         </td>
       </ng-container>
     
+      <!-- ACCOUNT TYPE Column -->
       <ng-container matColumnDef="ACCOUNT TYPE">
-        <th style="" mat-header-cell *matHeaderCellDef>ACCOUNT DETAIL</th>
-        <td
-          mat-cell
-          *matCellDef="let element"
-          style="border: 1px solid rgb(235, 235, 235)"
-        >
+        <th mat-header-cell *matHeaderCellDef>ACCOUNT DETAIL</th>
+        <td mat-cell *matCellDef="let element">
           {{ element["ACCOUNT TYPE"] }}
-          {{ element.accounttype }}
-          {{ element.Loginicon }} <br />
-          {{ element.username }} <br />
-          {{ element.password }}
+          <div class="sub-text"> 
+            <span>Account Type :</span>  {{ element.accounttype }} <br>
+            <span>Login Icon :</span>{{ element.Loginicon }} <br /> 
+            <span>Username: </span> {{ element.username }} <br />
+          </div>
         </td>
       </ng-container>
-    
       <!-- Define more columns similarly -->
+      <ng-container matColumnDef="ACTION">
+        <th mat-header-cell *matHeaderCellDef>ACTION</th>
+        <td mat-cell *matCellDef="let element">
+           
+          <div class="action-buttons">
+            <button >
+              <a style="text-decoration: none; color: inherit;">
+                <span><mat-icon style="color: green;">edit</mat-icon>Edit</span>
+              </a>
+            </button>
+            <br />
+            <button>
+              <a style="text-decoration: none; color: inherit;">
+                <span><mat-icon style="color: red;">delete</mat-icon>Delete</span>
+              </a>
+            </button>
+            
+          </div>
+          
+        </td>
+      </ng-container>  
+
+      <ng-container matColumnDef="STATUS">
+        <th mat-header-cell *matHeaderCellDef>STATUS</th>
+        <td mat-cell *matCellDef="let element">
+           
+            <mat-slide-toggle>Slide me!</mat-slide-toggle>
+            
+            
+          
+          
+        </td>
+      </ng-container> 
     
-      <tr
-        mat-header-row
-        *matHeaderRowDef="displayedColumns"
-        style="height: 35px; background-color: #f1f1f1"
-      ></tr>
+      <!-- Table Header Row -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- Table Data Row -->
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </mat-table>
+    
       
   </mat-sidenav-content>
 </mat-sidenav-container>

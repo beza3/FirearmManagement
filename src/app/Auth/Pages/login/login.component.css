@@ -198,6 +198,13 @@ mat-card {
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}  
+
+.danger-text {
+  color: red;
+}
+.error {
+  border: 1px solid red;
 }
 
 /* Media query for smaller screens */

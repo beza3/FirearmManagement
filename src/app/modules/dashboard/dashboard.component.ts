@@ -1,43 +1,38 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { count } from 'rxjs';
 import { ChatComponent } from 'src/app/modules/chat/chat.component';
-import { HmtsModalComponent } from 'src/app/Pages/hmts/hmts-modal/hmts-modal.component';
-import { MapComponent } from 'src/app/modules/map/map.component';
 import { FirearmService } from 'src/app/Core/services/firearm.service';
 import { UserInfoService } from 'src/app/user-info.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
-}) 
-
-export class DashboardComponent implements OnInit { 
-
+  styleUrls: ['./dashboard.component.css'],
+})
+export class DashboardComponent implements OnInit {
   totalFirearms: number = 0;
-  totalMarked: number = 0; 
-  totalDestroyed: number = 0; 
-  totalLost: number = 0; 
-  totalOfficer: number = 0; 
-  
-  showchat = false;   
+  totalMarked: number = 0;
+  totalDestroyed: number = 0;
+  totalLost: number = 0;
+  totalOfficer: number = 0;
+  showchat = false;
+  isSidenavOpen = false;
 
-
+  toggleSidenav() {
+    this.isSidenavOpen = !this.isSidenavOpen;
+  }
 
   Openchat(): void {
-    this.showchat = true; 
-    this.dialog.open(ChatComponent)
-  } 
-  constructor(private firearmServices: FirearmService,
+    this.showchat = true;
+    this.dialog.open(ChatComponent);
+  }
+  constructor(
+    private firearmServices: FirearmService,
     private dialog: MatDialog,
-    private userInfoService: UserInfoService) { }
-       
+    private userInfoService: UserInfoService
+  ) {}
 
-
-  ngOnInit(): void { 
-   
-  
+  ngOnInit(): void {
     this.firearmServices.getTotalFirearms().subscribe(
       (count) => {
         this.totalFirearms = count;
@@ -46,10 +41,9 @@ export class DashboardComponent implements OnInit {
       (error) => {
         console.error('Error fetching total firearms:', error);
       }
-    );  
+    );
 
-    this.firearmServices.getTotalMarked() 
-      .subscribe(
+    this.firearmServices.getTotalMarked().subscribe(
       (count) => {
         this.totalMarked = count;
         // Handle the count as needed, e.g., update your UI
@@ -57,13 +51,11 @@ export class DashboardComponent implements OnInit {
       (error) => {
         console.error('Error fetching total firearms:', error);
       }
-    ); 
+    );
 
-    this.firearmServices.getTotalDestroyed().subscribe(
-      (count) => {
-        this.totalDestroyed = count;
-      },
-    ) 
+    this.firearmServices.getTotalDestroyed().subscribe((count) => {
+      this.totalDestroyed = count;
+    });
 
     this.firearmServices.getTotalLost().subscribe(
       (count) => {
@@ -72,31 +64,19 @@ export class DashboardComponent implements OnInit {
       (error) => {
         console.error('Error fetching total firearms:', error);
       }
-    );  
-   
+    );
+
     this.firearmServices.getTotalOfficer().subscribe(
       (count) => {
-        this.totalOfficer = count ;
+        this.totalOfficer = count;
       },
       (error) => {
         console.error('Error fetching total firearms:', error);
       }
-    );  
- 
-     
-  } 
+    );
+  }
 
-
-
-
-
-
-
-
-
-
-
-  displayedColumns = ['position', 'name', 'weight', 'symbol','symbolL'];
+  displayedColumns = ['position', 'name', 'weight', 'symbol', 'symbolL'];
   dataSource = ELEMENT_DATA;
 }
 
@@ -108,19 +88,34 @@ export interface Element {
 }
 
 const ELEMENT_DATA: Element[] = [
-  {position: '15-JUN-2023', name: '07:43', weight: 'some operations', symbol: 'something has changed'},
-  {position: '15-JUN-2023', name: '07:43', weight: 'some operations', symbol: 'something has changed'},
-  {position: '15-JUN-2023', name: '07:43', weight: 'some operations', symbol: 'something has changed'},
-  {position: '15-JUN-2023', name: '07:43', weight: 'some operations', symbol: 'something has changed'},
-  {position: '15-JUN-2023', name: '07:43', weight: 'some operations', symbol: 'something has changed'},
+  {
+    position: '15-JUN-2023',
+    name: '07:43',
+    weight: 'some operations',
+    symbol: 'something has changed',
+  },
+  {
+    position: '15-JUN-2023',
+    name: '07:43',
+    weight: 'some operations',
+    symbol: 'something has changed',
+  },
+  {
+    position: '15-JUN-2023',
+    name: '07:43',
+    weight: 'some operations',
+    symbol: 'something has changed',
+  },
+  {
+    position: '15-JUN-2023',
+    name: '07:43',
+    weight: 'some operations',
+    symbol: 'something has changed',
+  },
+  {
+    position: '15-JUN-2023',
+    name: '07:43',
+    weight: 'some operations',
+    symbol: 'something has changed',
+  },
 ];
-
-
-
-
-
-
-
-
-
-

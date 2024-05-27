@@ -4,7 +4,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,25 +16,25 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   width: 1200px;
   color: black;
-  height: 650px; 
+  height: 650px;
   font-size: 12px;
-} 
+}
 
 .option-input {
-  width: 200px; 
+  width: 200px;
   height: 30px;
-  background-color: #e1e1e1; 
+  background-color: #e1e1e1;
   font-size: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
-} 
+}
 
 .mat-toolbar {
   display: flex;
   align-items: center;
   background-color: #0c2a4a;
   color: #dcc380;
-  height: fit-content; 
+  height: fit-content;
   padding: 10px;
 }
 
@@ -45,16 +44,14 @@
 
 button {
   position: absolute;
-  right: 0;  
+  right: 0;
   margin-right: 120px;
-
-} 
-button:hover{
+}
+button:hover {
   background-color: #0c2a4a;
   color: white;
 }
 /* signup-form.css */
-
 
 .form-container {
   display: flex;
@@ -97,15 +94,15 @@ textarea {
   background-color: #f1f1f1;
   color: #0c2a4a;
   border-radius: 4px;
-} 
+}
 img {
   max-width: 30px;
   max-height: 30px;
 }
- mat-card {
+mat-card {
   background-color: #fafafa;
-  box-shadow:  6px 4px 6px rgb(172, 166, 166);
- }/* Add some basic styling to the checkbox */
+  box-shadow: 6px 4px 6px rgb(172, 166, 166);
+} /* Add some basic styling to the checkbox */
 .checkbox-container {
   display: block;
   position: relative;
@@ -135,7 +132,7 @@ img {
 
 /* Style the custom checkbox when checked */
 .checkbox-container input:checked + .checkmark {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 /* Add a white checkmark icon using CSS */
